@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DNPageScrollView_Example' do
+  pod 'DNPageScrollView', :path => '../'
+
+  target 'DNPageScrollView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
