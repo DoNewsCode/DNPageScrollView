@@ -1,0 +1,28 @@
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#else
+#ifndef FOUNDATION_EXPORT
+#if defined(__cplusplus)
+#define FOUNDATION_EXPORT extern "C"
+#else
+#define FOUNDATION_EXPORT extern
+#endif
+#endif
+#endif
+
+#import "DNChannelScrollView.h"
+#import "DNChannelTitleView.h"
+#import "DNContentScrollView.h"
+#import "DNPageChannelStyle.h"
+#import "DNPageCollectionView.h"
+#import "DNPageCollectionViewCell.h"
+#import "DNPageCollectionViewFlowLayout.h"
+#import "DNPageScrollView.h"
+#import "DNPageScrollViewDelegate.h"
+#import "UIView+JAExt.h"
+#import "UIView+JAExtForPageScroll.h"
+#import "UIViewController+DNPageController.h"
+
+FOUNDATION_EXPORT double DNPageScrollViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char DNPageScrollViewVersionString[];
+

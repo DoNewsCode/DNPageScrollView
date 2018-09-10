@@ -1,0 +1,6 @@
+framework module DNPageScrollView {
+  umbrella header "DNPageScrollView-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -24,6 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		AFDE6FFAF206D7FB31FD11BF /* Pods_DNPageScrollView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8E190B15B6E9BAE9AAE2C50 /* Pods_DNPageScrollView_Tests.framework */; };
+		B189FAE3214619D400A9D88B /* DNChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B189FAE2214619D400A9D88B /* DNChildViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +57,16 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		647022BCB1A8F3B4194BF978 /* DNPageScrollView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = DNPageScrollView.podspec; path = ../DNPageScrollView.podspec; sourceTree = "<group>"; };
+		647022BCB1A8F3B4194BF978 /* DNPageScrollView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DNPageScrollView.podspec; path = ../DNPageScrollView.podspec; sourceTree = "<group>"; };
 		6CE4FC8AAF8C65CD96EE9AAD /* Pods-DNPageScrollView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNPageScrollView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNPageScrollView_Tests/Pods-DNPageScrollView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7EAF1E17FC48F678BA54EF22 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		7EAF1E17FC48F678BA54EF22 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8892E9D3D6F98BCA7398BD21 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8892E9D3D6F98BCA7398BD21 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		8FC59740B75D1B24BD394249 /* Pods-DNPageScrollView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNPageScrollView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DNPageScrollView_Example/Pods-DNPageScrollView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		95D4AE82180E8634AD412B64 /* Pods-DNPageScrollView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNPageScrollView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNPageScrollView_Example/Pods-DNPageScrollView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		B189FAE1214619D400A9D88B /* DNChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DNChildViewController.h; sourceTree = "<group>"; };
+		B189FAE2214619D400A9D88B /* DNChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DNChildViewController.m; sourceTree = "<group>"; };
 		BE0839401C9C760D6FCB6939 /* Pods_DNPageScrollView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNPageScrollView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E190B15B6E9BAE9AAE2C50 /* Pods_DNPageScrollView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DNPageScrollView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D93565F8FE6B0B8153011B /* Pods-DNPageScrollView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DNPageScrollView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DNPageScrollView_Tests/Pods-DNPageScrollView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* DNViewController.h */,
 				6003F5A6195388D20070C39A /* DNViewController.m */,
+				B189FAE1214619D400A9D88B /* DNChildViewController.h */,
+				B189FAE2214619D400A9D88B /* DNChildViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -406,6 +411,7 @@
 				6003F59E195388D20070C39A /* DNAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* DNViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				B189FAE3214619D400A9D88B /* DNChildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

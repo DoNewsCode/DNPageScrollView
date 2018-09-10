@@ -1,0 +1,16 @@
+PODS:
+  - DNPageScrollView (1)
+
+DEPENDENCIES:
+  - DNPageScrollView (from `../`)
+
+EXTERNAL SOURCES:
+  DNPageScrollView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  DNPageScrollView: 1b7a73e45b4d40a5028dd75b685004af7497dd3d
+
+PODFILE CHECKSUM: a74df18cfb4a2e0ec3035354fe182e23ae4e2b10
+
+COCOAPODS: 1.4.0
