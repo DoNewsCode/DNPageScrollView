@@ -133,8 +133,8 @@ static CGFloat const shadowCoverWidth = 30;
 {
     if (self.channelNameArray.count == 0) return;
     
-    [self setupScrollViewAndExtraButton];
     [self setupChannelViewsPosition];
+    [self setupScrollViewAndExtraButton];
     [self setupBottomLine];
     [self setupScrollLine];
     //设置滚动区域
@@ -178,10 +178,14 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat extraBtnW = 44.0;
     CGFloat extraBtnY = 5.0;
     
-    CGFloat scrollW = self.extraButton ? _currentWidth - extraBtnW : _currentWidth - self.channelStyle.titleMargin;
-    
+    CGFloat scrollW = self.extraButton ? _currentWidth - extraBtnW : _currentWidth;
+    if (self.channelStyle.contentCentered) {
+        scrollW = CGRectGetMaxX(self.scrollView.subviews.lastObject.frame);
+    }
     self.scrollView.frame = CGRectMake(0., 0., scrollW, self.frame.size.height);
-    
+    if (self.channelStyle.contentCentered) {
+        self.scrollView.centerX = self.centerX;
+    }
     if (self.channelStyle.isShowExtraButton) {
         [self addSubview:self.extraButton];
     }
@@ -191,11 +195,11 @@ static CGFloat const shadowCoverWidth = 30;
     }
     if (self.extraButton) {
         ///>标注 频道栏 + 按钮 frame
-        self.extraButton.frame = CGRectMake(scrollW , extraBtnY+1, extraBtnW, self.frame.size.height - 2 * extraBtnY);
+        self.extraButton.frame = CGRectMake(CGRectGetMaxX(self.scrollView.frame) , extraBtnY+1, extraBtnW, self.frame.size.height - 2 * extraBtnY);
     }
     
     if (self.shadowCover) {
-        self.shadowCover.frame = CGRectMake(scrollW - shadowCoverWidth, extraBtnY, shadowCoverWidth, self.frame.size.height - 2 * extraBtnY);
+        self.shadowCover.frame = CGRectMake(CGRectGetMaxX(self.scrollView.frame) - shadowCoverWidth, extraBtnY, shadowCoverWidth, self.frame.size.height - 2 * extraBtnY);
     }
 }
 
@@ -207,7 +211,7 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat channelH = self.height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY;
     
     NSInteger index = 0;
-    float lastChannelLabelMaxX = self.channelStyle.titleMargin;
+    float lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
     float addedMargon = 0.0f;
     
     for (DNChannelTitleView *channelView in self.channelViews) {

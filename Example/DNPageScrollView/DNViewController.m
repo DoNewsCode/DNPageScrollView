@@ -57,16 +57,18 @@
 - (DNPageChannelStyle *)pageStyle {
     if (_pageStyle == nil) {
         _pageStyle = [DNPageChannelStyle new];
+//        _pageStyle.contentCentered = YES;
         _pageStyle.showLine = YES;
         _pageStyle.scrollLineHeight = 4;
         _pageStyle.scrollLineWidth = 19;
         _pageStyle.scrollLinecornerRadius = 2.5;
-        _pageStyle.titleMargin = 20;
+        _pageStyle.titleMargin = 30;
+        _pageStyle.titleAboutMargin = 30;
         _pageStyle.scrollLineColor = [UIColor orangeColor];
         _pageStyle.titleFont = [UIFont systemFontOfSize:16];
         _pageStyle.normalTitleColor = [UIColor darkGrayColor];
         _pageStyle.selectedTitleColor = [UIColor orangeColor];
-        _pageStyle.shadowCover = YES;
+//        _pageStyle.shadowCover = YES;
 //        _pageStyle.shadowCoverImageName = @"icon_pagescroll";
         //        _pageStyle.showBottomLine = YES;
         //        _pageStyle.bottomLineHeight = 1;
@@ -76,7 +78,8 @@
 }
 
 - (NSArray *)channels {
-    return @[@"推荐",@"关注",@"测试",@"视频",@"推荐",@"关注",@"测试",@"视频"];
+    //
+    return @[@"推荐",@"关注",@"测试",@"视频",@"视频",@"推荐",@"关注",@"测试"];
 }
 
 - (void)didReceiveMemoryWarning
