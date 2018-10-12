@@ -465,6 +465,7 @@ static CGFloat const shadowCoverWidth = 30;
         scrollView.bounces = YES;
         scrollView.pagingEnabled = NO;
         scrollView.delegate = self;
+        scrollView.scrollEnabled = !_channelStyle.contentCentered;
         _scrollView = scrollView;
     }
     return _scrollView;
