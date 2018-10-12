@@ -11,6 +11,8 @@
 #import "DNChannelTitleView.h"
 #import "UIView+JAExt.h"
 
+#define iPhoneX                         [UIScreen mainScreen].bounds.size.height==812
+
 @interface DNPageScrollView ()
 
 @property (nonatomic, strong) DNPageChannelStyle *style;
@@ -19,10 +21,10 @@
 @property (strong, nonatomic) NSArray *childViewControllers;
 @property (strong, nonatomic) NSArray *channelNameArray;
 @end
-
 @implementation DNPageScrollView
 
-- (instancetype)initWithFrame:(CGRect)frame style:(DNPageChannelStyle *)style channelNames:(NSArray<NSString *> *)channelNames parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate {
+- (instancetype)initWithFrame:(CGRect)frame style:(DNPageChannelStyle *)style channelNames:(NSArray<NSString *> *)channelNames parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate
+{
     if (self = [super initWithFrame:frame]) {
         self.delegate = delegate;
         self.style = style;
@@ -33,8 +35,8 @@
     }
     return self;
 }
-
-- (void)createContent {
+- (void)createContent
+{
     self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
     self.channelView.backgroundColor = self.style.channelBackgroundColor;
     
@@ -54,7 +56,6 @@
     [self.channelView reloadTitlesWithNewTitles:self.channelNameArray];
     [self.contentView reload];
 }
-
 /**  只刷新频道名字 并load 地方频道数据 */
 - (void)reloadChannelNameWithNewTitles:(NSArray<NSString *> *)newTitles selectIndex:(NSInteger)selectIndex{
     self.channelNameArray = nil;
@@ -64,7 +65,8 @@
     [self.contentView reload];
 }
 
-- (void)reloadTheme {
+- (void)reloadTheme
+{
     [self.channelView reloadTheme];
 //    [self.contentView reload];
     self.backgroundColor = self.style.pageViewBackgroundColor;
@@ -72,23 +74,32 @@
     self.channelView.backgroundColor = self.style.channelBackgroundColor;
 }
 
--(void)returnExtraButtonClickBlock:(DNPageScrollViewExtraButtonClickBlock)block {
+-(void)returnExtraButtonClickBlock:(DNPageScrollViewExtraButtonClickBlock)block
+{
     self.extraButtonClickBlock = block;
 }
 
--(void)setCurrentHeight:(CGFloat)currentHeight {
+-(void)setCurrentHeight:(CGFloat)currentHeight
+{
     self.height = currentHeight;
+//  self.contentView.height = self.height - (CGRectGetMaxY(self.channelView.frame) + 1);
+//    self.contentView.currentHeight = self.height - (CGRectGetMaxY(self.channelView.frame));
+//    self.contentView.bounds = CGRectMake(0., 0., self.width, self.height - (CGRectGetMaxY(self.channelView.frame)));
 }
 
--(void)setFrame:(CGRect)frame {
+-(void)setFrame:(CGRect)frame
+{
     [super setFrame:frame];
 
 }
 
-- (DNChannelScrollView *)channelView {
+-(DNChannelScrollView *)channelView
+{
     if (!_channelView) {
         __weak typeof (self) weakSelf = self;
+        
         CGFloat stateBarHeight = 0;//iPhoneX ? 44 : 20;
+
         CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
         
         DNChannelScrollView *channelScrollView = [[DNChannelScrollView alloc]
@@ -104,8 +115,8 @@
     }
     return _channelView;
 }
-
-- (DNContentScrollView *)contentView {
+-(DNContentScrollView *)contentView
+{
     if (!_contentView) {
         DNContentScrollView *content = [[DNContentScrollView alloc]
                                         initWithFrame:CGRectMake(0.0, CGRectGetMaxY(self.channelView.frame) , self.bounds.size.width, self.bounds.size.height - CGRectGetMaxY(self.channelView.frame))
@@ -117,24 +128,24 @@
     }
     return _contentView;
 }
-
-- (NSArray *)channelNameArray {
+-(NSArray *)channelNameArray
+{
     if (!_channelNameArray) {
         _channelNameArray = [NSArray array];
     }
     return _channelNameArray;
 }
-
-- (NSArray *)childViewControllers {
+-(NSArray *)childViewControllers
+{
     if (!_channelNameArray) {
         _channelNameArray = [NSArray array];
     }
     return _childViewControllers;
 }
 
-- (void)setExtraButtonClickBlock:(DNPageScrollViewExtraButtonClickBlock)extraButtonClickBlock {
+-(void)setExtraButtonClickBlock:(DNPageScrollViewExtraButtonClickBlock)extraButtonClickBlock
+{
     _extraButtonClickBlock = extraButtonClickBlock;
     self.channelView.extraButtonClickBlock = extraButtonClickBlock;
 }
-
 @end
