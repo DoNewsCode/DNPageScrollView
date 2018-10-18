@@ -61,7 +61,9 @@
         _pageStyle.showLine = YES;
         _pageStyle.scrollLineHeight = 4;
         _pageStyle.scrollLineWidth = 19;
+//        _pageStyle.scrollLineColor = 19;
         _pageStyle.scrollLinecornerRadius = 2.5;
+        _pageStyle.contentBottomMargin = 7.;
         _pageStyle.titleMargin = 30;
         _pageStyle.titleAboutMargin = 0.;
         _pageStyle.scrollLineColor = [UIColor orangeColor];
@@ -71,8 +73,8 @@
 //        _pageStyle.shadowCover = YES;
 //        _pageStyle.shadowCoverImageName = @"icon_pagescroll";
         //        _pageStyle.showBottomLine = YES;
-        //        _pageStyle.bottomLineHeight = 1;
-        //        _pageStyle.bottomLineBackgroundColor = [TGColorManager sharedInstance].colorLineView;
+                _pageStyle.bottomLineHeight = 1;
+//                _pageStyle.bottomLineBackgroundColor = [TGColorManager sharedInstance].colorLineView;
     }
     return _pageStyle;
 }

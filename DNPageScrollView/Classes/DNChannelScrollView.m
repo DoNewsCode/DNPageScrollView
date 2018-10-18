@@ -150,7 +150,7 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat lineW = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : firstLabel.width;
     CGFloat lineX = self.channelStyle.scrollLineWidth > 0 ? (firstLabel.x + (firstLabel.width - lineW) * 0.5) : firstLabel.x;
     CGFloat lineH = self.channelStyle.scrollLineHeight;
-    CGFloat lineY = self.height - lineH;
+    CGFloat lineY = self.height - lineH - self.channelStyle.contentBottomMargin;
     
     if (self.scrollLine) {
         if (self.channelStyle.isScrollTitle) {
@@ -177,12 +177,12 @@ static CGFloat const shadowCoverWidth = 30;
 - (void)setupScrollViewAndExtraButton {
     CGFloat extraBtnW = 44.0;
     CGFloat extraBtnY = 5.0;
-    
+     CGFloat scrollH = self.frame.size.height - self.channelStyle.contentBottomMargin;
     CGFloat scrollW = self.extraButton ? _currentWidth - extraBtnW : _currentWidth;
     if (self.channelStyle.contentCentered) {
         scrollW = CGRectGetMaxX(self.scrollView.subviews.lastObject.frame);
     }
-    self.scrollView.frame = CGRectMake(0., 0., scrollW, self.frame.size.height);
+    self.scrollView.frame = CGRectMake(0., 0., scrollW, scrollH);
     if (self.channelStyle.contentCentered) {
         self.scrollView.centerX = self.centerX;
     }
@@ -208,7 +208,7 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat channelX = 0.0f;
     CGFloat channelY = 5.0f;
     CGFloat channelW = 0.0f;
-    CGFloat channelH = self.height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY;
+    CGFloat channelH = self.height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY - self.channelStyle.contentBottomMargin;
     
     NSInteger index = 0;
     float lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
