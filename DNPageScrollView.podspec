@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DNPageScrollView'
-  s.version          = '1.0.3'
+  s.version          = '1.0.5'
   s.summary          = 'Page Scroll 菜单组件'
 
 # This description is used to generate tags and improve search results.

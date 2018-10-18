@@ -20,6 +20,8 @@
 
 // 滚动scrollView
 @property (strong, nonatomic) UIScrollView *scrollView;
+/** channelCenterY */
+@property (nonatomic, assign) CGFloat channelCenterY;
 // 背景ImageView
 @property (strong, nonatomic) UIImageView *backgroundImageView;
 // 附加的按钮
@@ -209,7 +211,7 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat channelY = 5.0f;
     CGFloat channelW = 0.0f;
     CGFloat channelH = self.height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY - self.channelStyle.contentBottomMargin;
-    
+    _channelCenterY = 5. + channelH * 0.5;
     NSInteger index = 0;
     float lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
     float addedMargon = 0.0f;

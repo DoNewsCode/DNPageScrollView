@@ -17,6 +17,11 @@ typedef void(^DNChannelScrollViewExtraBtnOnClick)(UIButton *extraBtn);
 @property (nonatomic, copy ) NSArray *channelNameArray;
 /** 必须设置代理并且实现相应的方法*/
 @property(weak, nonatomic) id<DNPageScrollViewDelegate> delegate;
+// 滚动scrollView
+@property (strong, nonatomic,readonly) UIScrollView *scrollView;
+/** channelCenterY */
+@property (nonatomic, assign,readonly) CGFloat channelCenterY;
+
 @property (copy, nonatomic) DNChannelScrollViewExtraBtnOnClick extraButtonClickBlock;
 
 @property (nonatomic, strong) DNPageChannelStyle *channelStyle;
