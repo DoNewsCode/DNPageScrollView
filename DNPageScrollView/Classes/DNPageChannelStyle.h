@@ -11,6 +11,8 @@
 
 @interface DNPageChannelStyle : NSObject
 
+/** 是否显示Channel底部阴影 默认为NO*/
+@property (assign, nonatomic, getter=isShowChannelShadow) BOOL showChannelShadow;
 /** 是否显示滚动条 默认为NO*/
 @property (assign, nonatomic, getter=isShowLine) BOOL showLine;
 /** 是否内容居中 默认为NO*/

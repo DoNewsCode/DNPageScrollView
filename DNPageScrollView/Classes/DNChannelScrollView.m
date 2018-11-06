@@ -70,6 +70,11 @@ static CGFloat const shadowCoverWidth = 30;
         _currentIndex = 0;
         _oldIndex = 0;
         _currentWidth = frame.size.width;
+        if (channelStyle.isShowChannelShadow) {
+            self.layer.shadowColor = [[UIColor colorWithRed:0. green:0. blue:0. alpha:1.] CGColor];
+            self.layer.shadowOpacity = 0.1;//设置阴影的透明度
+            self.layer.shadowOffset = CGSizeMake(0, 1);//设置阴影的偏移量
+        }
         [self createContent];
     }
     return self;

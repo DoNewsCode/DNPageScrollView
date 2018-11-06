@@ -58,6 +58,7 @@
     if (_pageStyle == nil) {
         _pageStyle = [DNPageChannelStyle new];
         _pageStyle.contentCentered = YES;
+        _pageStyle.showChannelShadow = YES;
         _pageStyle.showLine = YES;
         _pageStyle.scrollLineHeight = 4;
         _pageStyle.scrollLineWidth = 19;
