@@ -9,7 +9,7 @@
 #import "DNPageScrollView.h"
 #import "DNPageChannelStyle.h"
 #import "DNChannelTitleView.h"
-#import "UIView+JAExt.h"
+#import <DNCommonKit/UIView+Layout.h>
 
 #define iPhoneX                         [UIScreen mainScreen].bounds.size.height==812
 
@@ -81,7 +81,7 @@
 
 -(void)setCurrentHeight:(CGFloat)currentHeight
 {
-    self.height = currentHeight;
+    self.ct_height = currentHeight;
 //  self.contentView.height = self.height - (CGRectGetMaxY(self.channelView.frame) + 1);
 //    self.contentView.currentHeight = self.height - (CGRectGetMaxY(self.channelView.frame));
 //    self.contentView.bounds = CGRectMake(0., 0., self.width, self.height - (CGRectGetMaxY(self.channelView.frame)));

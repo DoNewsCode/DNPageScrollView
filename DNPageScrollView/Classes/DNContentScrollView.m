@@ -13,7 +13,7 @@
 #import "UIViewController+DNPageController.h"
 #import "DNPageCollectionViewFlowLayout.h"
 #import "DNPageCollectionViewCell.h"
-#import "UIView+JAExt.h"
+#import <DNCommonKit/UIView+Layout.h>
 
 #define cellID @"DNPageContentCellid"
 
@@ -497,7 +497,7 @@
 {
     self.collectionViewFlowLayout.itemSize = CGSizeMake(self.collectionViewFlowLayout.itemSize.width, currentHeight);
     for (UIView *view in self.collectionView.subviews) {
-        view.y = 0;
+        view.ct_y = 0;
     }
 //    [self.collectionView ]
 //    self.collectionView.bounds = self.bounds;

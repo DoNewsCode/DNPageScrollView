@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DNPageScrollView'
-  s.version          = '1'
+  s.version          = '2'
   s.summary          = 'Page Scroll 菜单组件'
 
 # This description is used to generate tags and improve search results.
@@ -35,6 +35,8 @@ TODO: Add long description of the pod here.
   s.resource_bundles = {
      'DNPageScrollView' => ['DNPageScrollView/Assets/*.png']
   }
+  
+  s.dependency 'DNCommonKit/DNLayout'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
