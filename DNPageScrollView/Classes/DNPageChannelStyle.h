@@ -11,8 +11,12 @@
 
 @interface DNPageChannelStyle : NSObject
 
+/** 是否显示Channel底部阴影 默认为NO*/
+@property (assign, nonatomic, getter=isShowChannelShadow) BOOL showChannelShadow;
 /** 是否显示滚动条 默认为NO*/
 @property (assign, nonatomic, getter=isShowLine) BOOL showLine;
+/** 是否内容居中 默认为NO*/
+@property (assign, nonatomic, getter=isContentCentered) BOOL contentCentered;
 /** 是否有顶部搜索 默认为NO*/
 @property (assign, nonatomic, getter=isShowSearchBar) BOOL showSearchBar;
 /** 是否显示阴影遮罩 默认为NO*/
@@ -39,6 +43,10 @@
 @property (assign, nonatomic) UIColor *scrollLineColor;
 /** 标题之间的间隙 默认为15.0 */
 @property (assign, nonatomic) CGFloat titleMargin;
+/** 标题与content左右之间的间隙 默认为15.0 */
+@property (assign, nonatomic) CGFloat titleAboutMargin;
+/** content底部之间的间隙 默认为0. */
+@property (assign, nonatomic) CGFloat contentBottomMargin;
 /** 标题的字体 默认为14 */
 @property (strong, nonatomic) UIFont *titleFont;
 /** 标题缩放倍数, 默认1.3 */

@@ -20,6 +20,8 @@
 
 // 滚动scrollView
 @property (strong, nonatomic) UIScrollView *scrollView;
+/** channelCenterY */
+@property (nonatomic, assign) CGFloat channelCenterY;
 // 背景ImageView
 @property (strong, nonatomic) UIImageView *backgroundImageView;
 // 附加的按钮
@@ -68,6 +70,11 @@ static CGFloat const shadowCoverWidth = 30;
         _currentIndex = 0;
         _oldIndex = 0;
         _currentWidth = frame.size.width;
+        if (channelStyle.isShowChannelShadow) {
+            self.layer.shadowColor = [[UIColor colorWithRed:0. green:0. blue:0. alpha:1.] CGColor];
+            self.layer.shadowOpacity = 0.1;//设置阴影的透明度
+            self.layer.shadowOffset = CGSizeMake(0, 1);//设置阴影的偏移量
+        }
         [self createContent];
     }
     return self;
@@ -133,8 +140,8 @@ static CGFloat const shadowCoverWidth = 30;
 {
     if (self.channelNameArray.count == 0) return;
     
-    [self setupScrollViewAndExtraButton];
     [self setupChannelViewsPosition];
+    [self setupScrollViewAndExtraButton];
     [self setupBottomLine];
     [self setupScrollLine];
     //设置滚动区域
@@ -150,7 +157,7 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat lineW = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : firstLabel.ct_width;
     CGFloat lineX = self.channelStyle.scrollLineWidth > 0 ? (firstLabel.ct_x + (firstLabel.ct_width - lineW) * 0.5) : firstLabel.ct_x;
     CGFloat lineH = self.channelStyle.scrollLineHeight;
-    CGFloat lineY = self.ct_height - lineH;
+    CGFloat lineY = self.ct_height - lineH - self.channelStyle.contentBottomMargin;
     
     if (self.scrollLine) {
         if (self.channelStyle.isScrollTitle) {
@@ -177,11 +184,15 @@ static CGFloat const shadowCoverWidth = 30;
 - (void)setupScrollViewAndExtraButton {
     CGFloat extraBtnW = 44.0;
     CGFloat extraBtnY = 5.0;
-    
-    CGFloat scrollW = self.extraButton ? _currentWidth - extraBtnW : _currentWidth - self.channelStyle.titleMargin;
-    
-    self.scrollView.frame = CGRectMake(0., 0., scrollW, self.frame.size.height);
-    
+     CGFloat scrollH = self.frame.size.height - self.channelStyle.contentBottomMargin;
+    CGFloat scrollW = self.extraButton ? _currentWidth - extraBtnW : _currentWidth;
+    if (self.channelStyle.contentCentered) {
+        scrollW = CGRectGetMaxX(self.scrollView.subviews.lastObject.frame);
+    }
+    self.scrollView.frame = CGRectMake(0., 0., scrollW, scrollH);
+    if (self.channelStyle.contentCentered) {
+        self.scrollView.ct_centerX = self.ct_centerX;
+    }
     if (self.channelStyle.isShowExtraButton) {
         [self addSubview:self.extraButton];
     }
@@ -191,11 +202,11 @@ static CGFloat const shadowCoverWidth = 30;
     }
     if (self.extraButton) {
         ///>标注 频道栏 + 按钮 frame
-        self.extraButton.frame = CGRectMake(scrollW , extraBtnY+1, extraBtnW, self.frame.size.height - 2 * extraBtnY);
+        self.extraButton.frame = CGRectMake(CGRectGetMaxX(self.scrollView.frame) , extraBtnY+1, extraBtnW, self.frame.size.height - 2 * extraBtnY);
     }
     
     if (self.shadowCover) {
-        self.shadowCover.frame = CGRectMake(scrollW - shadowCoverWidth, extraBtnY, shadowCoverWidth, self.frame.size.height - 2 * extraBtnY);
+        self.shadowCover.frame = CGRectMake(CGRectGetMaxX(self.scrollView.frame) - shadowCoverWidth, extraBtnY, shadowCoverWidth, self.frame.size.height - 2 * extraBtnY);
     }
 }
 
@@ -204,10 +215,15 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat channelX = 0.0f;
     CGFloat channelY = 5.0f;
     CGFloat channelW = 0.0f;
-    CGFloat channelH = self.ct_height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY;
-    
+//<<<<<<< HEAD
+//    CGFloat channelH = self.ct_height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY;
+//
+//=======
+    CGFloat channelH = self.ct_height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY - self.channelStyle.contentBottomMargin;
+    _channelCenterY = 5. + channelH * 0.5;
+//>>>>>>> 278496b9cb41cb065f62b3f52bb357b8ed666ab8
     NSInteger index = 0;
-    float lastChannelLabelMaxX = self.channelStyle.titleMargin;
+    float lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
     float addedMargon = 0.0f;
     
     for (DNChannelTitleView *channelView in self.channelViews) {
@@ -461,6 +477,7 @@ static CGFloat const shadowCoverWidth = 30;
         scrollView.bounces = YES;
         scrollView.pagingEnabled = NO;
         scrollView.delegate = self;
+        scrollView.scrollEnabled = !_channelStyle.contentCentered;
         _scrollView = scrollView;
     }
     return _scrollView;

@@ -14,6 +14,8 @@
 @property (nonatomic, weak) id<DNPageScrollViewDelegate> delegate;
 // 用于处理重用和内容的显示
 @property (nonatomic, strong) DNPageCollectionView *collectionView;
+// 当前控制器
+@property (strong, nonatomic,readonly) UIViewController<DNPageScrollViewChildViewControllerDelegate> *currentChildViewController;
 @property (nonatomic, assign) CGFloat currentHeight;
 ///初始化方法
 

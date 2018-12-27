@@ -1,6 +1,6 @@
 {
   "name": "DNPageScrollView",
-  "version": "2",
+  "version": "2.0",
   "summary": "Page Scroll 菜单组件",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/DoNewsCode/DNPageScrollView",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/DoNewsCode/DNPageScrollView.git",
-    "tag": "2"
+    "tag": "2.0"
   },
   "platforms": {
     "ios": "8.0"

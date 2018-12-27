@@ -1,6 +1,6 @@
 PODS:
   - DNCommonKit/DNLayout (9.1)
-  - DNPageScrollView (2):
+  - DNPageScrollView (2.0):
     - DNCommonKit/DNLayout
 
 DEPENDENCIES:
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DNCommonKit: 4290347488174294c51a02418786bc7d3fad0345
-  DNPageScrollView: 1d45449cbffcc60fe844e9e8401cbded88d3f53e
+  DNPageScrollView: bdfe51eaf61c095ce411fdb5acd82eb99fb56d86
 
 PODFILE CHECKSUM: 768b25caddaa4e94bf9c5041bd5917e32c84555b
 
