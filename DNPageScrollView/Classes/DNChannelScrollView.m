@@ -120,6 +120,9 @@ static CGFloat const shadowCoverWidth = 30;
         channelView.font = self.channelStyle.titleFont;
         channelView.text = channelName;
         channelView.textColor = self.channelStyle.normalTitleColor;
+        channelView.channelTextAlignment = self.channelStyle.channelTextAlignment;
+        channelView.normalFont = self.channelStyle.titleFont;
+        channelView.selectedFont = self.channelStyle.selectedTitleFont;
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
             [self.delegate setUpTitleView:channelView forIndex:index];
@@ -226,7 +229,7 @@ static CGFloat const shadowCoverWidth = 30;
         channelX = lastChannelLabelMaxX + addedMargon * 0.5;
         lastChannelLabelMaxX += (channelW + addedMargon + self.channelStyle.titleMargin);
         channelView.frame = CGRectMake(channelX, channelY, channelW, channelH);
-        
+        channelView.normalFrame = channelView.frame;
         index++;
     }
     //初始选中状态样式
@@ -234,9 +237,7 @@ static CGFloat const shadowCoverWidth = 30;
     currentChannelView.currentTransformSx = 1.0;
     if (currentChannelView) {
         // 缩放, 设置初始的label的transform
-        if (self.channelStyle.isScrollTitle) {
-            currentChannelView.currentTransformSx = self.channelStyle.titleBigScale;
-        }
+        currentChannelView.currentTransformSx = self.channelStyle.titleBigScale;
         currentChannelView.textColor = self.channelStyle.selectedTitleColor;
     }
 }
@@ -343,7 +344,6 @@ static CGFloat const shadowCoverWidth = 30;
         }
     }
     
-    
     //颜色渐变
     oldChannelView.textColor = [UIColor colorWithRed:[self.selectedColorRGB[0] floatValue] + [self.deltaRGB[0] floatValue] * progress
                                                green:[self.selectedColorRGB[1] floatValue] + [self.deltaRGB[1] floatValue] * progress
@@ -355,9 +355,9 @@ static CGFloat const shadowCoverWidth = 30;
                                                    alpha:1.0];
     
     CGFloat deltaScale = self.channelStyle.titleBigScale - 1.0;
+    
     oldChannelView.currentTransformSx = self.channelStyle.titleBigScale - deltaScale * progress;
     currentChannelView.currentTransformSx = 1.0 + deltaScale * progress;
-    
 }
 
 - (void)adjustChannelOffSetToCurrentIndex:(NSInteger)currentIndex

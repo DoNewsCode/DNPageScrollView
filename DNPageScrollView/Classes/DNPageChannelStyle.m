@@ -24,6 +24,8 @@
         _titleAboutMargin = 15.0;
         _contentBottomMargin = 0.;
         _titleFont = [UIFont systemFontOfSize:17.0];
+        _selectedTitleFont = [UIFont boldSystemFontOfSize:17.0];
+
         _titleBigScale = 1.1;
         _channelBackgroundColor = [UIColor colorWithRed:248.0/255.0 green:249.0/255.0 blue:249.0/255.0 alpha:1.0];
         _extraButtonBackgroundColor = _channelBackgroundColor;

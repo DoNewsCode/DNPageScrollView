@@ -236,7 +236,7 @@
 /** 滚动减速完成时再更新title的位置 */
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger currentIndex = (scrollView.contentOffset.x / self.bounds.size.width);
-    [self contentViewDidMoveFromIndex:currentIndex toIndex:currentIndex prigress:1.0];
+//    [self contentViewDidMoveFromIndex:currentIndex toIndex:currentIndex prigress:1.0];
     
     //    // 调整title
     [self adjustChannelTitleOffSetTicurrentIndex:currentIndex];

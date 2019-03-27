@@ -56,26 +56,26 @@
 
 - (DNPageChannelStyle *)pageStyle {
     if (_pageStyle == nil) {
+        
         _pageStyle = [DNPageChannelStyle new];
         _pageStyle.contentCentered = YES;
         _pageStyle.showChannelShadow = YES;
         _pageStyle.showLine = YES;
         _pageStyle.scrollLineHeight = 4;
         _pageStyle.scrollLineWidth = 19;
-//        _pageStyle.scrollLineColor = 19;
         _pageStyle.scrollLinecornerRadius = 2.5;
         _pageStyle.contentBottomMargin = 7.;
         _pageStyle.titleMargin = 30;
         _pageStyle.titleAboutMargin = 0.;
+        _pageStyle.titleFont = [UIFont fontWithName:@"PingFangSC-Regular" size:15.];
+        _pageStyle.selectedTitleFont = [UIFont fontWithName:@"PingFangSC-Regular" size:15.];
+        _pageStyle.titleBigScale = 1.5333;
+        _pageStyle.channelTextAlignment = DNPageChannelStyleChannelTextAlignmentBottom;
+        
         _pageStyle.scrollLineColor = [UIColor orangeColor];
-        _pageStyle.titleFont = [UIFont systemFontOfSize:16];
-        _pageStyle.normalTitleColor = [UIColor darkGrayColor];
-        _pageStyle.selectedTitleColor = [UIColor orangeColor];
-//        _pageStyle.shadowCover = YES;
-//        _pageStyle.shadowCoverImageName = @"icon_pagescroll";
-        //        _pageStyle.showBottomLine = YES;
-                _pageStyle.bottomLineHeight = 1;
-//                _pageStyle.bottomLineBackgroundColor = [TGColorManager sharedInstance].colorLineView;
+        _pageStyle.normalTitleColor = [UIColor colorWithRed:51./255. green:51./255. blue:51./255. alpha:1.0];
+        _pageStyle.selectedTitleColor = [UIColor colorWithRed:51./255. green:51./255. blue:51./255. alpha:1.0];
+        _pageStyle.bottomLineHeight = 1;
     }
     return _pageStyle;
 }
