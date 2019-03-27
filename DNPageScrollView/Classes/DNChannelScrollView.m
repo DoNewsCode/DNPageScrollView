@@ -339,12 +339,12 @@ static CGFloat const shadowCoverWidth = 30;
     DNChannelTitleView *oldChannelView = self.channelViews[oldIndex];
     DNChannelTitleView *currentChannelView = self.channelViews[currentIndex];
     
-    CGFloat xDistance = currentChannelView.ct_x - oldChannelView.ct_x;
+    CGFloat xDistance = currentChannelView.ct_centerX - oldChannelView.ct_centerX;
     CGFloat wDistance = currentChannelView.ct_width - oldChannelView.ct_width;
     //下标
     if (self.scrollLine) {
         if (self.channelStyle.isScrollTitle) {
-            self.scrollLine.ct_x = self.channelStyle.scrollLineWidth > 0 ? (oldChannelView.ct_x + (oldChannelView.ct_width - self.channelStyle.scrollLineWidth) * 0.5) + xDistance * progress : (oldChannelView.ct_x + xDistance * progress);
+            self.scrollLine.ct_centerX = oldChannelView.ct_centerX + xDistance * progress;
             self.scrollLine.ct_width = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : (oldChannelView.ct_width + wDistance * progress);
         }
     }
