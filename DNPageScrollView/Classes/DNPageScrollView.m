@@ -9,7 +9,7 @@
 #import "DNPageScrollView.h"
 #import "DNPageChannelStyle.h"
 #import "DNChannelTitleView.h"
-#import "UIView+JAExt.h"
+#import <DNCommonKit/UIView+Layout.h>
 
 @interface DNPageScrollView ()
 
@@ -76,8 +76,17 @@
     self.extraButtonClickBlock = block;
 }
 
+//<<<<<<< HEAD
+//-(void)setCurrentHeight:(CGFloat)currentHeight
+//{
+//    self.ct_height = currentHeight;
+////  self.contentView.height = self.height - (CGRectGetMaxY(self.channelView.frame) + 1);
+////    self.contentView.currentHeight = self.height - (CGRectGetMaxY(self.channelView.frame));
+////    self.contentView.bounds = CGRectMake(0., 0., self.width, self.height - (CGRectGetMaxY(self.channelView.frame)));
+//=======
 -(void)setCurrentHeight:(CGFloat)currentHeight {
-    self.height = currentHeight;
+    self.ct_height = currentHeight;
+//>>>>>>> 278496b9cb41cb065f62b3f52bb357b8ed666ab8
 }
 
 -(void)setFrame:(CGRect)frame {

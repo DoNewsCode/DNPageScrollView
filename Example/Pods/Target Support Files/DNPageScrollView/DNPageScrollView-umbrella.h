@@ -19,8 +19,6 @@
 #import "DNPageCollectionViewFlowLayout.h"
 #import "DNPageScrollView.h"
 #import "DNPageScrollViewDelegate.h"
-#import "UIView+JAExt.h"
-#import "UIView+JAExtForPageScroll.h"
 #import "UIViewController+DNPageController.h"
 
 FOUNDATION_EXPORT double DNPageScrollViewVersionNumber;

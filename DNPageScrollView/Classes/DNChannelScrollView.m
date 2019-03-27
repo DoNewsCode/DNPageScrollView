@@ -8,7 +8,7 @@
 
 #import "DNChannelScrollView.h"
 #import "DNChannelTitleView.h"
-#import "UIView+JAExt.h"
+#import <DNCommonKit/UIView+Layout.h>
 //#import "TGConst.h"
 //#import "UIImage+ZZAdd.h"
 
@@ -53,7 +53,7 @@ static CGFloat const shadowCoverWidth = 30;
 
 - (NSBundle *)resourceBundle {
     if (_resourceBundle == nil) {
-        // 这里不使用mainBundle是为了适配pod 1.x和0.x
+        // 这里不使用mainBundle是为了适配pod 1.ct_x和0.ct_x
         _resourceBundle = [NSBundle bundleWithPath:[[NSBundle bundleForClass:[self class]] pathForResource:@"DNPageScrollView" ofType:@"bundle"]];
     }
     return _resourceBundle;
@@ -157,10 +157,10 @@ static CGFloat const shadowCoverWidth = 30;
 
 -(void)setupScrollLine{
     DNChannelTitleView *firstLabel = (DNChannelTitleView *)self.channelViews.firstObject;
-    CGFloat lineW = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : firstLabel.width;
-    CGFloat lineX = self.channelStyle.scrollLineWidth > 0 ? (firstLabel.x + (firstLabel.width - lineW) * 0.5) : firstLabel.x;
+    CGFloat lineW = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : firstLabel.ct_width;
+    CGFloat lineX = self.channelStyle.scrollLineWidth > 0 ? (firstLabel.ct_x + (firstLabel.ct_width - lineW) * 0.5) : firstLabel.ct_x;
     CGFloat lineH = self.channelStyle.scrollLineHeight;
-    CGFloat lineY = self.height - lineH - self.channelStyle.contentBottomMargin;
+    CGFloat lineY = self.ct_height - lineH - self.channelStyle.contentBottomMargin;
     
     if (self.scrollLine) {
         if (self.channelStyle.isScrollTitle) {
@@ -177,10 +177,10 @@ static CGFloat const shadowCoverWidth = 30;
         [self insertSubview:self.bottomLine atIndex:0];
     }
     if (self.bottomLine) {
-        CGFloat lineW = self.width;
+        CGFloat lineW = self.ct_width;
         CGFloat lineH = self.channelStyle.bottomLineHeight;
         CGFloat lineX = 0.0;
-        CGFloat lineY = self.height - lineH;
+        CGFloat lineY = self.ct_height - lineH;
         self.bottomLine.frame = CGRectMake(lineX, lineY, lineW, lineH);
     }
 }
@@ -194,7 +194,7 @@ static CGFloat const shadowCoverWidth = 30;
     }
     self.scrollView.frame = CGRectMake(0., 0., scrollW, scrollH);
     if (self.channelStyle.contentCentered) {
-        self.scrollView.centerX = self.centerX;
+        self.scrollView.ct_centerX = self.ct_centerX;
     }
     if (self.channelStyle.isShowExtraButton) {
         [self addSubview:self.extraButton];
@@ -218,8 +218,13 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat channelX = 0.0f;
     CGFloat channelY = 5.0f;
     CGFloat channelW = 0.0f;
-    CGFloat channelH = self.height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY - self.channelStyle.contentBottomMargin;
+//<<<<<<< HEAD
+//    CGFloat channelH = self.ct_height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY;
+//
+//=======
+    CGFloat channelH = self.ct_height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY - self.channelStyle.contentBottomMargin;
     _channelCenterY = 5. + channelH * 0.5;
+//>>>>>>> 278496b9cb41cb065f62b3f52bb357b8ed666ab8
     NSInteger index = 0;
     float lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
     float addedMargon = 0.0f;
@@ -294,19 +299,19 @@ static CGFloat const shadowCoverWidth = 30;
         
         if (weakSelf.scrollLine) {
             if (weakSelf.channelStyle.isScrollTitle) {
-                weakSelf.scrollLine.width = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : currentChannelView.width;
-                weakSelf.scrollLine.x =  self.channelStyle.scrollLineWidth > 0 ? (currentChannelView.x + (currentChannelView.width - self.channelStyle.scrollLineWidth) * 0.5) : currentChannelView.x;
+                weakSelf.scrollLine.ct_width = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : currentChannelView.ct_width;
+                weakSelf.scrollLine.ct_x =  self.channelStyle.scrollLineWidth > 0 ? (currentChannelView.ct_x + (currentChannelView.ct_width - self.channelStyle.scrollLineWidth) * 0.5) : currentChannelView.ct_x;
             }
             else{
                 if (self.channelStyle.isAdjustCoverOrLineWidth) {
                     CGFloat scrollLineW = [weakSelf.channelWidths[self->_currentIndex] floatValue] + wGap;
-                    CGFloat scrollLineX = currentChannelView.x + (currentChannelView.width - scrollLineW) * 0.5;
-                    weakSelf.scrollLine.x = scrollLineX;
-                    weakSelf.scrollLine.width = scrollLineW;
+                    CGFloat scrollLineX = currentChannelView.ct_x + (currentChannelView.ct_width - scrollLineW) * 0.5;
+                    weakSelf.scrollLine.ct_x = scrollLineX;
+                    weakSelf.scrollLine.ct_width = scrollLineW;
                 }
                 else{
-                    weakSelf.scrollLine.x = self.channelStyle.scrollLineWidth > 0 ? (currentChannelView.x + (currentChannelView.width - self.channelStyle.scrollLineWidth) * 0.5) : currentChannelView.x;
-                    weakSelf.scrollLine.width = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : currentChannelView.width;
+                    weakSelf.scrollLine.ct_x = self.channelStyle.scrollLineWidth > 0 ? (currentChannelView.ct_x + (currentChannelView.ct_width - self.channelStyle.scrollLineWidth) * 0.5) : currentChannelView.ct_x;
+                    weakSelf.scrollLine.ct_width = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : currentChannelView.ct_width;
                 }
             }
         }
@@ -334,13 +339,13 @@ static CGFloat const shadowCoverWidth = 30;
     DNChannelTitleView *oldChannelView = self.channelViews[oldIndex];
     DNChannelTitleView *currentChannelView = self.channelViews[currentIndex];
     
-    CGFloat xDistance = currentChannelView.x - oldChannelView.x;
-    CGFloat wDistance = currentChannelView.width - oldChannelView.width;
+    CGFloat xDistance = currentChannelView.ct_x - oldChannelView.ct_x;
+    CGFloat wDistance = currentChannelView.ct_width - oldChannelView.ct_width;
     //下标
     if (self.scrollLine) {
         if (self.channelStyle.isScrollTitle) {
-            self.scrollLine.x = self.channelStyle.scrollLineWidth > 0 ? (oldChannelView.x + (oldChannelView.width - self.channelStyle.scrollLineWidth) * 0.5) + xDistance * progress : (oldChannelView.x + xDistance * progress);
-            self.scrollLine.width = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : (oldChannelView.width + wDistance * progress);
+            self.scrollLine.ct_x = self.channelStyle.scrollLineWidth > 0 ? (oldChannelView.ct_x + (oldChannelView.ct_width - self.channelStyle.scrollLineWidth) * 0.5) + xDistance * progress : (oldChannelView.ct_x + xDistance * progress);
+            self.scrollLine.ct_width = self.channelStyle.scrollLineWidth > 0 ? self.channelStyle.scrollLineWidth : (oldChannelView.ct_width + wDistance * progress);
         }
     }
     
