@@ -49,8 +49,10 @@ static UIScreenType UIScreenType_iPhone6P = 414.0f;
 
 - (void)setCt_x:(CGFloat)x;
 - (void)setCt_left:(CGFloat)left;
+- (void)setCt_right:(CGFloat)right;
 - (void)setCt_y:(CGFloat)y;
 - (void)setCt_top:(CGFloat)top;
+- (void)setCt_bottom:(CGFloat)bottom;
 
 // height
 - (void)setCt_height:(CGFloat)height;

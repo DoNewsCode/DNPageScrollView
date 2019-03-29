@@ -1,6 +1,6 @@
 PODS:
-  - DNCommonKit/DNLayout (9.1)
-  - DNPageScrollView (2.0):
+  - DNCommonKit/DNLayout (9.8)
+  - DNPageScrollView (2.1.3):
     - DNCommonKit/DNLayout
 
 DEPENDENCIES:
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DNCommonKit: 4290347488174294c51a02418786bc7d3fad0345
-  DNPageScrollView: bdfe51eaf61c095ce411fdb5acd82eb99fb56d86
+  DNCommonKit: 6a3040af6566522403a3559f3f2bf0357f0afaa2
+  DNPageScrollView: feeb41ff65a5b07d00e55ce53994fe8c3b049d30
 
 PODFILE CHECKSUM: 768b25caddaa4e94bf9c5041bd5917e32c84555b
 

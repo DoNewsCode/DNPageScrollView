@@ -250,7 +250,7 @@
 			attributes = {
 				CLASSPREFIX = DN;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "540563689@qq.com";
+				ORGANIZATIONNAME = "418589912@qq.com";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = 6RV9KT8A38;
@@ -265,6 +265,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
