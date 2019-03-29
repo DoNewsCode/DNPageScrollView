@@ -8,7 +8,7 @@
 
 #import "DNChannelScrollView.h"
 #import "DNChannelTitleView.h"
-#import <DNCommonKit/UIView+Layout.h>
+#import "UIView+CALayout.h"
 //#import "TGConst.h"
 //#import "UIImage+ZZAdd.h"
 
@@ -363,6 +363,52 @@ static CGFloat const shadowCoverWidth = 30;
     
     oldChannelView.currentTransformSx = self.channelStyle.titleBigScale - deltaScale * progress;
     currentChannelView.currentTransformSx = 1.0 + deltaScale * progress;
+    
+//    NSLog(@"zuoyou-currentIndex = %d,oldIndex = %d",currentIndex,oldIndex);
+//    if (oldIndex < currentIndex) {//左右滚动判断 向右➡️
+//        NSLog(@"zuoyou-AAAAAAA");
+//        [UIView animateWithDuration:0.5 animations:^{
+//            
+//        }];
+//    } else {//向左
+//        [UIView animateWithDuration:0.5 animations:^{
+//            
+//        }];
+//        NSLog(@"zuoyou-BBBBBBB");
+//    }
+//    [UIView animateWithDuration:0.5 animations:^{
+//        if (self.channelStyle.channelTextAlignment == DNPageChannelStyleChannelTextAlignmentCenter) {
+//
+//            oldChannelView.transform = CGAffineTransformMakeScale(oldChannelView.currentTransformSx, oldChannelView.currentTransformSx);
+//            currentChannelView.transform = CGAffineTransformMakeScale(currentChannelView.currentTransformSx, currentChannelView.currentTransformSx);
+//        } else if (self.channelStyle.channelTextAlignment == DNPageChannelStyleChannelTextAlignmentBottom) {
+//            CGFloat margin = fabs(oldChannelView.centerX - currentChannelView.centerX) ;
+//            if (oldIndex < currentIndex) {//左右滚动判断
+//                CGFloat oldMX = (((oldChannelView.frame.size.width * oldChannelView.currentTransformSx) - oldChannelView.frame.size.width) * 0.5);
+//                CGFloat oldMY = oldChannelView.normalFrame.size.height * (oldChannelView.currentTransformSx - 1.0) * 0.5;
+//                CGAffineTransform translation = CGAffineTransformMakeTranslation(margin,-oldMY);
+//                oldChannelView.transform = CGAffineTransformScale(translation, oldChannelView.currentTransformSx, oldChannelView.currentTransformSx);
+//
+//
+//                CGFloat curMX = (((currentChannelView.frame.size.width * currentChannelView.currentTransformSx) - currentChannelView.frame.size.width) * 0.5);
+//                CGFloat curMY = currentChannelView.normalFrame.size.height * (currentChannelView.currentTransformSx - 1.0) * 0.5;
+//                CGAffineTransform currentTranslation = CGAffineTransformMakeTranslation(-margin,-curMY);
+//                currentChannelView.transform = CGAffineTransformScale(currentTranslation, currentChannelView.currentTransformSx, currentChannelView.currentTransformSx);
+//            } else {
+//                CGFloat oldMX = (((oldChannelView.frame.size.width * oldChannelView.currentTransformSx) - oldChannelView.frame.size.width) * 0.5);
+//                CGFloat oldMY = oldChannelView.normalFrame.size.height * (oldChannelView.currentTransformSx - 1.0) * 0.5;
+//                CGAffineTransform translation = CGAffineTransformMakeTranslation(-margin,-oldMY);
+//                oldChannelView.transform = CGAffineTransformScale(translation, oldChannelView.currentTransformSx, oldChannelView.currentTransformSx);
+//
+//
+//                CGFloat curMX = (((currentChannelView.frame.size.width * currentChannelView.currentTransformSx) - currentChannelView.frame.size.width) * 0.5);
+//                CGFloat curMY = currentChannelView.normalFrame.size.height * (currentChannelView.currentTransformSx - 1.0) * 0.5;
+//                CGAffineTransform currentTranslation = CGAffineTransformMakeTranslation(margin,-curMY);
+//                currentChannelView.transform = CGAffineTransformScale(currentTranslation, currentChannelView.currentTransformSx, currentChannelView.currentTransformSx);
+//            }
+//
+//        }
+//    }];
 }
 
 - (void)adjustChannelOffSetToCurrentIndex:(NSInteger)currentIndex

@@ -80,7 +80,7 @@
 
 - (void)setCurrentTransformSx:(CGFloat)currentTransformSx {
     _currentTransformSx = currentTransformSx;
-    [UIView animateWithDuration:0.5 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         if (self.channelTextAlignment == DNPageChannelStyleChannelTextAlignmentCenter) {
             
             self.transform = CGAffineTransformMakeScale(currentTransformSx, currentTransformSx);
@@ -89,13 +89,14 @@
             CGAffineTransform translation = CGAffineTransformMakeTranslation(0,-self.normalFrame.size.height * (currentTransformSx - 1.0) * 0.5);
             self.transform = CGAffineTransformScale(translation, currentTransformSx, currentTransformSx);
         }
+        if (currentTransformSx > 1) {
+            self.font = self.selectedFont;
+        } else {
+            self.font = self.normalFont;
+        }
+    }completion:^(BOOL finished) {
+       
     }];
-    
-    if (currentTransformSx > 1) {
-        self.font = self.selectedFont;
-    } else {
-        self.font = self.normalFont;
-    }
 }
 
 -(void)setFont:(UIFont *)font

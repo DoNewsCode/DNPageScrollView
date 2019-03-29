@@ -13,7 +13,7 @@
 #import "UIViewController+DNPageController.h"
 #import "DNPageCollectionViewFlowLayout.h"
 #import "DNPageCollectionViewCell.h"
-#import <DNCommonKit/UIView+Layout.h>
+#import "UIView+CALayout.h"
 
 #define cellID @"DNPageContentCellid"
 
@@ -228,7 +228,7 @@
     else{
         return;
     }
-    
+    _oldOffSetX = scrollView.contentOffset.x;
     [self contentViewDidMoveFromIndex:_oldIndex toIndex:_currentIndex prigress:progress];
     
 }
@@ -503,6 +503,10 @@
 //    self.collectionView.bounds = self.bounds;
 //    self.collectionView.y = 0;
 
+}
+
+- (void)setCurrentIndex:(NSInteger)currentIndex {
+    _currentIndex = currentIndex;
 }
 
 -(void)setFrame:(CGRect)frame
