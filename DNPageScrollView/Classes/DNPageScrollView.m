@@ -9,7 +9,7 @@
 #import "DNPageScrollView.h"
 #import "DNPageChannelStyle.h"
 #import "DNChannelTitleView.h"
-#import "UIView+CALayout.h"
+#import "UIView+Layout.h"
 
 @interface DNPageScrollView ()
 

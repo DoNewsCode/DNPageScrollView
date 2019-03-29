@@ -13,7 +13,7 @@
 #import "UIViewController+DNPageController.h"
 #import "DNPageCollectionViewFlowLayout.h"
 #import "DNPageCollectionViewCell.h"
-#import "UIView+CALayout.h"
+#import "UIView+Layout.h"
 
 #define cellID @"DNPageContentCellid"
 
