@@ -65,7 +65,7 @@
         _pageStyle.scrollLineWidth = 19;
         _pageStyle.scrollLinecornerRadius = 2.5;
         _pageStyle.contentBottomMargin = 7.;
-        _pageStyle.titleMargin = 30;
+        _pageStyle.titleMargin = 60;
         _pageStyle.titleAboutMargin = 0.;
         _pageStyle.titleFont = [UIFont fontWithName:@"PingFangSC-Regular" size:15.];
         _pageStyle.selectedTitleFont = [UIFont fontWithName:@"PingFangSC-Regular" size:15.];

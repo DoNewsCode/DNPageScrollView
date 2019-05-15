@@ -114,6 +114,10 @@ static CGFloat const shadowCoverWidth = 30;
 {
     if (self.channelNameArray.count == 0) return;
     NSInteger index = 0;
+    CGFloat titleWidth = 0;
+    if (self.channelStyle.scrollTitle == NO) {
+        titleWidth = self.frame.size.width / self.channelNameArray.count;
+    }
     for (NSString *channelName in self.channelNameArray) {
         DNChannelTitleView *channelView = [[DNChannelTitleView alloc] initWithFrame:CGRectZero];
         channelView.tag = index;
@@ -129,7 +133,12 @@ static CGFloat const shadowCoverWidth = 30;
         }
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(channelViewClick:)];
         [channelView addGestureRecognizer:tapGesture];
-        CGFloat channelViewWidth = [channelView channleTitleViewWidth];
+        CGFloat channelViewWidth = 0;
+        if (self.channelStyle.scrollTitle == NO) {
+            channelViewWidth = titleWidth;
+        } else {
+            channelViewWidth = [channelView channleTitleViewWidth];
+        }
         
         [self.channelWidths addObject:@(channelViewWidth)];
         [self.channelViews addObject:channelView];
@@ -218,13 +227,9 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat channelX = 0.0f;
     CGFloat channelY = 5.0f;
     CGFloat channelW = 0.0f;
-//<<<<<<< HEAD
-//    CGFloat channelH = self.ct_height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY;
-//
-//=======
     CGFloat channelH = self.ct_height - self.channelStyle.scrollLineHeight - self.channelStyle.bottomLineHeight - channelY - self.channelStyle.contentBottomMargin;
     _channelCenterY = 5. + channelH * 0.5;
-//>>>>>>> 278496b9cb41cb065f62b3f52bb357b8ed666ab8
+    
     NSInteger index = 0;
     float lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
     float addedMargon = 0.0f;
@@ -232,7 +237,9 @@ static CGFloat const shadowCoverWidth = 30;
     for (DNChannelTitleView *channelView in self.channelViews) {
         channelW = [self.channelWidths[index] floatValue];
         channelX = lastChannelLabelMaxX + addedMargon * 0.5;
-        lastChannelLabelMaxX += (channelW + addedMargon + self.channelStyle.titleMargin);
+        CGFloat margin = self.channelStyle.scrollTitle == NO ? 0 : self.channelStyle.titleMargin;
+
+        lastChannelLabelMaxX += (channelW + addedMargon + margin);
         channelView.frame = CGRectMake(channelX, channelY, channelW, channelH);
         channelView.normalFrame = channelView.frame;
         index++;
@@ -522,6 +529,7 @@ static CGFloat const shadowCoverWidth = 30;
         scrollView.scrollsToTop = NO;
         scrollView.bounces = YES;
         scrollView.pagingEnabled = NO;
+        scrollView.clipsToBounds = NO;
         scrollView.delegate = self;
         scrollView.scrollEnabled = !_channelStyle.contentCentered;
         _scrollView = scrollView;

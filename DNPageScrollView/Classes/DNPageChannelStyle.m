@@ -18,7 +18,7 @@
         _shadowCover = NO;
         _showExtraButton = NO;
         _showBottomLine = NO;
-        _scrollTitle = YES;
+        _scrollTitle = NO;
         _adjustCoverOrLineWidth = NO;
         _titleMargin = 15.0;
         _titleAboutMargin = 15.0;
