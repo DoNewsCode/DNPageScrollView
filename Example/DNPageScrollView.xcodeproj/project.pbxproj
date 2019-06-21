@@ -327,7 +327,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-DNPageScrollView_Example/Pods-DNPageScrollView_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DNPageScrollView_Example/Pods-DNPageScrollView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DNCommonKit/DNCommonKit.framework",
 				"${BUILT_PRODUCTS_DIR}/DNPageScrollView/DNPageScrollView.framework",
 			);
@@ -338,7 +338,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DNPageScrollView_Example/Pods-DNPageScrollView_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DNPageScrollView_Example/Pods-DNPageScrollView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		719C327973C4ACF95FBC33ED /* [CP] Check Pods Manifest.lock */ = {
