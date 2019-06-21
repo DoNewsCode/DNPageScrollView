@@ -1,10 +1,9 @@
 PODS:
-  - DNCommonKit/DNLayout (9.8)
-  - DNPageScrollView (2.1.7.0):
+  - DNCommonKit/DNLayout (9.9.1)
+  - DNPageScrollView (2.1.7.1):
     - DNCommonKit/DNLayout
 
 DEPENDENCIES:
-  - DNCommonKit/DNLayout
   - DNPageScrollView (from `../`)
 
 SPEC REPOS:
@@ -16,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DNCommonKit: 6a3040af6566522403a3559f3f2bf0357f0afaa2
-  DNPageScrollView: 9d28c6caeb80fc5b45464dab0a2a414fdf0f50ae
+  DNCommonKit: 2d6a33ccee9585e0b9b2b0b061fd762a513ecb65
+  DNPageScrollView: c7ae91f741644b3c95773de924087f0f9dc603b9
 
-PODFILE CHECKSUM: 768b25caddaa4e94bf9c5041bd5917e32c84555b
+PODFILE CHECKSUM: c2c0e4db919b4114fdc10163f1a7880ba324b084
 
 COCOAPODS: 1.7.1

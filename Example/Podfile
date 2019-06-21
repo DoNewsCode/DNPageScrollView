@@ -5,7 +5,6 @@ use_frameworks!
 
 target 'DNPageScrollView_Example' do
   pod 'DNPageScrollView', :path => '../'
-  pod 'DNCommonKit/DNLayout'
   target 'DNPageScrollView_Tests' do
     inherit! :search_paths
 

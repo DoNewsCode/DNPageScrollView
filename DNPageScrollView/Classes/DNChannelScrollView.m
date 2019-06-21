@@ -8,7 +8,7 @@
 
 #import "DNChannelScrollView.h"
 #import "DNChannelTitleView.h"
-#import "UIView+Layout.h"
+#import "UIView+CTLayout.h"
 //#import "TGConst.h"
 //#import "UIImage+ZZAdd.h"
 

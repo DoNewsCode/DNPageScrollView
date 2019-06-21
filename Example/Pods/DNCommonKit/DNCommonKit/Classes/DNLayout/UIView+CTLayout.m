@@ -6,7 +6,7 @@
 //  Copyright © 2018 DoNews. All rights reserved.
 //
 
-#import "UIView+Layout.h"
+#import "UIView+CTLayout.h"
 
 #import <objc/runtime.h>
 
@@ -15,7 +15,7 @@ static void *kUIViewLayoutMethodPropertyTopGap = &kUIViewLayoutMethodPropertyTop
 static void *kUIViewLayoutMethodPropertyLeftGap = &kUIViewLayoutMethodPropertyLeftGap;
 static void *kUIViewLayoutMethodPropertyRightGap = &kUIViewLayoutMethodPropertyRightGap;
 
-@implementation UIView (Layout)
+@implementation UIView (CTLayout)
 
 
 // coordinator getters
