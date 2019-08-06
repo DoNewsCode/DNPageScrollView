@@ -22,6 +22,7 @@
         _adjustCoverOrLineWidth = NO;
         _titleMargin = 15.0;
         _titleAboutMargin = 15.0;
+        _titleSeesawMargin = 5.0;
         _contentBottomMargin = 0.;
         _titleFont = [UIFont systemFontOfSize:17.0];
 

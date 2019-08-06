@@ -29,4 +29,5 @@
 @property (strong, nonatomic, readonly) UILabel *label;
 
 - (CGFloat)channleTitleViewWidth;
+
 @end

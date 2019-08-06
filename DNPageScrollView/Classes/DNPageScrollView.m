@@ -10,6 +10,7 @@
 #import "DNPageChannelStyle.h"
 #import "DNChannelTitleView.h"
 #import "UIView+CTLayout.h"
+#import "DNChannelView.h"
 
 @interface DNPageScrollView ()
 
@@ -18,6 +19,10 @@
 
 @property (strong, nonatomic) NSArray *childViewControllers;
 @property (strong, nonatomic) NSArray *channelNameArray;
+
+@property(nonatomic, assign) CGFloat contentY;
+
+
 @end
 
 @implementation DNPageScrollView
@@ -35,8 +40,25 @@
 }
 
 - (void)createContent {
-    self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
-    self.channelView.backgroundColor = self.style.channelBackgroundColor;
+    if (self.style.channleType == DNPageChannelStyleChannelTypeDefault) {
+        self.channelBaseView = self.channelView;
+        self.channelView.backgroundColor = self.style.channelBackgroundColor;
+        self.contentY = CGRectGetMaxY(self.channelView.frame) + self.style.channelEdge.bottom;
+        self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
+        [self addSubview:self.channelView];
+        [self insertSubview:self.contentView atIndex:0];
+    } else if (self.style.channleType == DNPageChannelStyleChannelTypeSymmetry) {
+        self.channelBaseView = self.symmetryChannelView;
+        self.symmetryChannelView.backgroundColor = self.style.channelBackgroundColor;
+        
+        self.contentY = CGRectGetMaxY(self.symmetryChannelView.frame) + self.style.channelEdge.bottom;
+        self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
+        [self addSubview:self.symmetryChannelView];
+        [self insertSubview:self.contentView atIndex:0];
+    } else {
+        
+    }
+    
     
 }
 
@@ -66,27 +88,17 @@
 
 - (void)reloadTheme {
     [self.channelView reloadTheme];
-//    [self.contentView reload];
     self.backgroundColor = self.style.pageViewBackgroundColor;
     self.contentView.backgroundColor = self.style.channelBackgroundColor;
     self.channelView.backgroundColor = self.style.channelBackgroundColor;
 }
 
--(void)returnExtraButtonClickBlock:(DNPageScrollViewExtraButtonClickBlock)block {
+- (void)returnExtraButtonClickBlock:(DNPageScrollViewExtraButtonClickBlock)block {
     self.extraButtonClickBlock = block;
 }
 
-//<<<<<<< HEAD
-//-(void)setCurrentHeight:(CGFloat)currentHeight
-//{
-//    self.ct_height = currentHeight;
-////  self.contentView.height = self.height - (CGRectGetMaxY(self.channelView.frame) + 1);
-////    self.contentView.currentHeight = self.height - (CGRectGetMaxY(self.channelView.frame));
-////    self.contentView.bounds = CGRectMake(0., 0., self.width, self.height - (CGRectGetMaxY(self.channelView.frame)));
-//=======
--(void)setCurrentHeight:(CGFloat)currentHeight {
+- (void)setCurrentHeight:(CGFloat)currentHeight {
     self.ct_height = currentHeight;
-//>>>>>>> 278496b9cb41cb065f62b3f52bb357b8ed666ab8
 }
 
 -(void)setFrame:(CGRect)frame {
@@ -97,31 +109,63 @@
 - (DNChannelScrollView *)channelView {
     if (!_channelView) {
         __weak typeof (self) weakSelf = self;
-        CGFloat stateBarHeight = 0;//iPhoneX ? 44 : 20;
+        CGFloat startHeight = self.style.channelEdge.top;//iPhoneX ? 44 : 20;
         CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
+        startHeight += height;
         
+        CGFloat width = self.bounds.size.width - self.style.channelEdge.left - self.style.channelEdge.right;
         DNChannelScrollView *channelScrollView = [[DNChannelScrollView alloc]
-                                                  initWithFrame:CGRectMake(0.0f, stateBarHeight + height, self.bounds.size.width, self.style.channelHeight)
+                                                  initWithFrame:CGRectMake(self.style.channelEdge.left, startHeight, width, self.style.channelHeight)
                                                   channelStyle:self.style
-                                                  delegate:self.delegate
                                                   channelNames:self.channelNameArray
-                                                  channelDidClick:^(DNChannelTitleView *titleView, NSInteger index) {
+                                                  channelDidClick:^(NSInteger index) {
                                                       [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
                                                   }];
-        [self addSubview:channelScrollView];
+        
+        [channelScrollView returnSetUpTitleBlock:^(DNChannelTitleView *titleView, NSInteger index) {
+            if (weakSelf.delegate && [weakSelf respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
+                [weakSelf.delegate setUpTitleView:titleView forIndex:index];
+            }
+        }];
+        
         _channelView = channelScrollView;
     }
     return _channelView;
 }
 
+- (DNChannelView *)symmetryChannelView {
+    if (!_symmetryChannelView) {
+        __weak typeof (self) weakSelf = self;
+        CGFloat startHeight = self.style.channelEdge.top;//iPhoneX ? 44 : 20;
+        CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
+        startHeight += height;
+        
+         CGFloat width = self.bounds.size.width - self.style.channelEdge.left - self.style.channelEdge.right;
+        DNChannelView *symmetryChannelView = [[DNChannelView alloc]
+                                                  initWithFrame:CGRectMake(self.style.channelEdge.left, startHeight, width, self.style.channelHeight)
+                                                  channelStyle:self.style
+                                                  channelNames:self.channelNameArray
+                                            channelDidClick:^(NSInteger index) {
+                                                  [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
+                                              }];
+        [symmetryChannelView returnSetUpTitleBlock:^(DNChannelTitleView *titleView, NSInteger index) {
+            if (weakSelf.delegate && [weakSelf respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
+                [weakSelf.delegate setUpTitleView:titleView forIndex:index];
+            }
+        }];
+        _symmetryChannelView = symmetryChannelView;
+    }
+    return _symmetryChannelView;
+}
+
 - (DNContentScrollView *)contentView {
     if (!_contentView) {
         DNContentScrollView *content = [[DNContentScrollView alloc]
-                                        initWithFrame:CGRectMake(0.0, CGRectGetMaxY(self.channelView.frame) , self.bounds.size.width, self.bounds.size.height - CGRectGetMaxY(self.channelView.frame))
-                                        channelScrollView:self.channelView
+                                        initWithFrame:CGRectMake(0.0, self.contentY, self.bounds.size.width, self.bounds.size.height - self.contentY)
+                                        channelScrollView:self.channelBaseView
                                         parentViewController:self.parentViewController
                                         delegate:self.delegate];
-        [self insertSubview:content atIndex:0];
+        
         _contentView = content;
     }
     return _contentView;

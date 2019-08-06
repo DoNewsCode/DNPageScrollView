@@ -21,8 +21,18 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelTextAlignment) {
     DNPageChannelStyleChannelTextAlignmentBottom = 1,
 };
 
+typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelType) {
+    DNPageChannelStyleChannelTypeDefault = 0,//默认
+    DNPageChannelStyleChannelTypeSymmetry = 1,//对称（人人）
+};
+
 @interface DNPageChannelStyle : NSObject
 
+/** channel选择器的类型 */
+@property (assign, nonatomic) DNPageChannelStyleChannelType channleType;
+
+/** UIEdgeInsetsMake(0., 0., 0., 0.); */
+@property(nonatomic, assign) UIEdgeInsets channelEdge;
 /** 是否显示Channel底部阴影 默认为NO*/
 @property (assign, nonatomic, getter=isShowChannelShadow) BOOL showChannelShadow;
 /** 是否显示滚动条 默认为NO*/
@@ -57,8 +67,11 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelTextAlignment) {
 @property (assign, nonatomic) UIColor *scrollLineColor;
 /** 标题之间的间隙 默认为15.0 */
 @property (assign, nonatomic) CGFloat titleMargin;
-/** 标题与content左右之间的间隙 默认为15.0 */
+/** 标题与ChannelView左右之间的间隙 默认为15.0 */
 @property (assign, nonatomic) CGFloat titleAboutMargin;
+/** 标题与ChannelViews上下之间的间隙 默认为5.0 */
+@property (assign, nonatomic) CGFloat titleSeesawMargin;
+
 /** content底部之间的间隙 默认为0. */
 @property (assign, nonatomic) CGFloat contentBottomMargin;
 /** 标题的字体 默认为14 */

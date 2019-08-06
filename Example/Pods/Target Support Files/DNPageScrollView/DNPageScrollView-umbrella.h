@@ -10,8 +10,10 @@
 #endif
 #endif
 
+#import "DNChannelBaseView.h"
 #import "DNChannelScrollView.h"
 #import "DNChannelTitleView.h"
+#import "DNChannelView.h"
 #import "DNContentScrollView.h"
 #import "DNPageChannelStyle.h"
 #import "DNPageCollectionView.h"

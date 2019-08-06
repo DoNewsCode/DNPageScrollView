@@ -19,7 +19,7 @@
 @property (nonatomic, assign) CGFloat currentHeight;
 ///初始化方法
 
-- (instancetype)initWithFrame:(CGRect)frame channelScrollView:(DNChannelScrollView *)channelScrollView parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate;
+- (instancetype)initWithFrame:(CGRect)frame channelScrollView:(__kindof DNChannelBaseView *)channelScrollView parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate;
 ///给外界可以设置ContentOffSet的方法
 - (void)setContentOffSet:(CGPoint)offset animated:(BOOL)animated;
 ///给外界 重新加载内容的方法

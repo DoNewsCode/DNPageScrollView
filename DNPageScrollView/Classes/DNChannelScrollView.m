@@ -7,16 +7,13 @@
 //
 
 #import "DNChannelScrollView.h"
+
 #import "DNChannelTitleView.h"
 #import "UIView+CTLayout.h"
 //#import "TGConst.h"
 //#import "UIImage+ZZAdd.h"
 
-@interface DNChannelScrollView ()<UIScrollViewDelegate>{
-    CGFloat _currentWidth;
-    NSUInteger _currentIndex;
-    NSUInteger _oldIndex;
-}
+@interface DNChannelScrollView ()<UIScrollViewDelegate>
 
 // 滚动scrollView
 @property (strong, nonatomic) UIScrollView *scrollView;
@@ -41,8 +38,6 @@
 @property (strong, nonatomic) NSArray *normalColorRGB;
 @property (nonatomic, strong) NSBundle *resourceBundle;
 
-// 响应标题点击
-@property (copy, nonatomic) DNChannelScrollViewTitleBtnOnClickBlock channelButtonClickBlock;
 @end
 @implementation DNChannelScrollView
 
@@ -59,17 +54,11 @@ static CGFloat const shadowCoverWidth = 30;
     return _resourceBundle;
 }
 
-- (instancetype)initWithFrame:(CGRect )frame channelStyle:(DNPageChannelStyle *)channelStyle delegate:(id<DNPageScrollViewDelegate>)delegate channelNames:(NSArray<NSString *> *)channelNames channelDidClick:(DNChannelScrollViewTitleBtnOnClickBlock)channelDidClick
+- (instancetype)initWithFrame:(CGRect )frame channelStyle:(DNPageChannelStyle *)channelStyle channelNames:(nonnull NSArray<NSString *> *)channelNames channelDidClick:(nonnull DNChannelViewTitleClickBlock)channelDidClick
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:frame channelStyle:channelStyle channelNames:channelNames channelDidClick:channelDidClick];
     if (self) {
-        self.channelNameArray = channelNames.copy;
-        self.delegate = delegate;
-        self.channelStyle = channelStyle;
-        self.channelButtonClickBlock = channelDidClick;
-        _currentIndex = 0;
-        _oldIndex = 0;
-        _currentWidth = frame.size.width;
+        
         if (channelStyle.isShowChannelShadow) {
             self.layer.shadowColor = [[UIColor colorWithRed:0. green:0. blue:0. alpha:1.] CGColor];
             self.layer.shadowOpacity = 0.1;//设置阴影的透明度
@@ -92,8 +81,9 @@ static CGFloat const shadowCoverWidth = 30;
     for (DNChannelTitleView *channelView in self.channelViews) {
         channelView.textColor = self.channelStyle.normalTitleColor;
     }
-    if(self.channelViews.count>_currentIndex){
-    DNChannelTitleView *channelView  =  self.channelViews[_currentIndex];
+    if(self.channelViews.count > self.currentIndex){
+        NSInteger index = self.currentIndex;
+    DNChannelTitleView *channelView  =  self.channelViews[index];
     channelView.textColor = self.channelStyle.selectedTitleColor;
     }
     self.scrollLine.backgroundColor = self.channelStyle.scrollLineColor;
@@ -128,8 +118,8 @@ static CGFloat const shadowCoverWidth = 30;
         channelView.normalFont = self.channelStyle.titleFont;
         channelView.selectedFont = self.channelStyle.selectedTitleFont;
         
-        if (self.delegate && [self.delegate respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
-            [self.delegate setUpTitleView:channelView forIndex:index];
+        if (self.setUpTitleBlock) {
+            self.setUpTitleBlock(channelView, index);
         }
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(channelViewClick:)];
         [channelView addGestureRecognizer:tapGesture];
@@ -197,7 +187,7 @@ static CGFloat const shadowCoverWidth = 30;
     CGFloat extraBtnW = 44.0;
     CGFloat extraBtnY = 5.0;
      CGFloat scrollH = self.frame.size.height - self.channelStyle.contentBottomMargin;
-    CGFloat scrollW = self.extraButton ? _currentWidth - extraBtnW : _currentWidth;
+    CGFloat scrollW = self.extraButton ? self.currentWidth - extraBtnW : self.currentWidth;
     if (self.channelStyle.contentCentered) {
         scrollW = CGRectGetMaxX(self.scrollView.subviews.lastObject.frame);
     }
@@ -245,7 +235,8 @@ static CGFloat const shadowCoverWidth = 30;
         index++;
     }
     //初始选中状态样式
-    DNChannelTitleView *currentChannelView = (DNChannelTitleView *)self.channelViews[_currentIndex];
+    NSInteger currentIndex = self.currentIndex;
+    DNChannelTitleView *currentChannelView = (DNChannelTitleView *)self.channelViews[currentIndex];
     currentChannelView.currentTransformSx = 1.0;
     if (currentChannelView) {
         // 缩放, 设置初始的label的transform
@@ -276,20 +267,21 @@ static CGFloat const shadowCoverWidth = 30;
     DNChannelTitleView * currentChannelView = (DNChannelTitleView *)tapGesture.view;
     if (!currentChannelView) return;
     
-    _currentIndex = currentChannelView.tag;
+    self.currentIndex = currentChannelView.tag;
     
     [self adjustUIWhenBtttonClickWithAnimate:YES taped:YES];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:self.channelStyle.notificationChannelClickName object:[NSString stringWithFormat:@"%zd",_currentIndex]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:self.channelStyle.notificationChannelClickName object:[NSString stringWithFormat:@"%zd",self.currentIndex]];
     
 }
 
 - (void)adjustUIWhenBtttonClickWithAnimate:(BOOL)animated taped:(BOOL)taped
 {
-    if (_currentIndex == _oldIndex && taped) return;
-    
-    DNChannelTitleView *oldChannelView = self.channelViews[_oldIndex];
-    DNChannelTitleView *currentChannelView = self.channelViews[_currentIndex];
+    if (self.currentIndex == self.oldIndex && taped) return;
+    NSInteger oldIndex = self.oldIndex;
+    NSInteger currentIndex = self.currentIndex;
+    DNChannelTitleView *oldChannelView = self.channelViews[oldIndex];
+    DNChannelTitleView *currentChannelView = self.channelViews[currentIndex];
     
     CGFloat animatedTime = animated ? 0.25 : 0;
     
@@ -311,7 +303,8 @@ static CGFloat const shadowCoverWidth = 30;
             }
             else{
                 if (self.channelStyle.isAdjustCoverOrLineWidth) {
-                    CGFloat scrollLineW = [weakSelf.channelWidths[self->_currentIndex] floatValue] + wGap;
+                    NSInteger index = self.currentIndex;
+                    CGFloat scrollLineW = [weakSelf.channelWidths[index] floatValue] + wGap;
                     CGFloat scrollLineX = currentChannelView.ct_x + (currentChannelView.ct_width - scrollLineW) * 0.5;
                     weakSelf.scrollLine.ct_x = scrollLineX;
                     weakSelf.scrollLine.ct_width = scrollLineW;
@@ -324,13 +317,14 @@ static CGFloat const shadowCoverWidth = 30;
         }
         
     } completion:^(BOOL finished) {
-        [weakSelf adjustChannelOffSetToCurrentIndex:self->_currentIndex];
+        [weakSelf adjustChannelOffSetToCurrentIndex:self.currentIndex];
     }];
-    _oldIndex = _currentIndex;
+    self.oldIndex = self.currentIndex;
     
     //点击标题执行的Block
     if (self.channelButtonClickBlock) {
-        self.channelButtonClickBlock(currentChannelView, _currentIndex);
+        NSInteger currentIndex = self.currentIndex;
+        self.channelButtonClickBlock(currentIndex);
     }
 }
 
@@ -341,7 +335,7 @@ static CGFloat const shadowCoverWidth = 30;
         currentIndex < 0 ||
         currentIndex >= self.channelNameArray.count) return;
     
-    _oldIndex = currentIndex;
+    self.oldIndex = currentIndex;
     
     DNChannelTitleView *oldChannelView = self.channelViews[oldIndex];
     DNChannelTitleView *currentChannelView = self.channelViews[currentIndex];
@@ -371,56 +365,11 @@ static CGFloat const shadowCoverWidth = 30;
     oldChannelView.currentTransformSx = self.channelStyle.titleBigScale - deltaScale * progress;
     currentChannelView.currentTransformSx = 1.0 + deltaScale * progress;
     
-//    NSLog(@"zuoyou-currentIndex = %d,oldIndex = %d",currentIndex,oldIndex);
-//    if (oldIndex < currentIndex) {//左右滚动判断 向右➡️
-//        NSLog(@"zuoyou-AAAAAAA");
-//        [UIView animateWithDuration:0.5 animations:^{
-//            
-//        }];
-//    } else {//向左
-//        [UIView animateWithDuration:0.5 animations:^{
-//            
-//        }];
-//        NSLog(@"zuoyou-BBBBBBB");
-//    }
-//    [UIView animateWithDuration:0.5 animations:^{
-//        if (self.channelStyle.channelTextAlignment == DNPageChannelStyleChannelTextAlignmentCenter) {
-//
-//            oldChannelView.transform = CGAffineTransformMakeScale(oldChannelView.currentTransformSx, oldChannelView.currentTransformSx);
-//            currentChannelView.transform = CGAffineTransformMakeScale(currentChannelView.currentTransformSx, currentChannelView.currentTransformSx);
-//        } else if (self.channelStyle.channelTextAlignment == DNPageChannelStyleChannelTextAlignmentBottom) {
-//            CGFloat margin = fabs(oldChannelView.centerX - currentChannelView.centerX) ;
-//            if (oldIndex < currentIndex) {//左右滚动判断
-//                CGFloat oldMX = (((oldChannelView.frame.size.width * oldChannelView.currentTransformSx) - oldChannelView.frame.size.width) * 0.5);
-//                CGFloat oldMY = oldChannelView.normalFrame.size.height * (oldChannelView.currentTransformSx - 1.0) * 0.5;
-//                CGAffineTransform translation = CGAffineTransformMakeTranslation(margin,-oldMY);
-//                oldChannelView.transform = CGAffineTransformScale(translation, oldChannelView.currentTransformSx, oldChannelView.currentTransformSx);
-//
-//
-//                CGFloat curMX = (((currentChannelView.frame.size.width * currentChannelView.currentTransformSx) - currentChannelView.frame.size.width) * 0.5);
-//                CGFloat curMY = currentChannelView.normalFrame.size.height * (currentChannelView.currentTransformSx - 1.0) * 0.5;
-//                CGAffineTransform currentTranslation = CGAffineTransformMakeTranslation(-margin,-curMY);
-//                currentChannelView.transform = CGAffineTransformScale(currentTranslation, currentChannelView.currentTransformSx, currentChannelView.currentTransformSx);
-//            } else {
-//                CGFloat oldMX = (((oldChannelView.frame.size.width * oldChannelView.currentTransformSx) - oldChannelView.frame.size.width) * 0.5);
-//                CGFloat oldMY = oldChannelView.normalFrame.size.height * (oldChannelView.currentTransformSx - 1.0) * 0.5;
-//                CGAffineTransform translation = CGAffineTransformMakeTranslation(-margin,-oldMY);
-//                oldChannelView.transform = CGAffineTransformScale(translation, oldChannelView.currentTransformSx, oldChannelView.currentTransformSx);
-//
-//
-//                CGFloat curMX = (((currentChannelView.frame.size.width * currentChannelView.currentTransformSx) - currentChannelView.frame.size.width) * 0.5);
-//                CGFloat curMY = currentChannelView.normalFrame.size.height * (currentChannelView.currentTransformSx - 1.0) * 0.5;
-//                CGAffineTransform currentTranslation = CGAffineTransformMakeTranslation(margin,-curMY);
-//                currentChannelView.transform = CGAffineTransformScale(currentTranslation, currentChannelView.currentTransformSx, currentChannelView.currentTransformSx);
-//            }
-//
-//        }
-//    }];
 }
 
 - (void)adjustChannelOffSetToCurrentIndex:(NSInteger)currentIndex
 {
-    _oldIndex = currentIndex;
+    self.oldIndex = currentIndex;
     
     NSInteger index = 0;
     for (DNChannelTitleView *channelView in _channelViews) {
@@ -439,12 +388,12 @@ static CGFloat const shadowCoverWidth = 30;
     
     if (self.scrollView.contentSize.width != self.scrollView.bounds.size.width + contentSizeXOff) {//需要滚动
         DNChannelTitleView *currentChannelView = (DNChannelTitleView *)_channelViews[currentIndex];
-        CGFloat offSetX = currentChannelView.center.x - _currentWidth * 0.5;
+        CGFloat offSetX = currentChannelView.center.x - self.currentWidth * 0.5;
         
         if (offSetX < 0) offSetX = 0;
         
         CGFloat extraButtonW = self.extraButton ? self.extraButton.frame.size.width : 0.0f;
-        CGFloat maxOffSetX = self.scrollView.contentSize.width - (_currentWidth - extraButtonW);
+        CGFloat maxOffSetX = self.scrollView.contentSize.width - (self.currentWidth - extraButtonW);
         
         if (maxOffSetX < 0) maxOffSetX = 0;
         if (offSetX > maxOffSetX) offSetX = maxOffSetX;
@@ -459,15 +408,15 @@ static CGFloat const shadowCoverWidth = 30;
     
     if (index < 0 || index >= self.channelNameArray.count) return;
     
-    _currentIndex = index;
+    self.currentIndex = index;
     [self adjustUIWhenBtttonClickWithAnimate:animated taped:NO];
 }
 
 - (void)reloadTitlesWithNewTitles:(NSArray *)titles
 {
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    _currentIndex = 0;
-    _oldIndex = 0;
+    self.currentIndex = 0;
+    self.oldIndex = 0;
     self.channelWidths = nil;
     self.channelViews = nil;
     self.channelNameArray = nil;
@@ -482,8 +431,8 @@ static CGFloat const shadowCoverWidth = 30;
 - (void)reloadTitlesNameWithNewTitles:(NSArray *)titles selectIndex:(NSInteger)selectIndex
 {
     [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    _currentIndex = 0;
-    _oldIndex = 0;
+    self.currentIndex = 0;
+    self.oldIndex = 0;
     self.channelWidths = nil;
     self.channelViews = nil;
     self.channelNameArray = nil;
@@ -497,11 +446,6 @@ static CGFloat const shadowCoverWidth = 30;
 }
 
 #pragma mark - Getter and Setter
--(void)setChannelNameArray:(NSArray *)channelNameArray
-{
-    _channelNameArray = channelNameArray;
-    
-}
 
 - (NSMutableArray *)channelViews
 {
@@ -531,7 +475,7 @@ static CGFloat const shadowCoverWidth = 30;
         scrollView.pagingEnabled = NO;
         scrollView.clipsToBounds = NO;
         scrollView.delegate = self;
-        scrollView.scrollEnabled = !_channelStyle.contentCentered;
+        scrollView.scrollEnabled = !self.channelStyle.contentCentered;
         _scrollView = scrollView;
     }
     return _scrollView;

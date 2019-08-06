@@ -7,43 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EA28CD5D7C0096FB8A291851EAE9517 /* DNPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F00AC5B43DDAD48A0DE7BAA582C29C0C /* DNPageScrollView.m */; };
-		14D0E7640D9776E2D9A136E6FCFFFF68 /* DNPageCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B1726CCC712D1CA0743DC01558748D4 /* DNPageCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		193E0C25400A1F33A66A01391A623529 /* UIViewController+DNPageController.h in Headers */ = {isa = PBXBuildFile; fileRef = 16EED3364AB09771C69D27EAB855F30F /* UIViewController+DNPageController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BB273B604F3424568A7DFB8F0E79FDE /* DNPageScrollViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6869709DAF0BD3818C2649F20F288FB9 /* DNPageScrollViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2312B282CDEA01F559B117E2FAC8F9FE /* DNChannelScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6559674C817D457A7C043FAA5B03E84C /* DNChannelScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42D1D10785E949086E324535D308387F /* DNPageChannelStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 20383E881349ED0E467367EA6063837A /* DNPageChannelStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B4CD0B0965D98F4A61512B3F03833B5 /* DNChannelScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 903AF367E98854556766806C445A611B /* DNChannelScrollView.m */; };
-		5A3A73D595EFF58E67FB76589F3586C9 /* icon_pagescroll@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D45CFA2AC6FD269B0F44A3DE9FA2AD2F /* icon_pagescroll@3x.png */; };
-		5F8BC05E6F4E5DB8A0B921C383184EF0 /* DNChannelTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9214FAEBB8851CED44514BFF0062E880 /* DNChannelTitleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		031F18C69E456ACAD2F3E1448CE75AC7 /* DNContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6CDBEAA143D1CD801B1D4FCD4197EB /* DNContentScrollView.m */; };
+		0ACEA1BA680E335EFA84E9D81BDB2866 /* DNChannelTitleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E7EA3F04C190CD3DFE2244029429AB /* DNChannelTitleView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11B7B0900DDB762E6AD91CA9229DFF4B /* UIViewController+DNPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE31A869ECFBB72E45FB583F18C27D84 /* UIViewController+DNPageController.m */; };
+		1460EB6C59B3A7BC08295EC78910EF8C /* DNPageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 31C9991D793AADFD0A462884702197B9 /* DNPageCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB56D9DDC8FED187086758D47069728 /* DNChannelBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB6F103775170239640284DC913F3F4C /* DNChannelBaseView.m */; };
+		3110A6B4CCCB30498EEB93DB04A5EF58 /* DNChannelTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97CAAF254228D26F726CA61F2C1DC79B /* DNChannelTitleView.m */; };
+		3A55F501A2B31C526E6C57D0066874E9 /* DNPageScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D774AD432CF558872691E7F6E4B7E2EC /* DNPageScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B939BB0C916AE2E7A74A670F7848708 /* DNChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6E391F715D49E83AD68A5AF2551E8 /* DNChannelView.m */; };
+		5AE2336D22D635D6FD389482F457E845 /* DNPageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71189580B952AB87F07876D1E9470F7D /* DNPageCollectionView.m */; };
 		615860D8FB1BAA8A1909EDD80DE7B018 /* DNCommonKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 731838D4BD7EC304DD4FF30AC3425439 /* DNCommonKit-dummy.m */; };
+		63C11EAB0C801DAE3025B4AC28E2D3A2 /* DNPageCollectionViewFlowLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = C9328D22543EB356ADF5F972A0BB24FC /* DNPageCollectionViewFlowLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F958C8D33B3BBCA2C7F40FFA6E1E2B4 /* DNPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF50624584F808C0FA8DC33102425435 /* DNPageScrollView.m */; };
 		72C56976AA4FA4532D5C61A44E89B14C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9185757027FFAC1AA4A06DF7D7A26132 /* Foundation.framework */; };
 		73F30EF28F88BF4CB629E027AFF94A3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9185757027FFAC1AA4A06DF7D7A26132 /* Foundation.framework */; };
-		74FD5F21F4BDDA3F6F89B6439B7058F9 /* DNPageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23575269799C3CCCF282E51D2242DC9B /* DNPageCollectionViewCell.m */; };
 		79D96378600F49AEEADC23AE9295DAF3 /* UIView+CTLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E32B898E9F4A5FEEF76389DD867347C /* UIView+CTLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FBAC7074966AE6591D5BCE5009DD720 /* Pods-DNPageScrollView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A28CE9D8AA8FB16F04363B4078381B50 /* Pods-DNPageScrollView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		829E14221E029E3E72F5FB1DB89C98DD /* Pods-DNPageScrollView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7506F3A6CB125A668CD842C92E955DEB /* Pods-DNPageScrollView_Tests-dummy.m */; };
-		91FD707903B4DC27031A22CD4062C335 /* DNPageCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C15BBB1FBB7BA827E2E5BAB7EA1760A9 /* DNPageCollectionViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		933D246B34291EDDC8462381A2CCDB93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9185757027FFAC1AA4A06DF7D7A26132 /* Foundation.framework */; };
+		8329DDF8B6B2AFFCC22BFE9FD365EC53 /* DNPageCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F133F7FFEA75A04DE241082BB31C4CFD /* DNPageCollectionViewFlowLayout.m */; };
+		83D089800D0D7EB4F856332D9FC47837 /* DNPageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8511CAD98285D9CDDC5BA9BFA7CA9AC2 /* DNPageCollectionViewCell.m */; };
+		849341A0916D9C056CDB447F18BB19C1 /* DNPageScrollViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = D9AEC400671BB7DDD108CBA1006EF148 /* DNPageScrollViewDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		935B6677FCFE14C96EC9F4E1EBEC822F /* UIView+CTLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 145268F2775CD55408C469BD2C72EF54 /* UIView+CTLayout.m */; };
 		9AE5390764D05E1EDE7BA966586A8056 /* Pods-DNPageScrollView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A379819FDB9768A9E76A93CDF9E4792 /* Pods-DNPageScrollView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A238D41CEEF70EFE8FCB44F3B58F55A4 /* DNCommonKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB3529E7B337A427E3DCCF11D7BBB75 /* DNCommonKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2FA041623ACB447B0CD6E68BD4B8D30 /* DNPageCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 589E1B639E82721E4DE0615CD172DDCB /* DNPageCollectionViewFlowLayout.m */; };
-		A5D167618639A309DAE63CAD1045E870 /* DNCommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B961EE0381F046A140FA33DE8557F2A2 /* DNCommonKit.framework */; };
+		A283A4340FE816A4639158579E33F3D0 /* DNChannelScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = F7B1B8096E402C887DA2A6A65549FBDC /* DNChannelScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4F904C3597A7BD8D6882899664DBBE5 /* UIViewController+DNPageController.h in Headers */ = {isa = PBXBuildFile; fileRef = 516B7E025C127CAEEEE4E413A6534DA4 /* UIViewController+DNPageController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5A87A2409D4114CF0E5DFB104CD58A8 /* DNChannelView.h in Headers */ = {isa = PBXBuildFile; fileRef = D0A13DE40A5CBBD1071F4B23FFB2E3D3 /* DNChannelView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A74DB0E5C1F1F249DAD449D73C1315EB /* icon_pagescroll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 045B2C6228DB605A647C154AEC0A2D32 /* icon_pagescroll@2x.png */; };
+		A95C81882378B369A2B70125C4F96E6E /* DNPageCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 016CFCB6E697197FE5D6108EF8B9D9D7 /* DNPageCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB943C394D362ECF045E71534E8E5D8F /* DNPageScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BA4D4FA321C32B090B2C07A7BEF12BA /* DNPageScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABFA6DE652B45D5969814AED36C791F5 /* Pods-DNPageScrollView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE48FB1E931F2F5D9A846AA8269D96B /* Pods-DNPageScrollView_Example-dummy.m */; };
-		AC28BC73F8D77B8F57397BD81370BAC7 /* DNChannelTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 90C307E63FF5D57B8E4A4027BFF89686 /* DNChannelTitleView.m */; };
-		BB322EAE0F9FF879B2FE08E55389A223 /* DNPageScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 238C6706B7D1EF522FBC465EA0A23000 /* DNPageScrollView-dummy.m */; };
-		BB8E57A2159334EE7B527678302B2A2C /* DNPageScrollView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BBCDE829ACDA769A3B960E53AF183578 /* DNPageScrollView.bundle */; };
-		BEA96A0D45C722EB21F4E0D679A5BF7E /* DNPageChannelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B929FED628F129997A09357194B76C33 /* DNPageChannelStyle.m */; };
-		C47830779C3324758A259670B8F43AFC /* DNContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EF723662CCCC710113006132CD9A67E8 /* DNContentScrollView.m */; };
+		BF20EF49BBFCC47D23FCA067FA644396 /* DNPageScrollView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B47C87A8748A952DCD4127F4D58E299 /* DNPageScrollView-dummy.m */; };
+		C8B8E23B9F017400D820951A0F5E314B /* DNCommonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B961EE0381F046A140FA33DE8557F2A2 /* DNCommonKit.framework */; };
+		CBCFD6B67966A664EFB8B7B9E3DCDC75 /* DNPageScrollView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BBCDE829ACDA769A3B960E53AF183578 /* DNPageScrollView.bundle */; };
+		D72A7F8E49BCFC042B25E49C37D6A51E /* DNPageChannelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1033EAAFB58BA519383FFF54EFD48F31 /* DNPageChannelStyle.m */; };
 		DEF41C1445FAD6CA77F3856AABCC1FF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9185757027FFAC1AA4A06DF7D7A26132 /* Foundation.framework */; };
-		E433D3AA9ECB31F573C6C029A3532173 /* DNPageCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C3546034B8881B9318B9766286039FC /* DNPageCollectionView.m */; };
-		E7E40D3BBE00E208E5F83F8C050A90C0 /* icon_pagescroll@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE0817886168BEA7828B4A740A7BD91 /* icon_pagescroll@2x.png */; };
-		EB4BA0D4F227A1C0B1ABAECDEDDC443B /* DNPageScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B87E49B31C8DF81B3CE897067D84971 /* DNPageScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB6154DD6F6D8A6842BBB58771BFFFEF /* DNContentScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DC13D3CF7AF4D0C47E42E05F5EFE3A2 /* DNContentScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EEA994398D3BD0B1E4AF2AD5D9D7983E /* DNPageScrollView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A1570E24C7D03B61161B60BF5B611A6A /* DNPageScrollView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EFA7AA806100EF6CA6A7FB4232F67ED2 /* DNPageCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = E410E1767E75F53344C4B6D9612DFBAC /* DNPageCollectionView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBC4555A31C2783BF1D657DFC19C34B3 /* UIViewController+DNPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 743C2556FD3791EFC8CC31A7D3BC6335 /* UIViewController+DNPageController.m */; };
+		DF34809D7889FBE9B11B59A4EEFAF9D2 /* DNChannelBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = E561F1381462E7CF7E6D62F1294B9D28 /* DNChannelBaseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E040A94A061214A1170FA404051DF1F2 /* DNPageChannelStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3DBCD74D424AB7285154DE1C20DBF4 /* DNPageChannelStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E0BCCEC11CAC6C8FC05B8B76A012A446 /* icon_pagescroll@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14F0BB4EFCF3A3E3194F47895EF5F6B3 /* icon_pagescroll@3x.png */; };
+		E946A87776973FDF6333D876B93DB66B /* DNChannelScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A9AC5A84B15CA3CAB26470C61E2339 /* DNChannelScrollView.m */; };
+		EC9CC71E65F86585F785D15C3778FDB6 /* DNContentScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F82425A184F30AE3FF685B16C1038F4 /* DNContentScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBA390179404B35A2B1D2FC9E665BC05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9185757027FFAC1AA4A06DF7D7A26132 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,19 +58,19 @@
 			remoteGlobalIDString = 817207E53BFFA72C9D38AD69ABD117C3;
 			remoteInfo = "Pods-DNPageScrollView_Example";
 		};
-		4209A1D59E7820CD1501A600D37914B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 147CA1FF1208730959D6C601858F6B6A;
-			remoteInfo = DNCommonKit;
-		};
 		4E9829BC88910439610A0CF7BEE2C418 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 147CA1FF1208730959D6C601858F6B6A;
 			remoteInfo = DNCommonKit;
+		};
+		6393A99197829E71AE9FC0361B44934D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7BF2B2CB6C44273EA7495F3C07E9AC2;
+			remoteInfo = "DNPageScrollView-DNPageScrollView";
 		};
 		A1363CC0176E1B42FDDF5A821FF901C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -75,80 +79,84 @@
 			remoteGlobalIDString = 5FC65736D3812DCB4DA6A224A3F32280;
 			remoteInfo = DNPageScrollView;
 		};
-		DC2F5EC1FF29067208292263ED8E40F1 /* PBXContainerItemProxy */ = {
+		EA3B823C2ECB443BCC80E5CB8BCC1B88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E7BF2B2CB6C44273EA7495F3C07E9AC2;
-			remoteInfo = "DNPageScrollView-DNPageScrollView";
+			remoteGlobalIDString = 147CA1FF1208730959D6C601858F6B6A;
+			remoteInfo = DNCommonKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		016CFCB6E697197FE5D6108EF8B9D9D7 /* DNPageCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageCollectionView.h; path = DNPageScrollView/Classes/DNPageCollectionView.h; sourceTree = "<group>"; };
+		045B2C6228DB605A647C154AEC0A2D32 /* icon_pagescroll@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_pagescroll@2x.png"; path = "DNPageScrollView/Assets/icon_pagescroll@2x.png"; sourceTree = "<group>"; };
 		067A63426A27B3751F38DB2BC22EB3EC /* DNCommonKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DNCommonKit.modulemap; sourceTree = "<group>"; };
-		0B87E49B31C8DF81B3CE897067D84971 /* DNPageScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageScrollView.h; path = DNPageScrollView/Classes/DNPageScrollView.h; sourceTree = "<group>"; };
-		0DC13D3CF7AF4D0C47E42E05F5EFE3A2 /* DNContentScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNContentScrollView.h; path = DNPageScrollView/Classes/DNContentScrollView.h; sourceTree = "<group>"; };
-		10B0B9D81184023A0595304908D31A43 /* DNPageScrollView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DNPageScrollView.xcconfig; sourceTree = "<group>"; };
+		0BA4D4FA321C32B090B2C07A7BEF12BA /* DNPageScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageScrollView.h; path = DNPageScrollView/Classes/DNPageScrollView.h; sourceTree = "<group>"; };
+		1033EAAFB58BA519383FFF54EFD48F31 /* DNPageChannelStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageChannelStyle.m; path = DNPageScrollView/Classes/DNPageChannelStyle.m; sourceTree = "<group>"; };
 		12B71D1AAD28EE25DF19DDE1B08617CF /* DNPageScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DNPageScrollView.framework; path = DNPageScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		145268F2775CD55408C469BD2C72EF54 /* UIView+CTLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+CTLayout.m"; path = "DNCommonKit/Classes/DNLayout/UIView+CTLayout.m"; sourceTree = "<group>"; };
-		16EED3364AB09771C69D27EAB855F30F /* UIViewController+DNPageController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+DNPageController.h"; path = "DNPageScrollView/Classes/UIViewController+DNPageController.h"; sourceTree = "<group>"; };
+		14F0BB4EFCF3A3E3194F47895EF5F6B3 /* icon_pagescroll@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_pagescroll@3x.png"; path = "DNPageScrollView/Assets/icon_pagescroll@3x.png"; sourceTree = "<group>"; };
 		17B9338D5421DCE16F51687819087505 /* Pods-DNPageScrollView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DNPageScrollView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1C3546034B8881B9318B9766286039FC /* DNPageCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageCollectionView.m; path = DNPageScrollView/Classes/DNPageCollectionView.m; sourceTree = "<group>"; };
-		20383E881349ED0E467367EA6063837A /* DNPageChannelStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageChannelStyle.h; path = DNPageScrollView/Classes/DNPageChannelStyle.h; sourceTree = "<group>"; };
-		23575269799C3CCCF282E51D2242DC9B /* DNPageCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageCollectionViewCell.m; path = DNPageScrollView/Classes/DNPageCollectionViewCell.m; sourceTree = "<group>"; };
-		238C6706B7D1EF522FBC465EA0A23000 /* DNPageScrollView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DNPageScrollView-dummy.m"; sourceTree = "<group>"; };
+		21B3274AF1A6015C151F2A0843AFBE90 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		21E7EA3F04C190CD3DFE2244029429AB /* DNChannelTitleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNChannelTitleView.h; path = DNPageScrollView/Classes/DNChannelTitleView.h; sourceTree = "<group>"; };
 		255C1249E50F78F3EF450EBC018A82D4 /* Pods-DNPageScrollView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DNPageScrollView_Example.modulemap"; sourceTree = "<group>"; };
 		2AE3736F4673C6EB2E8E97671BF970A6 /* Pods-DNPageScrollView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DNPageScrollView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2B1726CCC712D1CA0743DC01558748D4 /* DNPageCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageCollectionViewFlowLayout.h; path = DNPageScrollView/Classes/DNPageCollectionViewFlowLayout.h; sourceTree = "<group>"; };
-		2DE0817886168BEA7828B4A740A7BD91 /* icon_pagescroll@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_pagescroll@2x.png"; path = "DNPageScrollView/Assets/icon_pagescroll@2x.png"; sourceTree = "<group>"; };
+		31C9991D793AADFD0A462884702197B9 /* DNPageCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageCollectionViewCell.h; path = DNPageScrollView/Classes/DNPageCollectionViewCell.h; sourceTree = "<group>"; };
 		33A4FAAB39020BAA81B43C069BEA1B71 /* Pods-DNPageScrollView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DNPageScrollView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		3622A57F567EFE1FF11730F3BF5E8EFE /* ResourceBundle-DNPageScrollView-DNPageScrollView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DNPageScrollView-DNPageScrollView-Info.plist"; sourceTree = "<group>"; };
 		3869FEAADF042CC4367CE797EC4F8AD8 /* DNCommonKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DNCommonKit.xcconfig; sourceTree = "<group>"; };
+		3A6CDBEAA143D1CD801B1D4FCD4197EB /* DNContentScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNContentScrollView.m; path = DNPageScrollView/Classes/DNContentScrollView.m; sourceTree = "<group>"; };
+		3AC6E391F715D49E83AD68A5AF2551E8 /* DNChannelView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNChannelView.m; path = DNPageScrollView/Classes/DNChannelView.m; sourceTree = "<group>"; };
 		3E65914C0EF38876B0BC81049C7BC5C8 /* DNCommonKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DNCommonKit-Info.plist"; sourceTree = "<group>"; };
-		460CCACF883A274C6A1265709E585D13 /* DNPageScrollView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DNPageScrollView.modulemap; sourceTree = "<group>"; };
 		492FBE6DB1E066F3420CF47A0791CFB0 /* Pods-DNPageScrollView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DNPageScrollView_Tests-Info.plist"; sourceTree = "<group>"; };
-		589E1B639E82721E4DE0615CD172DDCB /* DNPageCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageCollectionViewFlowLayout.m; path = DNPageScrollView/Classes/DNPageCollectionViewFlowLayout.m; sourceTree = "<group>"; };
-		6559674C817D457A7C043FAA5B03E84C /* DNChannelScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNChannelScrollView.h; path = DNPageScrollView/Classes/DNChannelScrollView.h; sourceTree = "<group>"; };
+		4D4715D3EB0AED9B0996F80DC92696F8 /* DNPageScrollView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DNPageScrollView.modulemap; sourceTree = "<group>"; };
+		4D6E15CBFA9224AD164B22D639BD80FE /* DNPageScrollView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DNPageScrollView.xcconfig; sourceTree = "<group>"; };
+		516B7E025C127CAEEEE4E413A6534DA4 /* UIViewController+DNPageController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+DNPageController.h"; path = "DNPageScrollView/Classes/UIViewController+DNPageController.h"; sourceTree = "<group>"; };
+		5BDE0E329B998E3DAE53C3D07AE5811C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		656AA16A3336B43590A346FF1558D4AF /* Pods_DNPageScrollView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DNPageScrollView_Example.framework; path = "Pods-DNPageScrollView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		661B02AF86BAD074B4ECBADC74A34BFE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		6869709DAF0BD3818C2649F20F288FB9 /* DNPageScrollViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageScrollViewDelegate.h; path = DNPageScrollView/Classes/DNPageScrollViewDelegate.h; sourceTree = "<group>"; };
+		6628CBE7E17D9007A71138F0EE2B577C /* ResourceBundle-DNPageScrollView-DNPageScrollView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-DNPageScrollView-DNPageScrollView-Info.plist"; sourceTree = "<group>"; };
+		6F82425A184F30AE3FF685B16C1038F4 /* DNContentScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNContentScrollView.h; path = DNPageScrollView/Classes/DNContentScrollView.h; sourceTree = "<group>"; };
+		71189580B952AB87F07876D1E9470F7D /* DNPageCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageCollectionView.m; path = DNPageScrollView/Classes/DNPageCollectionView.m; sourceTree = "<group>"; };
 		731838D4BD7EC304DD4FF30AC3425439 /* DNCommonKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DNCommonKit-dummy.m"; sourceTree = "<group>"; };
-		743C2556FD3791EFC8CC31A7D3BC6335 /* UIViewController+DNPageController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+DNPageController.m"; path = "DNPageScrollView/Classes/UIViewController+DNPageController.m"; sourceTree = "<group>"; };
 		7506F3A6CB125A668CD842C92E955DEB /* Pods-DNPageScrollView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DNPageScrollView_Tests-dummy.m"; sourceTree = "<group>"; };
 		761058745EF6A1C2E9EA54E1FA3FFF3C /* Pods-DNPageScrollView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DNPageScrollView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		77A466E3DC79F95257231A5C29E37429 /* DNPageScrollView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DNPageScrollView-Info.plist"; sourceTree = "<group>"; };
-		79FC283876F227BC3167C1A5EB0525EA /* DNPageScrollView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DNPageScrollView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7A379819FDB9768A9E76A93CDF9E4792 /* Pods-DNPageScrollView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DNPageScrollView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		7BBD02C95742B4062E6193216E5BBABF /* Pods-DNPageScrollView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DNPageScrollView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		7DB0153B5648A905E6E1D1819206FBDD /* DNCommonKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DNCommonKit-prefix.pch"; sourceTree = "<group>"; };
 		7E32B898E9F4A5FEEF76389DD867347C /* UIView+CTLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+CTLayout.h"; path = "DNCommonKit/Classes/DNLayout/UIView+CTLayout.h"; sourceTree = "<group>"; };
 		7E5B69BF8F0AF32022C8CFDE2631AF63 /* Pods-DNPageScrollView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DNPageScrollView_Tests.modulemap"; sourceTree = "<group>"; };
-		8E4FE8292F45B76EA48363AA415BC5A2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		903AF367E98854556766806C445A611B /* DNChannelScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNChannelScrollView.m; path = DNPageScrollView/Classes/DNChannelScrollView.m; sourceTree = "<group>"; };
-		90C307E63FF5D57B8E4A4027BFF89686 /* DNChannelTitleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNChannelTitleView.m; path = DNPageScrollView/Classes/DNChannelTitleView.m; sourceTree = "<group>"; };
+		8511CAD98285D9CDDC5BA9BFA7CA9AC2 /* DNPageCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageCollectionViewCell.m; path = DNPageScrollView/Classes/DNPageCollectionViewCell.m; sourceTree = "<group>"; };
 		9185757027FFAC1AA4A06DF7D7A26132 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9214FAEBB8851CED44514BFF0062E880 /* DNChannelTitleView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNChannelTitleView.h; path = DNPageScrollView/Classes/DNChannelTitleView.h; sourceTree = "<group>"; };
+		97CAAF254228D26F726CA61F2C1DC79B /* DNChannelTitleView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNChannelTitleView.m; path = DNPageScrollView/Classes/DNChannelTitleView.m; sourceTree = "<group>"; };
+		9B47C87A8748A952DCD4127F4D58E299 /* DNPageScrollView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DNPageScrollView-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FE48FB1E931F2F5D9A846AA8269D96B /* Pods-DNPageScrollView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DNPageScrollView_Example-dummy.m"; sourceTree = "<group>"; };
-		A1570E24C7D03B61161B60BF5B611A6A /* DNPageScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DNPageScrollView-umbrella.h"; sourceTree = "<group>"; };
 		A28CE9D8AA8FB16F04363B4078381B50 /* Pods-DNPageScrollView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DNPageScrollView_Example-umbrella.h"; sourceTree = "<group>"; };
 		AEB3529E7B337A427E3DCCF11D7BBB75 /* DNCommonKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DNCommonKit-umbrella.h"; sourceTree = "<group>"; };
 		AEC82AC9917F32FFB6C51F8333E11710 /* Pods-DNPageScrollView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DNPageScrollView_Example-Info.plist"; sourceTree = "<group>"; };
 		AED59E5BE8A7D2391B34B4B1567A945E /* Pods-DNPageScrollView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DNPageScrollView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B4E15B2292AFE53BC83F62C53467CB6B /* Pods-DNPageScrollView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DNPageScrollView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B929FED628F129997A09357194B76C33 /* DNPageChannelStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageChannelStyle.m; path = DNPageScrollView/Classes/DNPageChannelStyle.m; sourceTree = "<group>"; };
 		B961EE0381F046A140FA33DE8557F2A2 /* DNCommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DNCommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3DBCD74D424AB7285154DE1C20DBF4 /* DNPageChannelStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageChannelStyle.h; path = DNPageScrollView/Classes/DNPageChannelStyle.h; sourceTree = "<group>"; };
 		BBCDE829ACDA769A3B960E53AF183578 /* DNPageScrollView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DNPageScrollView.bundle; path = "DNPageScrollView-DNPageScrollView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C15BBB1FBB7BA827E2E5BAB7EA1760A9 /* DNPageCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageCollectionViewCell.h; path = DNPageScrollView/Classes/DNPageCollectionViewCell.h; sourceTree = "<group>"; };
+		BF50624584F808C0FA8DC33102425435 /* DNPageScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageScrollView.m; path = DNPageScrollView/Classes/DNPageScrollView.m; sourceTree = "<group>"; };
+		C9328D22543EB356ADF5F972A0BB24FC /* DNPageCollectionViewFlowLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageCollectionViewFlowLayout.h; path = DNPageScrollView/Classes/DNPageCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		C9F9A70016774B901C51933329A18386 /* Pods-DNPageScrollView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DNPageScrollView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CB6F103775170239640284DC913F3F4C /* DNChannelBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNChannelBaseView.m; path = DNPageScrollView/Classes/DNChannelBaseView.m; sourceTree = "<group>"; };
+		CC3D7A1788E13A0AC0B5F6146E7CC029 /* DNPageScrollView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DNPageScrollView-prefix.pch"; sourceTree = "<group>"; };
 		CDC6068A04EBD59B4628311B4C74EE71 /* Pods_DNPageScrollView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DNPageScrollView_Tests.framework; path = "Pods-DNPageScrollView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D45CFA2AC6FD269B0F44A3DE9FA2AD2F /* icon_pagescroll@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_pagescroll@3x.png"; path = "DNPageScrollView/Assets/icon_pagescroll@3x.png"; sourceTree = "<group>"; };
+		D0A13DE40A5CBBD1071F4B23FFB2E3D3 /* DNChannelView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNChannelView.h; path = DNPageScrollView/Classes/DNChannelView.h; sourceTree = "<group>"; };
 		D4700CFB9982C7B6E6D37AB31A92EFD7 /* DNCommonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DNCommonKit.framework; path = DNCommonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E410E1767E75F53344C4B6D9612DFBAC /* DNPageCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageCollectionView.h; path = DNPageScrollView/Classes/DNPageCollectionView.h; sourceTree = "<group>"; };
+		D6A9AC5A84B15CA3CAB26470C61E2339 /* DNChannelScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNChannelScrollView.m; path = DNPageScrollView/Classes/DNChannelScrollView.m; sourceTree = "<group>"; };
+		D774AD432CF558872691E7F6E4B7E2EC /* DNPageScrollView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DNPageScrollView-umbrella.h"; sourceTree = "<group>"; };
+		D9AEC400671BB7DDD108CBA1006EF148 /* DNPageScrollViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNPageScrollViewDelegate.h; path = DNPageScrollView/Classes/DNPageScrollViewDelegate.h; sourceTree = "<group>"; };
+		DB8B277886215563FE77D03FC54D81B3 /* DNPageScrollView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DNPageScrollView-Info.plist"; sourceTree = "<group>"; };
+		E561F1381462E7CF7E6D62F1294B9D28 /* DNChannelBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNChannelBaseView.h; path = DNPageScrollView/Classes/DNChannelBaseView.h; sourceTree = "<group>"; };
 		E5A968C0DD1AF000C2D0E46FE6676D32 /* Pods-DNPageScrollView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DNPageScrollView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EF723662CCCC710113006132CD9A67E8 /* DNContentScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNContentScrollView.m; path = DNPageScrollView/Classes/DNContentScrollView.m; sourceTree = "<group>"; };
-		F00AC5B43DDAD48A0DE7BAA582C29C0C /* DNPageScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageScrollView.m; path = DNPageScrollView/Classes/DNPageScrollView.m; sourceTree = "<group>"; };
-		FCDAB1CF4056D0DF6CCE0E52D20A26AC /* DNPageScrollView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DNPageScrollView-prefix.pch"; sourceTree = "<group>"; };
+		E8531CEF31FE01B89BA8A244A34371DB /* DNPageScrollView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DNPageScrollView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F133F7FFEA75A04DE241082BB31C4CFD /* DNPageCollectionViewFlowLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DNPageCollectionViewFlowLayout.m; path = DNPageScrollView/Classes/DNPageCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		F7B1B8096E402C887DA2A6A65549FBDC /* DNChannelScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DNChannelScrollView.h; path = DNPageScrollView/Classes/DNChannelScrollView.h; sourceTree = "<group>"; };
+		FE31A869ECFBB72E45FB583F18C27D84 /* UIViewController+DNPageController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+DNPageController.m"; path = "DNPageScrollView/Classes/UIViewController+DNPageController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +168,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		508DDE09E6D96981D708A051E1A82E72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66225EEE2F2C9DEA315CC8EB1B277577 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,27 +183,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		93B182D54BE660173E8FAF41A7921114 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A395EF019FF8676F109F02F4F1A87DC3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5D167618639A309DAE63CAD1045E870 /* DNCommonKit.framework in Frameworks */,
-				933D246B34291EDDC8462381A2CCDB93 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		EE19FA980BD623CE58307F06C5EE7E09 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DEF41C1445FAD6CA77F3856AABCC1FF1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F629985B81FAD62B8A4BDB1850AB3CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8B8E23B9F017400D820951A0F5E314B /* DNCommonKit.framework in Frameworks */,
+				FBA390179404B35A2B1D2FC9E665BC05 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,12 +212,56 @@
 			name = DNLayout;
 			sourceTree = "<group>";
 		};
+		0C52F08D9AFF958186715A08BA68654F /* DNPageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E561F1381462E7CF7E6D62F1294B9D28 /* DNChannelBaseView.h */,
+				CB6F103775170239640284DC913F3F4C /* DNChannelBaseView.m */,
+				F7B1B8096E402C887DA2A6A65549FBDC /* DNChannelScrollView.h */,
+				D6A9AC5A84B15CA3CAB26470C61E2339 /* DNChannelScrollView.m */,
+				21E7EA3F04C190CD3DFE2244029429AB /* DNChannelTitleView.h */,
+				97CAAF254228D26F726CA61F2C1DC79B /* DNChannelTitleView.m */,
+				D0A13DE40A5CBBD1071F4B23FFB2E3D3 /* DNChannelView.h */,
+				3AC6E391F715D49E83AD68A5AF2551E8 /* DNChannelView.m */,
+				6F82425A184F30AE3FF685B16C1038F4 /* DNContentScrollView.h */,
+				3A6CDBEAA143D1CD801B1D4FCD4197EB /* DNContentScrollView.m */,
+				BB3DBCD74D424AB7285154DE1C20DBF4 /* DNPageChannelStyle.h */,
+				1033EAAFB58BA519383FFF54EFD48F31 /* DNPageChannelStyle.m */,
+				016CFCB6E697197FE5D6108EF8B9D9D7 /* DNPageCollectionView.h */,
+				71189580B952AB87F07876D1E9470F7D /* DNPageCollectionView.m */,
+				31C9991D793AADFD0A462884702197B9 /* DNPageCollectionViewCell.h */,
+				8511CAD98285D9CDDC5BA9BFA7CA9AC2 /* DNPageCollectionViewCell.m */,
+				C9328D22543EB356ADF5F972A0BB24FC /* DNPageCollectionViewFlowLayout.h */,
+				F133F7FFEA75A04DE241082BB31C4CFD /* DNPageCollectionViewFlowLayout.m */,
+				0BA4D4FA321C32B090B2C07A7BEF12BA /* DNPageScrollView.h */,
+				BF50624584F808C0FA8DC33102425435 /* DNPageScrollView.m */,
+				D9AEC400671BB7DDD108CBA1006EF148 /* DNPageScrollViewDelegate.h */,
+				516B7E025C127CAEEEE4E413A6534DA4 /* UIViewController+DNPageController.h */,
+				FE31A869ECFBB72E45FB583F18C27D84 /* UIViewController+DNPageController.m */,
+				1401C394BD60788B7F9B4650B79D8517 /* Pod */,
+				CAE4E80501702426BC10E54BAAFE9314 /* Resources */,
+				51B9CCFFF753AE64E67128F729059E6C /* Support Files */,
+			);
+			name = DNPageScrollView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		13864ECB8F4FF8A3A6F57DAB77554832 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				9185757027FFAC1AA4A06DF7D7A26132 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		1401C394BD60788B7F9B4650B79D8517 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E8531CEF31FE01B89BA8A244A34371DB /* DNPageScrollView.podspec */,
+				21B3274AF1A6015C151F2A0843AFBE90 /* LICENSE */,
+				5BDE0E329B998E3DAE53C3D07AE5811C /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		1FF5B6C56937CBA2282052A2E24D94C8 /* Targets Support Files */ = {
@@ -219,23 +271,6 @@
 				ACA3F1CE7A59C6612343402867D22E05 /* Pods-DNPageScrollView_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		20A642575A9113EAF6A7360A48177D3D /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2DE0817886168BEA7828B4A740A7BD91 /* icon_pagescroll@2x.png */,
-				D45CFA2AC6FD269B0F44A3DE9FA2AD2F /* icon_pagescroll@3x.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		2D3DAA5744B867EC6731F518C5308E7A /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5BACCD2B8A52716AF49B0C63A08911F7 /* DNPageScrollView */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		473AEF2B85439A521D9E9108469D8FCE /* Support Files */ = {
@@ -252,34 +287,19 @@
 			path = "../Target Support Files/DNCommonKit";
 			sourceTree = "<group>";
 		};
-		5BACCD2B8A52716AF49B0C63A08911F7 /* DNPageScrollView */ = {
+		51B9CCFFF753AE64E67128F729059E6C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6559674C817D457A7C043FAA5B03E84C /* DNChannelScrollView.h */,
-				903AF367E98854556766806C445A611B /* DNChannelScrollView.m */,
-				9214FAEBB8851CED44514BFF0062E880 /* DNChannelTitleView.h */,
-				90C307E63FF5D57B8E4A4027BFF89686 /* DNChannelTitleView.m */,
-				0DC13D3CF7AF4D0C47E42E05F5EFE3A2 /* DNContentScrollView.h */,
-				EF723662CCCC710113006132CD9A67E8 /* DNContentScrollView.m */,
-				20383E881349ED0E467367EA6063837A /* DNPageChannelStyle.h */,
-				B929FED628F129997A09357194B76C33 /* DNPageChannelStyle.m */,
-				E410E1767E75F53344C4B6D9612DFBAC /* DNPageCollectionView.h */,
-				1C3546034B8881B9318B9766286039FC /* DNPageCollectionView.m */,
-				C15BBB1FBB7BA827E2E5BAB7EA1760A9 /* DNPageCollectionViewCell.h */,
-				23575269799C3CCCF282E51D2242DC9B /* DNPageCollectionViewCell.m */,
-				2B1726CCC712D1CA0743DC01558748D4 /* DNPageCollectionViewFlowLayout.h */,
-				589E1B639E82721E4DE0615CD172DDCB /* DNPageCollectionViewFlowLayout.m */,
-				0B87E49B31C8DF81B3CE897067D84971 /* DNPageScrollView.h */,
-				F00AC5B43DDAD48A0DE7BAA582C29C0C /* DNPageScrollView.m */,
-				6869709DAF0BD3818C2649F20F288FB9 /* DNPageScrollViewDelegate.h */,
-				16EED3364AB09771C69D27EAB855F30F /* UIViewController+DNPageController.h */,
-				743C2556FD3791EFC8CC31A7D3BC6335 /* UIViewController+DNPageController.m */,
-				93316B0D364BDE8D59C017578B2C13B4 /* Pod */,
-				20A642575A9113EAF6A7360A48177D3D /* Resources */,
-				AB48D73676843C12193A94BDD285D360 /* Support Files */,
+				4D4715D3EB0AED9B0996F80DC92696F8 /* DNPageScrollView.modulemap */,
+				4D6E15CBFA9224AD164B22D639BD80FE /* DNPageScrollView.xcconfig */,
+				9B47C87A8748A952DCD4127F4D58E299 /* DNPageScrollView-dummy.m */,
+				DB8B277886215563FE77D03FC54D81B3 /* DNPageScrollView-Info.plist */,
+				CC3D7A1788E13A0AC0B5F6146E7CC029 /* DNPageScrollView-prefix.pch */,
+				D774AD432CF558872691E7F6E4B7E2EC /* DNPageScrollView-umbrella.h */,
+				6628CBE7E17D9007A71138F0EE2B577C /* ResourceBundle-DNPageScrollView-DNPageScrollView-Info.plist */,
 			);
-			name = DNPageScrollView;
-			path = ../..;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/DNPageScrollView";
 			sourceTree = "<group>";
 		};
 		6C73C9658D685F534A3B3B0945C4B8CA /* DNCommonKit */ = {
@@ -304,37 +324,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		93316B0D364BDE8D59C017578B2C13B4 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				79FC283876F227BC3167C1A5EB0525EA /* DNPageScrollView.podspec */,
-				8E4FE8292F45B76EA48363AA415BC5A2 /* LICENSE */,
-				661B02AF86BAD074B4ECBADC74A34BFE /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		9D3AA633598E1F8631D0F93CA1E76233 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				6C73C9658D685F534A3B3B0945C4B8CA /* DNCommonKit */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		AB48D73676843C12193A94BDD285D360 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				460CCACF883A274C6A1265709E585D13 /* DNPageScrollView.modulemap */,
-				10B0B9D81184023A0595304908D31A43 /* DNPageScrollView.xcconfig */,
-				238C6706B7D1EF522FBC465EA0A23000 /* DNPageScrollView-dummy.m */,
-				77A466E3DC79F95257231A5C29E37429 /* DNPageScrollView-Info.plist */,
-				FCDAB1CF4056D0DF6CCE0E52D20A26AC /* DNPageScrollView-prefix.pch */,
-				A1570E24C7D03B61161B60BF5B611A6A /* DNPageScrollView-umbrella.h */,
-				3622A57F567EFE1FF11730F3BF5E8EFE /* ResourceBundle-DNPageScrollView-DNPageScrollView-Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/DNPageScrollView";
 			sourceTree = "<group>";
 		};
 		ACA3F1CE7A59C6612343402867D22E05 /* Pods-DNPageScrollView_Tests */ = {
@@ -379,16 +374,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CAE4E80501702426BC10E54BAAFE9314 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				045B2C6228DB605A647C154AEC0A2D32 /* icon_pagescroll@2x.png */,
+				14F0BB4EFCF3A3E3194F47895EF5F6B3 /* icon_pagescroll@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				2D3DAA5744B867EC6731F518C5308E7A /* Development Pods */,
+				FED2A25215C88FE99C003A2771768FD7 /* Development Pods */,
 				B7EE26574D2276E7EFC0747850B13437 /* Frameworks */,
 				9D3AA633598E1F8631D0F93CA1E76233 /* Pods */,
 				7AFB95F023588AEB3822BDDC6D08B58A /* Products */,
 				1FF5B6C56937CBA2282052A2E24D94C8 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		FED2A25215C88FE99C003A2771768FD7 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C52F08D9AFF958186715A08BA68654F /* DNPageScrollView */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,21 +422,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		671530FCB4325E4173C917CE8AC5DA40 /* Headers */ = {
+		32F76CD0344BE3B95DFD1E6683410234 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2312B282CDEA01F559B117E2FAC8F9FE /* DNChannelScrollView.h in Headers */,
-				5F8BC05E6F4E5DB8A0B921C383184EF0 /* DNChannelTitleView.h in Headers */,
-				EB6154DD6F6D8A6842BBB58771BFFFEF /* DNContentScrollView.h in Headers */,
-				42D1D10785E949086E324535D308387F /* DNPageChannelStyle.h in Headers */,
-				EFA7AA806100EF6CA6A7FB4232F67ED2 /* DNPageCollectionView.h in Headers */,
-				91FD707903B4DC27031A22CD4062C335 /* DNPageCollectionViewCell.h in Headers */,
-				14D0E7640D9776E2D9A136E6FCFFFF68 /* DNPageCollectionViewFlowLayout.h in Headers */,
-				EEA994398D3BD0B1E4AF2AD5D9D7983E /* DNPageScrollView-umbrella.h in Headers */,
-				EB4BA0D4F227A1C0B1ABAECDEDDC443B /* DNPageScrollView.h in Headers */,
-				1BB273B604F3424568A7DFB8F0E79FDE /* DNPageScrollViewDelegate.h in Headers */,
-				193E0C25400A1F33A66A01391A623529 /* UIViewController+DNPageController.h in Headers */,
+				DF34809D7889FBE9B11B59A4EEFAF9D2 /* DNChannelBaseView.h in Headers */,
+				A283A4340FE816A4639158579E33F3D0 /* DNChannelScrollView.h in Headers */,
+				0ACEA1BA680E335EFA84E9D81BDB2866 /* DNChannelTitleView.h in Headers */,
+				A5A87A2409D4114CF0E5DFB104CD58A8 /* DNChannelView.h in Headers */,
+				EC9CC71E65F86585F785D15C3778FDB6 /* DNContentScrollView.h in Headers */,
+				E040A94A061214A1170FA404051DF1F2 /* DNPageChannelStyle.h in Headers */,
+				A95C81882378B369A2B70125C4F96E6E /* DNPageCollectionView.h in Headers */,
+				1460EB6C59B3A7BC08295EC78910EF8C /* DNPageCollectionViewCell.h in Headers */,
+				63C11EAB0C801DAE3025B4AC28E2D3A2 /* DNPageCollectionViewFlowLayout.h in Headers */,
+				3A55F501A2B31C526E6C57D0066874E9 /* DNPageScrollView-umbrella.h in Headers */,
+				AB943C394D362ECF045E71534E8E5D8F /* DNPageScrollView.h in Headers */,
+				849341A0916D9C056CDB447F18BB19C1 /* DNPageScrollViewDelegate.h in Headers */,
+				A4F904C3597A7BD8D6882899664DBBE5 /* UIViewController+DNPageController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,18 +474,18 @@
 		};
 		5FC65736D3812DCB4DA6A224A3F32280 /* DNPageScrollView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 520C70405CE9240683FF98A069F8F55E /* Build configuration list for PBXNativeTarget "DNPageScrollView" */;
+			buildConfigurationList = DED6792CFA444FBD82FC07CE5BF28A55 /* Build configuration list for PBXNativeTarget "DNPageScrollView" */;
 			buildPhases = (
-				671530FCB4325E4173C917CE8AC5DA40 /* Headers */,
-				2D7C784B974DCFBA78AB9223590871EF /* Sources */,
-				A395EF019FF8676F109F02F4F1A87DC3 /* Frameworks */,
-				947F7BC9C74EC2EFCBCF90BFA3C62AF8 /* Resources */,
+				32F76CD0344BE3B95DFD1E6683410234 /* Headers */,
+				9E1B0767770A7A1529B1D371D14415BD /* Sources */,
+				F629985B81FAD62B8A4BDB1850AB3CD9 /* Frameworks */,
+				B17509FFF15D9138D2DC73F0D4380241 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				717870AE64CCDE6DD640D925C3127E66 /* PBXTargetDependency */,
-				C69A34DE68E58BFA1E80D886C66C8CB8 /* PBXTargetDependency */,
+				61ED340A8D34E90D8A4DE0F0C9C31C89 /* PBXTargetDependency */,
+				EB8879BE1C5128CA9D33EAFD0DDE991A /* PBXTargetDependency */,
 			);
 			name = DNPageScrollView;
 			productName = DNPageScrollView;
@@ -519,11 +533,11 @@
 		};
 		E7BF2B2CB6C44273EA7495F3C07E9AC2 /* DNPageScrollView-DNPageScrollView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB9A56BB82F054955AD8A2ED215474B3 /* Build configuration list for PBXNativeTarget "DNPageScrollView-DNPageScrollView" */;
+			buildConfigurationList = FB54A1B77D3A84455D771D112E1E6A1A /* Build configuration list for PBXNativeTarget "DNPageScrollView-DNPageScrollView" */;
 			buildPhases = (
-				EABB6CD5F800740142DCEC7AEDA6EF33 /* Sources */,
-				93B182D54BE660173E8FAF41A7921114 /* Frameworks */,
-				38AB85677FA78C6670A5C07BCAB84DDB /* Resources */,
+				359FB665B2D7EB2C51A59AC361CA1184 /* Sources */,
+				508DDE09E6D96981D708A051E1A82E72 /* Frameworks */,
+				FE5D0596E4B503554C31949F0DF781BA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -572,15 +586,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38AB85677FA78C6670A5C07BCAB84DDB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E7E40D3BBE00E208E5F83F8C050A90C0 /* icon_pagescroll@2x.png in Resources */,
-				5A3A73D595EFF58E67FB76589F3586C9 /* icon_pagescroll@3x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		39B86804300D22B635E53BA094388DF7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -595,31 +600,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		947F7BC9C74EC2EFCBCF90BFA3C62AF8 /* Resources */ = {
+		B17509FFF15D9138D2DC73F0D4380241 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB8E57A2159334EE7B527678302B2A2C /* DNPageScrollView.bundle in Resources */,
+				CBCFD6B67966A664EFB8B7B9E3DCDC75 /* DNPageScrollView.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE5D0596E4B503554C31949F0DF781BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A74DB0E5C1F1F249DAD449D73C1315EB /* icon_pagescroll@2x.png in Resources */,
+				E0BCCEC11CAC6C8FC05B8B76A012A446 /* icon_pagescroll@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2D7C784B974DCFBA78AB9223590871EF /* Sources */ = {
+		359FB665B2D7EB2C51A59AC361CA1184 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B4CD0B0965D98F4A61512B3F03833B5 /* DNChannelScrollView.m in Sources */,
-				AC28BC73F8D77B8F57397BD81370BAC7 /* DNChannelTitleView.m in Sources */,
-				C47830779C3324758A259670B8F43AFC /* DNContentScrollView.m in Sources */,
-				BEA96A0D45C722EB21F4E0D679A5BF7E /* DNPageChannelStyle.m in Sources */,
-				E433D3AA9ECB31F573C6C029A3532173 /* DNPageCollectionView.m in Sources */,
-				74FD5F21F4BDDA3F6F89B6439B7058F9 /* DNPageCollectionViewCell.m in Sources */,
-				A2FA041623ACB447B0CD6E68BD4B8D30 /* DNPageCollectionViewFlowLayout.m in Sources */,
-				BB322EAE0F9FF879B2FE08E55389A223 /* DNPageScrollView-dummy.m in Sources */,
-				0EA28CD5D7C0096FB8A291851EAE9517 /* DNPageScrollView.m in Sources */,
-				FBC4555A31C2783BF1D657DFC19C34B3 /* UIViewController+DNPageController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E1B0767770A7A1529B1D371D14415BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FB56D9DDC8FED187086758D47069728 /* DNChannelBaseView.m in Sources */,
+				E946A87776973FDF6333D876B93DB66B /* DNChannelScrollView.m in Sources */,
+				3110A6B4CCCB30498EEB93DB04A5EF58 /* DNChannelTitleView.m in Sources */,
+				3B939BB0C916AE2E7A74A670F7848708 /* DNChannelView.m in Sources */,
+				031F18C69E456ACAD2F3E1448CE75AC7 /* DNContentScrollView.m in Sources */,
+				D72A7F8E49BCFC042B25E49C37D6A51E /* DNPageChannelStyle.m in Sources */,
+				5AE2336D22D635D6FD389482F457E845 /* DNPageCollectionView.m in Sources */,
+				83D089800D0D7EB4F856332D9FC47837 /* DNPageCollectionViewCell.m in Sources */,
+				8329DDF8B6B2AFFCC22BFE9FD365EC53 /* DNPageCollectionViewFlowLayout.m in Sources */,
+				BF20EF49BBFCC47D23FCA067FA644396 /* DNPageScrollView-dummy.m in Sources */,
+				6F958C8D33B3BBCA2C7F40FFA6E1E2B4 /* DNPageScrollView.m in Sources */,
+				11B7B0900DDB762E6AD91CA9229DFF4B /* UIViewController+DNPageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,13 +671,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EABB6CD5F800740142DCEC7AEDA6EF33 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -676,71 +692,24 @@
 			target = 5FC65736D3812DCB4DA6A224A3F32280 /* DNPageScrollView */;
 			targetProxy = A1363CC0176E1B42FDDF5A821FF901C4 /* PBXContainerItemProxy */;
 		};
-		717870AE64CCDE6DD640D925C3127E66 /* PBXTargetDependency */ = {
+		61ED340A8D34E90D8A4DE0F0C9C31C89 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DNCommonKit;
 			target = 147CA1FF1208730959D6C601858F6B6A /* DNCommonKit */;
-			targetProxy = 4209A1D59E7820CD1501A600D37914B4 /* PBXContainerItemProxy */;
+			targetProxy = EA3B823C2ECB443BCC80E5CB8BCC1B88 /* PBXContainerItemProxy */;
 		};
-		C69A34DE68E58BFA1E80D886C66C8CB8 /* PBXTargetDependency */ = {
+		EB8879BE1C5128CA9D33EAFD0DDE991A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "DNPageScrollView-DNPageScrollView";
 			target = E7BF2B2CB6C44273EA7495F3C07E9AC2 /* DNPageScrollView-DNPageScrollView */;
-			targetProxy = DC2F5EC1FF29067208292263ED8E40F1 /* PBXContainerItemProxy */;
+			targetProxy = 6393A99197829E71AE9FC0361B44934D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0AF94148E534A30991252D10EE1A20AA /* Release */ = {
+		4B5D8B464B8DC9F53331F9A88FA58BCF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10B0B9D81184023A0595304908D31A43 /* DNPageScrollView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DNPageScrollView/DNPageScrollView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DNPageScrollView/DNPageScrollView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DNPageScrollView/DNPageScrollView.modulemap";
-				PRODUCT_MODULE_NAME = DNPageScrollView;
-				PRODUCT_NAME = DNPageScrollView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		27C6E79275D70592EBC07134B4A239B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10B0B9D81184023A0595304908D31A43 /* DNPageScrollView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DNPageScrollView";
-				INFOPLIST_FILE = "Target Support Files/DNPageScrollView/ResourceBundle-DNPageScrollView-DNPageScrollView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = DNPageScrollView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		2D910770E495CB94BAAA123F76138176 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10B0B9D81184023A0595304908D31A43 /* DNPageScrollView.xcconfig */;
+			baseConfigurationReference = 4D6E15CBFA9224AD164B22D639BD80FE /* DNPageScrollView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DNPageScrollView";
@@ -818,36 +787,6 @@
 			};
 			name = Release;
 		};
-		6E7A63C1C6538FE5489E999AC37FE5F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10B0B9D81184023A0595304908D31A43 /* DNPageScrollView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/DNPageScrollView/DNPageScrollView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DNPageScrollView/DNPageScrollView-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DNPageScrollView/DNPageScrollView.modulemap";
-				PRODUCT_MODULE_NAME = DNPageScrollView;
-				PRODUCT_NAME = DNPageScrollView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		718425DAA6055AFC6B4E3704D8A7ABC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 761058745EF6A1C2E9EA54E1FA3FFF3C /* Pods-DNPageScrollView_Tests.debug.xcconfig */;
@@ -880,6 +819,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		9CDF689FB6EA7F637C1765A83F3E7EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D6E15CBFA9224AD164B22D639BD80FE /* DNPageScrollView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DNPageScrollView/DNPageScrollView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DNPageScrollView/DNPageScrollView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DNPageScrollView/DNPageScrollView.modulemap";
+				PRODUCT_MODULE_NAME = DNPageScrollView;
+				PRODUCT_NAME = DNPageScrollView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		AA798F44C73B1E7779D364B572C925CD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1036,6 +1006,36 @@
 			};
 			name = Debug;
 		};
+		BF87EF00210B3C3FD16B9ED2BA95B0F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D6E15CBFA9224AD164B22D639BD80FE /* DNPageScrollView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/DNPageScrollView/DNPageScrollView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DNPageScrollView/DNPageScrollView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DNPageScrollView/DNPageScrollView.modulemap";
+				PRODUCT_MODULE_NAME = DNPageScrollView;
+				PRODUCT_NAME = DNPageScrollView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		CA97ACFC05883EC579363F0A23DFF24B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9F9A70016774B901C51933329A18386 /* Pods-DNPageScrollView_Example.debug.xcconfig */;
@@ -1068,6 +1068,22 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		D02CB81FAA9F1FDC50FBE34F0DE3C3C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D6E15CBFA9224AD164B22D639BD80FE /* DNPageScrollView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/DNPageScrollView";
+				INFOPLIST_FILE = "Target Support Files/DNPageScrollView/ResourceBundle-DNPageScrollView-DNPageScrollView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = DNPageScrollView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		DDA35E4AB4E97AE67E67BEF11F0A0DAB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1124,15 +1140,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		520C70405CE9240683FF98A069F8F55E /* Build configuration list for PBXNativeTarget "DNPageScrollView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E7A63C1C6538FE5489E999AC37FE5F2 /* Debug */,
-				0AF94148E534A30991252D10EE1A20AA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		C1ADC4D936C48FE6A4AF8678AE9226D9 /* Build configuration list for PBXNativeTarget "DNCommonKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1142,11 +1149,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB9A56BB82F054955AD8A2ED215474B3 /* Build configuration list for PBXNativeTarget "DNPageScrollView-DNPageScrollView" */ = {
+		DED6792CFA444FBD82FC07CE5BF28A55 /* Build configuration list for PBXNativeTarget "DNPageScrollView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2D910770E495CB94BAAA123F76138176 /* Debug */,
-				27C6E79275D70592EBC07134B4A239B4 /* Release */,
+				BF87EF00210B3C3FD16B9ED2BA95B0F8 /* Debug */,
+				9CDF689FB6EA7F637C1765A83F3E7EB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1156,6 +1163,15 @@
 			buildConfigurations = (
 				718425DAA6055AFC6B4E3704D8A7ABC2 /* Debug */,
 				69242580AA82E0F4F14BD5AD905E3B8B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB54A1B77D3A84455D771D112E1E6A1A /* Build configuration list for PBXNativeTarget "DNPageScrollView-DNPageScrollView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B5D8B464B8DC9F53331F9A88FA58BCF /* Debug */,
+				D02CB81FAA9F1FDC50FBE34F0DE3C3C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

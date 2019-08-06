@@ -15,6 +15,8 @@
 #import "DNPageCollectionViewCell.h"
 #import "UIView+CTLayout.h"
 
+#import "DNChannelView.h"
+
 #define cellID @"DNPageContentCellid"
 
 @interface DNContentScrollView ()<UIScrollViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>{
@@ -36,6 +38,7 @@
 @property (assign, nonatomic) BOOL needManageLifeCycle;
 
 @property (weak, nonatomic) DNChannelScrollView *channelScrollView;
+@property (weak, nonatomic) DNChannelBaseView *channelView;
 @property (nonatomic, strong) DNPageCollectionViewFlowLayout *collectionViewFlowLayout;
 
 // 所有的子控制器
@@ -47,7 +50,7 @@
 
 
 ///初始化方法
-- (instancetype)initWithFrame:(CGRect)frame channelScrollView:(DNChannelScrollView *)channelScrollView parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate
+- (instancetype)initWithFrame:(CGRect)frame channelScrollView:(__kindof DNChannelBaseView *)channelScrollView parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -418,6 +421,9 @@
 {
     if (self.channelScrollView) {
         [self.channelScrollView adjustUIWithProgress:progress oldIndex:fromIndex currentIndex:toIndex];
+    }
+    if (self.channelView) {
+        [self.channelView adjustUIWithProgress:progress oldIndex:fromIndex currentIndex:toIndex];
     }
 }
 

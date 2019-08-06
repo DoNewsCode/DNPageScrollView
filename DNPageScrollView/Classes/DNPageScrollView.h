@@ -7,19 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "DNPageScrollViewDelegate.h"
+
+#import "DNChannelView.h"
 #import "DNChannelScrollView.h"
 #import "DNContentScrollView.h"
-@class DNContentScrollView,DNHomeSearchBar,DNChannelScrollView,DNPageChannelStyle;
+
+@class DNContentScrollView,DNHomeSearchBar,DNChannelScrollView,DNPageChannelStyle,DNChannelView;
+
 typedef void(^DNPageScrollViewExtraButtonClickBlock)(UIButton *extraBtn);
+
 @interface DNPageScrollView : UIView
 /** 必须设置代理并且实现相应的方法*/
 @property(nonatomic,weak )id<DNPageScrollViewDelegate> delegate;
 @property (copy, nonatomic) DNPageScrollViewExtraButtonClickBlock extraButtonClickBlock;
-@property (nonatomic, weak) DNChannelScrollView *channelView;
-@property (nonatomic, weak) DNContentScrollView *contentView;
+@property (nonatomic, strong) DNChannelView *symmetryChannelView;
+@property (nonatomic, strong) DNChannelScrollView *channelView;
+
+@property (nonatomic, strong) DNChannelBaseView *channelBaseView;
+@property (nonatomic, strong) DNContentScrollView *contentView;
 //@property (nonatomic, strong) DNHomeSearchBar *searchBar;
 @property (nonatomic, assign) CGFloat currentHeight;
+
+
 - (instancetype)initWithFrame:(CGRect)frame style:(DNPageChannelStyle *)style channelNames:(NSArray<NSString *> *)channelNames parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate;
 
 /** 给外界设置选中的下标的方法 */
@@ -33,4 +44,6 @@ typedef void(^DNPageScrollViewExtraButtonClickBlock)(UIButton *extraBtn);
 - (void)returnExtraButtonClickBlock:(DNPageScrollViewExtraButtonClickBlock )block;
 
 - (void)reloadTheme;
+
+
 @end
