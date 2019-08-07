@@ -13,6 +13,8 @@
 #import "DNChannelView.h"
 #import "DNChannelScrollView.h"
 #import "DNContentScrollView.h"
+#import "DNChannelSymmetryView.h"
+#import "DNChannelTapView.h"
 
 @class DNContentScrollView,DNHomeSearchBar,DNChannelScrollView,DNPageChannelStyle,DNChannelView;
 
@@ -22,7 +24,8 @@ typedef void(^DNPageScrollViewExtraButtonClickBlock)(UIButton *extraBtn);
 /** 必须设置代理并且实现相应的方法*/
 @property(nonatomic,weak )id<DNPageScrollViewDelegate> delegate;
 @property (copy, nonatomic) DNPageScrollViewExtraButtonClickBlock extraButtonClickBlock;
-@property (nonatomic, strong) DNChannelView *symmetryChannelView;
+@property (nonatomic, strong) DNChannelTapView *tabChannelView;
+@property (nonatomic, strong) DNChannelSymmetryView *symmetryChannelView;
 @property (nonatomic, strong) DNChannelScrollView *channelView;
 
 @property (nonatomic, strong) DNChannelBaseView *channelBaseView;

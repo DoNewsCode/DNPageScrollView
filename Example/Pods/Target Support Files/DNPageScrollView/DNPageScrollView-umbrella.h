@@ -12,6 +12,8 @@
 
 #import "DNChannelBaseView.h"
 #import "DNChannelScrollView.h"
+#import "DNChannelSymmetryView.h"
+#import "DNChannelTapView.h"
 #import "DNChannelTitleView.h"
 #import "DNChannelView.h"
 #import "DNContentScrollView.h"
@@ -21,6 +23,7 @@
 #import "DNPageCollectionViewFlowLayout.h"
 #import "DNPageScrollView.h"
 #import "DNPageScrollViewDelegate.h"
+#import "DNSymmetryItemView.h"
 #import "UIViewController+DNPageController.h"
 
 FOUNDATION_EXPORT double DNPageScrollViewVersionNumber;

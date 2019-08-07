@@ -14,7 +14,7 @@
 
 typedef void(^DNChannelViewTitleClickBlock)(NSInteger index);
 
-typedef void(^DNChannelBaseViewSetUpTitleBlock)(DNChannelTitleView *titleView, NSInteger index);
+typedef void(^DNChannelBaseViewSetUpTitleBlock)(UIView *titleView, NSInteger index);
 
 @interface DNChannelBaseView : UIView
 
@@ -32,6 +32,13 @@ typedef void(^DNChannelBaseViewSetUpTitleBlock)(DNChannelTitleView *titleView, N
 @property(nonatomic, assign) CGFloat currentWidth;
 @property(nonatomic, assign) CGFloat currentIndex;
 @property(nonatomic, assign) CGFloat oldIndex;
+
+// 用于懒加载计算文字的rgb差值, 用于颜色渐变的时候设置
+@property (strong, nonatomic) NSArray *deltaRGB;
+@property (strong, nonatomic) NSArray *selectedColorRGB;
+@property (strong, nonatomic) NSArray *normalColorRGB;
+
+- (NSArray *)getColorRgb:(UIColor *)color;
 
 - (instancetype)initWithFrame:(CGRect )frame channelStyle:(DNPageChannelStyle *)channelStyle channelNames:(NSArray<NSString *> *)channelNames channelDidClick:(DNChannelViewTitleClickBlock)channelDidClick;
 

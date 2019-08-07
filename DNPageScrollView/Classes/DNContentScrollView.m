@@ -50,14 +50,14 @@
 
 
 ///初始化方法
-- (instancetype)initWithFrame:(CGRect)frame channelScrollView:(__kindof DNChannelBaseView *)channelScrollView parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate
+- (instancetype)initWithFrame:(CGRect)frame channelScrollView:(__kindof DNChannelBaseView *)channelView parentViewController:(UIViewController *)parentViewController delegate:(id<DNPageScrollViewDelegate>) delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
         //        self.aut
         self.delegate = delegate;
         self.parentViewController = parentViewController;
-        self.channelScrollView = channelScrollView;
+        self.channelView = channelView;
         _needManageLifeCycle = ![parentViewController shouldAutomaticallyForwardAppearanceMethods];
         if (!_needManageLifeCycle) {
 #if DEBUG
@@ -419,9 +419,6 @@
 
 - (void)contentViewDidMoveFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex prigress:(CGFloat)progress
 {
-    if (self.channelScrollView) {
-        [self.channelScrollView adjustUIWithProgress:progress oldIndex:fromIndex currentIndex:toIndex];
-    }
     if (self.channelView) {
         [self.channelView adjustUIWithProgress:progress oldIndex:fromIndex currentIndex:toIndex];
     }
@@ -429,8 +426,8 @@
 
 -(void)adjustChannelTitleOffSetTicurrentIndex:(NSInteger)index
 {
-    if (self.channelScrollView) {
-        [self.channelScrollView adjustChannelOffSetToCurrentIndex:index];
+    if (self.channelView) {
+        [self.channelView adjustChannelOffSetToCurrentIndex:index];
     }
 }
 

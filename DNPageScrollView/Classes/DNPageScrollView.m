@@ -47,7 +47,15 @@
         self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
         [self addSubview:self.channelView];
         [self insertSubview:self.contentView atIndex:0];
-    } else if (self.style.channleType == DNPageChannelStyleChannelTypeSymmetry) {
+    } else if (self.style.channleType == DNPageChannelStyleChannelTypeTab) {
+        self.channelBaseView = self.tabChannelView;
+        self.tabChannelView.backgroundColor = self.style.channelBackgroundColor;
+        
+        self.contentY = CGRectGetMaxY(self.tabChannelView.frame) + self.style.channelEdge.bottom;
+        self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
+        [self addSubview:self.tabChannelView];
+        [self insertSubview:self.contentView atIndex:0];
+    } else if (self.style.channleType == DNPageChannelStyleChannelTypeSymmetry){
         self.channelBaseView = self.symmetryChannelView;
         self.symmetryChannelView.backgroundColor = self.style.channelBackgroundColor;
         
@@ -55,8 +63,6 @@
         self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
         [self addSubview:self.symmetryChannelView];
         [self insertSubview:self.contentView atIndex:0];
-    } else {
-        
     }
     
     
@@ -109,20 +115,26 @@
 - (DNChannelScrollView *)channelView {
     if (!_channelView) {
         __weak typeof (self) weakSelf = self;
-        CGFloat startHeight = self.style.channelEdge.top;//iPhoneX ? 44 : 20;
-        CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
-        startHeight += height;
-        
-        CGFloat width = self.bounds.size.width - self.style.channelEdge.left - self.style.channelEdge.right;
+        CGRect symmetryChannelViewFrame = CGRectZero;
+        if (self.style.channelFrame.size.width > 0) {
+            symmetryChannelViewFrame = self.style.channelFrame;
+        } else {
+            CGFloat startHeight = self.style.channelEdge.top;//iPhoneX ? 44 : 20;
+            CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
+            startHeight += height;
+            
+            CGFloat width = self.bounds.size.width - self.style.channelEdge.left - self.style.channelEdge.right;
+            symmetryChannelViewFrame = CGRectMake(self.style.channelEdge.left, startHeight, width, self.style.channelHeight);
+        }
         DNChannelScrollView *channelScrollView = [[DNChannelScrollView alloc]
-                                                  initWithFrame:CGRectMake(self.style.channelEdge.left, startHeight, width, self.style.channelHeight)
+                                                  initWithFrame:symmetryChannelViewFrame
                                                   channelStyle:self.style
                                                   channelNames:self.channelNameArray
                                                   channelDidClick:^(NSInteger index) {
                                                       [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
                                                   }];
         
-        [channelScrollView returnSetUpTitleBlock:^(DNChannelTitleView *titleView, NSInteger index) {
+        [channelScrollView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {
             if (weakSelf.delegate && [weakSelf respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
                 [weakSelf.delegate setUpTitleView:titleView forIndex:index];
             }
@@ -133,22 +145,61 @@
     return _channelView;
 }
 
-- (DNChannelView *)symmetryChannelView {
-    if (!_symmetryChannelView) {
+- (DNChannelTapView *)tabChannelView {
+    if (!_tabChannelView) {
         __weak typeof (self) weakSelf = self;
-        CGFloat startHeight = self.style.channelEdge.top;//iPhoneX ? 44 : 20;
-        CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
-        startHeight += height;
+        CGRect symmetryChannelViewFrame = CGRectZero;
+        if (self.style.channelFrame.size.width > 0) {
+            symmetryChannelViewFrame = self.style.channelFrame;
+        } else {
+            CGFloat startHeight = self.style.channelEdge.top;//iPhoneX ? 44 : 20;
+            CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
+            startHeight += height;
+            
+            CGFloat width = self.bounds.size.width - self.style.channelEdge.left - self.style.channelEdge.right;
+            symmetryChannelViewFrame = CGRectMake(self.style.channelEdge.left, startHeight, width, self.style.channelHeight);
+        }
         
-         CGFloat width = self.bounds.size.width - self.style.channelEdge.left - self.style.channelEdge.right;
-        DNChannelView *symmetryChannelView = [[DNChannelView alloc]
-                                                  initWithFrame:CGRectMake(self.style.channelEdge.left, startHeight, width, self.style.channelHeight)
+        DNChannelTapView *tabChannelView = [[DNChannelTapView alloc]
+                                                  initWithFrame:symmetryChannelViewFrame
                                                   channelStyle:self.style
                                                   channelNames:self.channelNameArray
                                             channelDidClick:^(NSInteger index) {
                                                   [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
                                               }];
-        [symmetryChannelView returnSetUpTitleBlock:^(DNChannelTitleView *titleView, NSInteger index) {
+        [tabChannelView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {
+            if (weakSelf.delegate && [weakSelf respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
+                [weakSelf.delegate setUpTitleView:titleView forIndex:index];
+            }
+        }];
+        _tabChannelView = tabChannelView;
+    }
+    return _tabChannelView;
+}
+
+- (DNChannelSymmetryView *)symmetryChannelView {
+    if (!_symmetryChannelView) {
+        __weak typeof (self) weakSelf = self;
+        CGRect symmetryChannelViewFrame = CGRectZero;
+        if (self.style.channelFrame.size.width > 0) {
+            symmetryChannelViewFrame = self.style.channelFrame;
+        } else {
+            CGFloat startHeight = self.style.channelEdge.top;//iPhoneX ? 44 : 20;
+            CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
+            startHeight += height;
+            
+            CGFloat width = self.bounds.size.width - self.style.channelEdge.left - self.style.channelEdge.right;
+            symmetryChannelViewFrame = CGRectMake(self.style.channelEdge.left, startHeight, width, self.style.channelHeight);
+        }
+        
+        DNChannelSymmetryView *symmetryChannelView = [[DNChannelSymmetryView alloc]
+                                         initWithFrame:symmetryChannelViewFrame
+                                         channelStyle:self.style
+                                         channelNames:self.channelNameArray
+                                         channelDidClick:^(NSInteger index) {
+                                             [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
+                                         }];
+        [symmetryChannelView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {
             if (weakSelf.delegate && [weakSelf respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
                 [weakSelf.delegate setUpTitleView:titleView forIndex:index];
             }
@@ -157,6 +208,7 @@
     }
     return _symmetryChannelView;
 }
+
 
 - (DNContentScrollView *)contentView {
     if (!_contentView) {

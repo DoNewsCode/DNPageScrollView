@@ -32,7 +32,7 @@
 @protocol DNPageScrollViewDelegate <NSObject>
 
 @optional;
-- (void)setUpTitleView:(DNChannelTitleView *)channelView forIndex:(NSInteger)index;
+- (void)setUpTitleView:(UIView *)channelView forIndex:(NSInteger)index;
 
 - (BOOL)scrollPageController:(UIViewController *)scrollPageController contentScrollView:(DNPageCollectionView *)scrollView shouldBeginPanGesture:(UIPanGestureRecognizer *)panGesture;
 

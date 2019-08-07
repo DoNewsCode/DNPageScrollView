@@ -42,4 +42,53 @@
     self.channelButtonClickBlock = channelButtonClickBlock;
 }
 
+- (NSArray *)deltaRGB {
+    if (_deltaRGB == nil) {
+        NSArray *normalColorRgb = self.normalColorRGB;
+        NSArray *selectedColorRgb = self.selectedColorRGB;
+        
+        NSArray *delta;
+        if (normalColorRgb && selectedColorRgb) {
+            CGFloat deltaR = [normalColorRgb[0] floatValue] - [selectedColorRgb[0] floatValue];
+            CGFloat deltaG = [normalColorRgb[1] floatValue] - [selectedColorRgb[1] floatValue];
+            CGFloat deltaB = [normalColorRgb[2] floatValue] - [selectedColorRgb[2] floatValue];
+            delta = [NSArray arrayWithObjects:@(deltaR), @(deltaG), @(deltaB), nil];
+            _deltaRGB = delta;
+            
+        }
+    }
+    return _deltaRGB;
+}
+
+- (NSArray *)normalColorRGB {
+    if (!_normalColorRGB) {
+        NSArray *normalColorRgb = [self getColorRgb:self.channelStyle.normalTitleColor];
+        NSAssert(normalColorRgb, @"设置普通状态的文字颜色时 请使用RGB空间的颜色值");
+        _normalColorRGB = normalColorRgb;
+        
+    }
+    return  _normalColorRGB;
+}
+
+- (NSArray *)selectedColorRGB {
+    if (!_selectedColorRGB) {
+        NSArray *selectedColorRgb = [self getColorRgb:self.channelStyle.selectedTitleColor];
+        NSAssert(selectedColorRgb, @"设置选中状态的文字颜色时 请使用RGB空间的颜色值");
+        _selectedColorRGB = selectedColorRgb;
+        
+    }
+    return  _selectedColorRGB;
+}
+
+- (NSArray *)getColorRgb:(UIColor *)color {
+    CGFloat numOfcomponents = CGColorGetNumberOfComponents(color.CGColor);
+    NSArray *rgbComponents;
+    if (numOfcomponents == 4) {
+        const CGFloat *components = CGColorGetComponents(color.CGColor);
+        rgbComponents = [NSArray arrayWithObjects:@(components[0]), @(components[1]), @(components[2]), nil];
+    }
+    return rgbComponents;
+    
+}
+
 @end

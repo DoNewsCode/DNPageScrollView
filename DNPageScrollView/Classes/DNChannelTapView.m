@@ -1,28 +1,28 @@
 //
-//  DNChannelView.m
+//  DNChannelTapView.m
 //  DNPageScrollView
 //
-//  Created by 陈金铭 on 2019/8/4.
+//  Created by 陈金铭 on 2019/8/7.
 //
 
-#import "DNChannelView.h"
+#import "DNChannelTapView.h"
 
 #import "DNChannelTitleView.h"
 
 #import "UIView+CTLayout.h"
 
-@interface DNChannelView ()
+@interface DNChannelTapView ()
 /** 缓存所有标题label */
 @property (nonatomic, strong) NSMutableArray<DNChannelTitleView *> *channelViews;
 
 @end
-@implementation DNChannelView
+@implementation DNChannelTapView
 
 - (instancetype)initWithFrame:(CGRect )frame channelStyle:(DNPageChannelStyle *)channelStyle channelNames:(NSArray<NSString *> *)channelNames channelDidClick:(DNChannelViewTitleClickBlock)channelDidClick
 {
     self = [super initWithFrame:frame channelStyle:channelStyle channelNames:channelNames channelDidClick:channelDidClick];
     if (self) {
-       
+        
         [self createContent];
     }
     return self;
@@ -82,7 +82,7 @@
 - (void)reloadTitlesWithNewTitles:(NSArray *)titles {
     self.currentIndex = 0;
     self.oldIndex = 0;
-//    self.channelWidths = nil;
+    //    self.channelWidths = nil;
     self.channelViews = nil;
     self.channelNameArray = nil;
     self.channelNameArray = titles;
@@ -158,7 +158,7 @@
     } completion:^(BOOL finished) {
         [weakSelf adjustChannelOffSetToCurrentIndex:self.currentIndex];
     }];
-   
+    
     self.oldIndex = self.currentIndex;
     
     //点击标题执行的Block
@@ -171,7 +171,7 @@
 - (UIView *)selectedTip {
     if (!_selectedTip) {
         UIView *selectedTip = [UIView new];
-//        selectedTip.backgroundColor = [UIColor grayColor];
+        //        selectedTip.backgroundColor = [UIColor grayColor];
         _selectedTip = selectedTip;
     }
     return _selectedTip;

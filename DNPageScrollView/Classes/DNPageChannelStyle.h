@@ -23,13 +23,17 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelTextAlignment) {
 
 typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelType) {
     DNPageChannelStyleChannelTypeDefault = 0,//默认
-    DNPageChannelStyleChannelTypeSymmetry = 1,//对称（人人）
+    DNPageChannelStyleChannelTypeSymmetry = 1,//对称（例：人人首页）
+    DNPageChannelStyleChannelTypeTab = 2,//选项卡（例：人人校园库）
 };
 
 @interface DNPageChannelStyle : NSObject
 
 /** channel选择器的类型 */
 @property (assign, nonatomic) DNPageChannelStyleChannelType channleType;
+
+/** UIEdgeInsetsMake(0., 0., 0., 0.); */
+@property(nonatomic, assign) CGRect channelFrame;
 
 /** UIEdgeInsetsMake(0., 0., 0., 0.); */
 @property(nonatomic, assign) UIEdgeInsets channelEdge;
@@ -60,18 +64,21 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelType) {
 /** 滚动条的高度 默认为0(不设置此值时滚动条宽度会自适应标题) */
 @property (assign, nonatomic) CGFloat scrollLineWidth;
 /** 滚动条的圆角 默认为0(不设置此值时滚动条宽度会自适应标题) */
-@property (assign, nonatomic) CGFloat scrollLinecornerRadius;
+@property (assign, nonatomic) CGFloat scrollLineCornerRadius;
 /** 滚动条的图片 默认为空*/
 @property (assign, nonatomic) NSString *scrollLineImageName;
 /** 滚动条的图片 默认为选中状态文字颜色*/
-@property (assign, nonatomic) UIColor *scrollLineColor;
+@property (strong, nonatomic) UIColor *scrollLineColor;
 /** 标题之间的间隙 默认为15.0 */
 @property (assign, nonatomic) CGFloat titleMargin;
 /** 标题与ChannelView左右之间的间隙 默认为15.0 */
 @property (assign, nonatomic) CGFloat titleAboutMargin;
 /** 标题与ChannelViews上下之间的间隙 默认为5.0 */
 @property (assign, nonatomic) CGFloat titleSeesawMargin;
-
+/** 标题的字体 默认为14 */
+@property (assign, nonatomic) CGFloat titleFontSize;
+/** 标题的字体 默认为14 */
+@property (assign, nonatomic) CGFloat selectedTitleFontSize;
 /** content底部之间的间隙 默认为0. */
 @property (assign, nonatomic) CGFloat contentBottomMargin;
 /** 标题的字体 默认为14 */
