@@ -45,7 +45,7 @@
         reuseViewController = [[DNChildViewController alloc] init];
     }
     if (index == 2) {
-        reuseViewController.view.backgroundColor = [UIColor redColor];
+        reuseViewController.view.backgroundColor = [UIColor greenColor];
     }
     return reuseViewController;
 }
@@ -59,12 +59,12 @@
     if (_pageScrollView == nil) {
         _pageScrollView = [[DNPageScrollView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 400) style:self.pageStyle channelNames:self.channels parentViewController:self delegate:self];
         _pageScrollView.backgroundColor = [UIColor whiteColor];
-        _pageScrollView.tabChannelView.layer.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.07].CGColor;
-        _pageScrollView.tabChannelView.layer.cornerRadius = _pageScrollView.channelView.frame.size.height * 0.5;
+        _pageScrollView.tabChannelView.layer.shadowColor = [UIColor colorWithRed:22 green:22 blue:22 alpha:0.07].CGColor;
+        _pageScrollView.tabChannelView.layer.cornerRadius = 10;
         _pageScrollView.tabChannelView.layer.shadowOffset = CGSizeMake(0,10.5);
         _pageScrollView.tabChannelView.layer.shadowOpacity = 1;
-        _pageScrollView.tabChannelView.layer.shadowRadius = 30.5 ;
-        _pageScrollView.tabChannelView.selectedTip.layer.cornerRadius = (_pageScrollView.tabChannelView.frame.size.height - _pageStyle.titleSeesawMargin * 2) * 0.5;
+        _pageScrollView.tabChannelView.layer.shadowRadius = 50 ;
+        _pageScrollView.tabChannelView.selectedTip.layer.cornerRadius = 30;
         
 //        _pageScrollView.channelView.backgroundColor = [UIColor whiteColor];
 //        _pageScrollView.
