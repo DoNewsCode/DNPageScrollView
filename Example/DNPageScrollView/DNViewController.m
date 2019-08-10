@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-     [self.view addSubview:self.pageScrollView2];
+     [self.view addSubview:self.pageScrollView];
 }
 
 #pragma mark - DNPageScrollViewDelegate
