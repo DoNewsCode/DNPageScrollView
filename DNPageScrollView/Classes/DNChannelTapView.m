@@ -52,19 +52,35 @@
                                                     blue:[self.normalColorRGB[2] floatValue] - [self.deltaRGB[2] floatValue] * progress
                                                    alpha:1.0];
     
-    CGFloat deltaScale = self.channelStyle.titleBigScale - 1.0;
+    CGFloat currentChannelViewCenterX = currentChannelView.ct_centerX;
+    CGFloat oldChannelViewCenterX = oldChannelView.ct_centerX;
+    //        self.selectedTip.cen
+    if (currentChannelView.layer.anchorPoint.x == 0) {
+        currentChannelViewCenterX += (currentChannelView.ct_width * 0.5);
+    } else if (currentChannelView.layer.anchorPoint.x == 1) {
+        currentChannelViewCenterX -= (currentChannelView.ct_width * 0.5);
+        
+    }
+    if (oldChannelView.layer.anchorPoint.x == 0) {
+        oldChannelViewCenterX += (oldChannelView.ct_width * 0.5);
+    } else if (oldChannelView.layer.anchorPoint.x == 1) {
+        oldChannelViewCenterX -= (oldChannelView.ct_width * 0.5);
+        
+    }
     
-    oldChannelView.currentTransformSx = self.channelStyle.titleBigScale - deltaScale * progress;
-    currentChannelView.currentTransformSx = 1.0 + deltaScale * progress;
-    CGFloat margin = (currentChannelView.ct_centerX - oldChannelView.ct_centerX);
-    CGFloat centerX = oldChannelView.ct_centerX + margin * progress;
-    self.selectedTip.ct_centerX = centerX;
+    CGFloat xDistance = currentChannelViewCenterX - oldChannelViewCenterX;
+    CGFloat wDistance = currentChannelView.ct_width - oldChannelView.ct_width;
+    //下标
+    self.selectedTip.ct_centerX = oldChannelViewCenterX + xDistance * progress;
+    self.selectedTip.ct_width = ((oldChannelView.ct_width + self.channelStyle.titleAboutMargin * 2) + wDistance * progress);
     
 }
 
 /** 让选中的标题居中*/
 - (void)adjustChannelOffSetToCurrentIndex:(NSInteger)currentIndex {
-    self.selectedTip.frame = self.channelViews[currentIndex].frame;
+//    self.selectedTip.frame = self.channelViews[currentIndex].frame;
+    self.selectedTip.center = self.channelViews[currentIndex].center;
+    self.selectedTip.ct_width = (self.channelViews[currentIndex].ct_width + self.channelStyle.titleAboutMargin * 2);
     NSLog(@"dsadasdsa");
 }
 
@@ -106,23 +122,39 @@
 
 - (void)createContent {
     [self addSubview:self.selectedTip];
-    CGFloat width = (self.frame.size.width - self.channelStyle.titleAboutMargin * 2 - self.channelStyle.titleMargin * (self.channelNameArray.count - 1)) / self.channelNameArray.count;
     CGFloat height = self.frame.size.height - self.channelStyle.titleSeesawMargin * 2;
     for (NSInteger i = 0; i < self.channelNameArray.count; i++) {
         NSString *name = self.channelNameArray[i];
         DNChannelTitleView *titleView = [DNChannelTitleView new];
-        titleView.text = name;
         titleView.font = self.channelStyle.titleFont;
         titleView.textColor = self.channelStyle.normalTitleColor;
+        titleView.text = name;
+        
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(channelViewClick:)];
         [titleView addGestureRecognizer:tapGesture];
-        CGFloat titleViewX = self.channelStyle.titleAboutMargin + i * (width + self.channelStyle.titleMargin);
-        titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,width,height};
+        CGFloat titleViewX = self.channelStyle.titleAboutMargin + i * (titleView.channleTitleViewWidth);
+        titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleView.channleTitleViewWidth,height};
         [self addSubview:titleView];
         [self.channelViews addObject:titleView];
         
     }
-    self.selectedTip.frame = self.channelViews.firstObject.frame;
+    CGFloat margin = (self.frame.size.width - self.channelStyle.titleAboutMargin * 2 - CGRectGetMaxX(self.channelViews.lastObject.frame)) / (self.channelViews.count - 1);
+    for (NSInteger i = 0; i < self.channelViews.count; i++) {
+        if (i > 0) {
+            DNChannelTitleView *titleView = self.channelViews[i];
+            titleView.ct_x = CGRectGetMaxX(self.channelViews[i - 1].frame) + margin;
+        }
+    }
+    
+    if (self.channelStyle.showLine == YES) {
+        self.selectedTip.backgroundColor = self.channelStyle.scrollLineColor;
+        NSInteger currentIndex = self.currentIndex;
+        DNChannelTitleView *itemView = self.channelViews[currentIndex];
+        self.selectedTip.ct_size = CGSizeMake(itemView.ct_width + self.channelStyle.titleAboutMargin * 2, self.ct_height);
+        self.selectedTip.layer.cornerRadius = self.channelStyle.scrollLineCornerRadius;
+        self.selectedTip.ct_centerX = itemView.ct_centerX;
+        [self insertSubview:self.selectedTip atIndex:0];
+    }
     self.channelViews.firstObject.textColor = self.channelStyle.selectedTitleColor;
 }
 
@@ -154,7 +186,8 @@
         currentChannelView.selected = YES;
         currentChannelView.currentTransformSx = weakSelf.channelStyle.titleBigScale;
         
-        weakSelf.selectedTip.frame = currentChannelView.frame;
+        weakSelf.selectedTip.center = currentChannelView.center;
+        weakSelf.selectedTip.ct_width = (currentChannelView.ct_width + self.channelStyle.titleAboutMargin * 2);
     } completion:^(BOOL finished) {
         [weakSelf adjustChannelOffSetToCurrentIndex:self.currentIndex];
     }];

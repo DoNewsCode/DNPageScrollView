@@ -23,6 +23,8 @@
 
 @property (assign, nonatomic) CGRect normalFrame;
 
+//@property (assign, nonatomic) CGSize titleSize;
+
 @property (assign, nonatomic) CGFloat currentTransformSx;
 @property (assign, nonatomic, getter=isSelected) BOOL selected;
 

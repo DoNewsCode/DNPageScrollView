@@ -60,11 +60,12 @@
         _pageScrollView = [[DNPageScrollView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 400) style:self.pageStyle channelNames:self.channels parentViewController:self delegate:self];
         _pageScrollView.backgroundColor = [UIColor whiteColor];
         _pageScrollView.tabChannelView.layer.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.07].CGColor;
-        _pageScrollView.tabChannelView.layer.cornerRadius = _pageScrollView.channelView.frame.size.height * 0.5;
+        _pageScrollView.tabChannelView.layer.cornerRadius = _pageScrollView.tabChannelView.frame.size.height * 0.5;
         _pageScrollView.tabChannelView.layer.shadowOffset = CGSizeMake(0,10.5);
         _pageScrollView.tabChannelView.layer.shadowOpacity = 1;
         _pageScrollView.tabChannelView.layer.shadowRadius = 30.5 ;
-        _pageScrollView.tabChannelView.selectedTip.layer.cornerRadius = (_pageScrollView.tabChannelView.frame.size.height - _pageStyle.titleSeesawMargin * 2) * 0.5;
+        _pageScrollView.tabChannelView.selectedTip.layer.cornerRadius = _pageScrollView.tabChannelView.frame.size.height * 0.5;
+        _pageScrollView.tabChannelView.selectedTip.backgroundColor = [UIColor grayColor];
         
 //        _pageScrollView.channelView.backgroundColor = [UIColor whiteColor];
 //        _pageScrollView.
@@ -82,6 +83,7 @@
         _pageStyle.contentBottomMargin = 7.;
         _pageStyle.titleMargin = 28.;
         _pageStyle.titleAboutMargin = 12.;
+        _pageStyle.showLine = YES;
         _pageStyle.titleFont = [UIFont fontWithName:@"PingFangSC-Regular" size:15.];
         _pageStyle.selectedTitleFont = [UIFont fontWithName:@"PingFangSC-Regular" size:15.];
         _pageStyle.titleBigScale = 1.0;
@@ -90,7 +92,7 @@
         _pageStyle.selectedTitleColor = [UIColor colorWithRed:255./255. green:255./255. blue:255./255. alpha:1.0];
         _pageStyle.bottomLineHeight = 1;
         _pageStyle.channelEdge = UIEdgeInsetsMake(17., 12, 24, 12);
-        _pageStyle.channelHeight = 46;
+        _pageStyle.channelHeight = 28;
         _pageStyle.channleType = DNPageChannelStyleChannelTypeTab;
     }
     return _pageStyle;
@@ -144,7 +146,7 @@
 
 - (NSArray *)channels {
     //,@"视频",@"推荐",@"关注",@"测试"
-    return @[@"新鲜事",@"推荐"];
+    return @[@"首页",@"新鲜事",@"讨论",@"校友",@"相册",@"活动"];
 }
 
 - (void)didReceiveMemoryWarning
