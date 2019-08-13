@@ -182,9 +182,9 @@
         currentChannelView.textColor = weakSelf.channelStyle.selectedTitleColor;
         
         oldChannelView.selected = NO;
-        oldChannelView.currentTransformSx = 1.0;
+//        oldChannelView.currentTransformSx = 1.0;
         currentChannelView.selected = YES;
-        currentChannelView.currentTransformSx = weakSelf.channelStyle.titleBigScale;
+//        currentChannelView.currentTransformSx = weakSelf.channelStyle.titleBigScale;
         
         weakSelf.selectedTip.center = currentChannelView.center;
         weakSelf.selectedTip.ct_width = (currentChannelView.ct_width + self.channelStyle.titleAboutMargin * 2);
