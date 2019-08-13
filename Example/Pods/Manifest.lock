@@ -1,33 +1,12 @@
 PODS:
-  - DNCommonKit (9.9.1):
-    - DNCommonKit/DNBaseMacro (= 9.9.1)
-    - DNCommonKit/DNCustomView (= 9.9.1)
-    - DNCommonKit/DNHandyCategory (= 9.9.1)
-    - DNCommonKit/DNLayout (= 9.9.1)
-    - DNCommonKit/DNTools (= 9.9.1)
-  - DNCommonKit/DNBaseMacro (9.9.1)
-  - DNCommonKit/DNCustomView (9.9.1):
-    - DNCommonKit/DNHandyCategory
-  - DNCommonKit/DNHandyCategory (9.9.1):
-    - DNCommonKit/DNLayout
-    - SDWebImage
   - DNCommonKit/DNLayout (9.9.1)
-  - DNCommonKit/DNTools (9.9.1):
-    - YYText
-  - DNPageScrollView (2.1.7.13):
-    - DNCommonKit
-  - SDWebImage (5.1.0):
-    - SDWebImage/Core (= 5.1.0)
-  - SDWebImage/Core (5.1.0)
-  - YYText (1.0.7)
+  - DNPageScrollView (2.1.7.14):
+    - DNCommonKit/DNLayout
 
 DEPENDENCIES:
   - DNPageScrollView (from `../`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - SDWebImage
-    - YYText
   https://github.com/DoNewsCode/DNSpecs.git:
     - DNCommonKit
 
@@ -37,9 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   DNCommonKit: 2d6a33ccee9585e0b9b2b0b061fd762a513ecb65
-  DNPageScrollView: eec0c182076db93c54877327e8367b2d7ad42be0
-  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
-  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  DNPageScrollView: 11c9c86a4ba0e6fc0146aa23e1f72a992f98a6d5
 
 PODFILE CHECKSUM: c2c0e4db919b4114fdc10163f1a7880ba324b084
 

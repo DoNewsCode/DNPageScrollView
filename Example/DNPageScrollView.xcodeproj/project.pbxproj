@@ -350,15 +350,11 @@
 				"${PODS_ROOT}/Target Support Files/Pods-DNPageScrollView_Example/Pods-DNPageScrollView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/DNCommonKit/DNCommonKit.framework",
 				"${BUILT_PRODUCTS_DIR}/DNPageScrollView/DNPageScrollView.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DNCommonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DNPageScrollView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
