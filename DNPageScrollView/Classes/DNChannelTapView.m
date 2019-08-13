@@ -9,8 +9,6 @@
 
 #import "DNChannelTitleView.h"
 
-#import "UIView+CTLayout.h"
-
 @interface DNChannelTapView ()
 /** 缓存所有标题label */
 @property (nonatomic, strong) NSMutableArray<DNChannelTitleView *> *channelViews;
@@ -78,10 +76,8 @@
 
 /** 让选中的标题居中*/
 - (void)adjustChannelOffSetToCurrentIndex:(NSInteger)currentIndex {
-//    self.selectedTip.frame = self.channelViews[currentIndex].frame;
-    self.selectedTip.center = self.channelViews[currentIndex].center;
-    self.selectedTip.ct_width = (self.channelViews[currentIndex].ct_width + self.channelStyle.titleAboutMargin * 2);
-    NSLog(@"dsadasdsa");
+//    self.selectedTip.center = self.channelViews[currentIndex].center;
+//    self.selectedTip.ct_width = (self.channelViews[currentIndex].ct_width + self.channelStyle.titleAboutMargin * 2);
 }
 
 /** 设置选中的下标*/
@@ -132,13 +128,13 @@
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(channelViewClick:)];
         [titleView addGestureRecognizer:tapGesture];
-        CGFloat titleViewX = self.channelStyle.titleAboutMargin + i * (titleView.channleTitleViewWidth);
+        CGFloat titleViewX = self.channelStyle.titleAboutMargin + self.channelStyle.channelInnerEdge.left + i * (titleView.channleTitleViewWidth);
         titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleView.channleTitleViewWidth,height};
         [self addSubview:titleView];
         [self.channelViews addObject:titleView];
         
     }
-    CGFloat margin = (self.frame.size.width - self.channelStyle.titleAboutMargin * 2 - CGRectGetMaxX(self.channelViews.lastObject.frame)) / (self.channelViews.count - 1);
+    CGFloat margin = (self.frame.size.width - self.channelStyle.titleAboutMargin * 2 - self.channelStyle.channelInnerEdge.left - self.channelStyle.channelInnerEdge.right - CGRectGetMaxX(self.channelViews.lastObject.frame)) / (self.channelViews.count - 1);
     for (NSInteger i = 0; i < self.channelViews.count; i++) {
         if (i > 0) {
             DNChannelTitleView *titleView = self.channelViews[i];
@@ -150,9 +146,12 @@
         self.selectedTip.backgroundColor = self.channelStyle.scrollLineColor;
         NSInteger currentIndex = self.currentIndex;
         DNChannelTitleView *itemView = self.channelViews[currentIndex];
-        self.selectedTip.ct_size = CGSizeMake(itemView.ct_width + self.channelStyle.titleAboutMargin * 2, self.ct_height);
+        self.selectedTip.ct_size = CGSizeMake(itemView.ct_width + self.channelStyle.titleAboutMargin * 2, self.selectedTip.ct_height > 0 ? self.selectedTip.ct_height : self.channelStyle.scrollLineHeight);
         self.selectedTip.layer.cornerRadius = self.channelStyle.scrollLineCornerRadius;
         self.selectedTip.ct_centerX = itemView.ct_centerX;
+        self.selectedTip.ct_centerY = itemView.ct_centerY;
+        self.selectedTip.layer.cornerRadius = self.channelStyle.selectedTipCornerRadius;
+        
         [self insertSubview:self.selectedTip atIndex:0];
     }
     self.channelViews.firstObject.textColor = self.channelStyle.selectedTitleColor;
@@ -182,12 +181,10 @@
         currentChannelView.textColor = weakSelf.channelStyle.selectedTitleColor;
         
         oldChannelView.selected = NO;
-//        oldChannelView.currentTransformSx = 1.0;
         currentChannelView.selected = YES;
-//        currentChannelView.currentTransformSx = weakSelf.channelStyle.titleBigScale;
         
-        weakSelf.selectedTip.center = currentChannelView.center;
         weakSelf.selectedTip.ct_width = (currentChannelView.ct_width + self.channelStyle.titleAboutMargin * 2);
+        weakSelf.selectedTip.center = currentChannelView.center;
     } completion:^(BOOL finished) {
         [weakSelf adjustChannelOffSetToCurrentIndex:self.currentIndex];
     }];
@@ -204,7 +201,7 @@
 - (UIView *)selectedTip {
     if (!_selectedTip) {
         UIView *selectedTip = [UIView new];
-        //        selectedTip.backgroundColor = [UIColor grayColor];
+        selectedTip.clipsToBounds = YES;
         _selectedTip = selectedTip;
     }
     return _selectedTip;

@@ -63,6 +63,14 @@
         self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
         [self addSubview:self.symmetryChannelView];
         [self insertSubview:self.contentView atIndex:0];
+    } else if (self.style.channleType == DNPageChannelStyleChannelTypeTimeLine){
+        self.channelBaseView = self.timeLineChannelView;
+        self.timeLineChannelView.backgroundColor = self.style.channelBackgroundColor;
+        
+        self.contentY = CGRectGetMaxY(self.timeLineChannelView.frame) + self.style.channelEdge.bottom;
+        self.contentView.backgroundColor = self.style.pageViewBackgroundColor;
+        [self addSubview:self.timeLineChannelView];
+        [self insertSubview:self.contentView atIndex:0];
     }
     
     
@@ -207,6 +215,38 @@
         _symmetryChannelView = symmetryChannelView;
     }
     return _symmetryChannelView;
+}
+
+- (DNChannelTimeLineView *)timeLineChannelView {
+    if (!_timeLineChannelView) {
+        __weak typeof (self) weakSelf = self;
+        CGRect symmetryChannelViewFrame = CGRectZero;
+        if (self.style.channelFrame.size.width > 0) {
+            symmetryChannelViewFrame = self.style.channelFrame;
+        } else {
+            CGFloat startHeight = self.style.channelEdge.top;//iPhoneX ? 44 : 20;
+            CGFloat height = (self.style.isShowSearchBar ? 44. : 0.);
+            startHeight += height;
+            
+            CGFloat width = self.bounds.size.width - self.style.channelEdge.left - self.style.channelEdge.right;
+            symmetryChannelViewFrame = CGRectMake(self.style.channelEdge.left, startHeight, width, self.style.channelHeight);
+        }
+        
+        DNChannelTimeLineView *timeLineChannelView = [[DNChannelTimeLineView alloc]
+                                                      initWithFrame:symmetryChannelViewFrame
+                                                      channelStyle:self.style
+                                                      channelNames:self.channelNameArray
+                                                      channelDidClick:^(NSInteger index) {
+                                                          [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
+                                                      }];
+        [timeLineChannelView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {
+            if (weakSelf.delegate && [weakSelf respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
+                [weakSelf.delegate setUpTitleView:titleView forIndex:index];
+            }
+        }];
+        _timeLineChannelView = timeLineChannelView;
+    }
+    return _timeLineChannelView;
 }
 
 

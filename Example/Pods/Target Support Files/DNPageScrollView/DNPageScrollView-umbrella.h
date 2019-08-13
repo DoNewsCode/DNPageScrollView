@@ -14,6 +14,7 @@
 #import "DNChannelScrollView.h"
 #import "DNChannelSymmetryView.h"
 #import "DNChannelTapView.h"
+#import "DNChannelTimeLineView.h"
 #import "DNChannelTitleView.h"
 #import "DNChannelView.h"
 #import "DNContentScrollView.h"

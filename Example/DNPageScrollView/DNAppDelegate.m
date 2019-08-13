@@ -8,11 +8,27 @@
 
 #import "DNAppDelegate.h"
 
+#import "DNViewController.h"
+
 @implementation DNAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    UITabBarController *mainTabBarController = [UITabBarController new];
+    mainTabBarController.view.backgroundColor = [UIColor whiteColor];
+    DNViewController *viewController = [DNViewController new];
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    UINavigationController *navigationController = [UINavigationController new];
+    [navigationController addChildViewController:viewController];
+    
+    UIViewController *viewController2 = [UIViewController new];
+    
+    [mainTabBarController addChildViewController:navigationController];
+    [mainTabBarController addChildViewController:viewController2];
+    self.window.rootViewController = mainTabBarController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

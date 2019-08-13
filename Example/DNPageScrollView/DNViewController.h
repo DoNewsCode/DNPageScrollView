@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface DNViewController : UIViewController
+@interface DNViewController : UITableViewController
 
 @end

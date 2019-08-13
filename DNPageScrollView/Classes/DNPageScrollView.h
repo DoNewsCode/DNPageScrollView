@@ -14,6 +14,8 @@
 #import "DNChannelScrollView.h"
 #import "DNContentScrollView.h"
 #import "DNChannelSymmetryView.h"
+
+#import "DNChannelTimeLineView.h"
 #import "DNChannelTapView.h"
 
 @class DNContentScrollView,DNHomeSearchBar,DNChannelScrollView,DNPageChannelStyle,DNChannelView;
@@ -26,6 +28,7 @@ typedef void(^DNPageScrollViewExtraButtonClickBlock)(UIButton *extraBtn);
 @property (copy, nonatomic) DNPageScrollViewExtraButtonClickBlock extraButtonClickBlock;
 @property (nonatomic, strong) DNChannelTapView *tabChannelView;
 @property (nonatomic, strong) DNChannelSymmetryView *symmetryChannelView;
+@property (nonatomic, strong) DNChannelTimeLineView *timeLineChannelView;
 @property (nonatomic, strong) DNChannelScrollView *channelView;
 
 @property (nonatomic, strong) DNChannelBaseView *channelBaseView;

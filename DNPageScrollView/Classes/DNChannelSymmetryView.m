@@ -9,7 +9,6 @@
 
 #import "DNSymmetryItemView.h"
 
-#import "UIView+CTLayout.h"
 
 @interface DNChannelSymmetryView ()
 
@@ -54,7 +53,8 @@
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(channelViewClick:)];
         [titleView addGestureRecognizer:tapGesture];
         CGFloat titleViewX = lastChannelLabelMaxX;
-        titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleSize.width,height};
+        titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleSize.width,titleSize.height};
+        titleView.ct_centerY = self.ct_centerY;
         titleView.titleLabel.frame = titleView.bounds;
         lastChannelLabelMaxX += (titleView.ct_width + self.channelStyle.titleMargin);
         if (i == 0) {
@@ -176,6 +176,9 @@
     [UIView animateKeyframesWithDuration:animatedTime delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
         oldChannelView.titleLabel.textColor = weakSelf.channelStyle.normalTitleColor;
         currentChannelView.titleLabel.textColor = weakSelf.channelStyle.selectedTitleColor;
+        
+        oldChannelView.transform = CGAffineTransformIdentity;
+        currentChannelView.transform = CGAffineTransformMakeScale(self.channelStyle.titleBigScale, self.channelStyle.titleBigScale);;
     
     } completion:^(BOOL finished) {
         [weakSelf adjustChannelOffSetToCurrentIndex:self.currentIndex];

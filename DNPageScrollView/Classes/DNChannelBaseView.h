@@ -10,7 +10,7 @@
 #import "DNChannelTitleView.h"
 #import "DNPageChannelStyle.h"
 
-
+#import "UIView+CTLayout.h"
 
 typedef void(^DNChannelViewTitleClickBlock)(NSInteger index);
 

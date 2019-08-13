@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <DNPageScrollView/DNPageScrollViewDelegate.h>
+#import "DNPageScrollViewDelegate.h"
 
 @interface DNChildViewController : UIViewController  <DNPageScrollViewChildViewControllerDelegate>
 

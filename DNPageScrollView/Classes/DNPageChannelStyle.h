@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelType) {
     DNPageChannelStyleChannelTypeDefault = 0,//默认
     DNPageChannelStyleChannelTypeSymmetry = 1,//对称（例：人人首页）
     DNPageChannelStyleChannelTypeTab = 2,//选项卡（例：人人校园库）
+    DNPageChannelStyleChannelTypeTimeLine = 3,//时间轴（例：人人校友选择）
 };
 
 @interface DNPageChannelStyle : NSObject
@@ -37,6 +38,8 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelType) {
 
 /** UIEdgeInsetsMake(0., 0., 0., 0.); */
 @property(nonatomic, assign) UIEdgeInsets channelEdge;
+/** UIEdgeInsetsMake(0., 0., 0., 0.); */
+@property(nonatomic, assign) UIEdgeInsets channelInnerEdge;
 /** 是否显示Channel底部阴影 默认为NO*/
 @property (assign, nonatomic, getter=isShowChannelShadow) BOOL showChannelShadow;
 /** 是否显示滚动条 默认为NO*/
@@ -101,6 +104,8 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelType) {
 @property (strong, nonatomic) UIColor *pageViewBackgroundColor;
 /** channelVIew的高度 */
 @property (assign, nonatomic) CGFloat channelHeight;
+/** channelVIew的高度 */
+@property (assign, nonatomic) CGFloat selectedTipCornerRadius;
 /** 底部边线高度的高度 默认为0.5 */
 @property (assign, nonatomic) CGFloat bottomLineHeight;
 /** 设置附加按钮的背景图片 默认为nil*/
@@ -109,6 +114,7 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelType) {
 @property (copy, nonatomic) NSString *shadowCoverImageName;
 
 @property (nonatomic, copy ) NSString *notificationChannelClickName;
-
+/** channelVIew的高度 */
+@property (assign, nonatomic) CGFloat centerOffset;
 
 @end
