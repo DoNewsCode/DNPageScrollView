@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DNCommonKit" "${PODS_CONFIGURATION_BUILD_DIR}/DNPageScrollView"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DNCommonKit" "${PODS_CONFIGURATION_BUILD_DIR}/DNPageScrollView" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/YYText"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DNCommonKit/DNCommonKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/DNPageScrollView/DNPageScrollView.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DNCommonKit/DNCommonKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/DNPageScrollView/DNPageScrollView.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/YYText/YYText.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "DNCommonKit" -framework "DNPageScrollView"
+OTHER_LDFLAGS = $(inherited) -framework "Accelerate" -framework "CoreFoundation" -framework "CoreText" -framework "DNCommonKit" -framework "DNPageScrollView" -framework "ImageIO" -framework "MobileCoreServices" -framework "QuartzCore" -framework "SDWebImage" -framework "UIKit" -framework "YYText"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
