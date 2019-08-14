@@ -118,13 +118,10 @@
         currentChannelView.textColor = weakSelf.channelStyle.selectedTitleColor;
         
         oldChannelView.selected = NO;
-        //        oldChannelView.currentTransformSx = 1.0;
         currentChannelView.selected = YES;
-        //        currentChannelView.currentTransformSx = weakSelf.channelStyle.titleBigScale;
         
         CGFloat offSetX = self.offSetX + currentChannelView.ct_x - self.channelStyle.titleAboutMargin;
         [self.scrollView setContentOffset:CGPointMake(offSetX, 0.0f) animated:YES];
-        weakSelf.selectedTip.center = currentChannelView.center;
         weakSelf.selectedTip.ct_width = (currentChannelView.ct_width + self.channelStyle.titleAboutMargin * 2);
     } completion:^(BOOL finished) {
         [weakSelf adjustChannelOffSetToCurrentIndex:self.currentIndex];
