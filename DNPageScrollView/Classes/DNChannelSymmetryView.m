@@ -109,6 +109,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:self.channelStyle.notificationChannelClickName object:[NSString stringWithFormat:@"%zd",index]];
 }
 
+/** 让选中的标题居中*/
+- (void)adjustChannelOffSetToCurrentIndex:(NSInteger)currentIndex {
+    DNSymmetryItemView *titleView = self.channelViews[currentIndex];
+    CGFloat oldChannelViewCenterX = titleView.ct_centerX;
+    //        self.selectedTip.cen
+    if (titleView.layer.anchorPoint.x == 0) {
+        oldChannelViewCenterX += (titleView.ct_width * 0.5);
+    } else if (titleView.layer.anchorPoint.x == 1) {
+        oldChannelViewCenterX -= (titleView.ct_width * 0.5);
+    }
+        self.selectedTip.ct_centerX = oldChannelViewCenterX;
+}
+
 /** 切换下标的时候根据progress同步设置UI*/
 - (void)adjustUIWithProgress:(CGFloat)progress oldIndex:(NSInteger)oldIndex currentIndex:(NSInteger)currentIndex {
     if (oldIndex < 0 ||
