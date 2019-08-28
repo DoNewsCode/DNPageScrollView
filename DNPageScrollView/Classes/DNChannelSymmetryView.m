@@ -23,7 +23,7 @@
 {
     self = [super initWithFrame:frame channelStyle:channelStyle channelNames:channelNames channelDidClick:channelDidClick];
     if (self) {
-//        self.backgroundColor = [UIColor redColor];
+        //        self.backgroundColor = [UIColor redColor];
         [self createContent];
     }
     return self;
@@ -54,11 +54,11 @@
         [titleView addGestureRecognizer:tapGesture];
         CGFloat titleViewX = lastChannelLabelMaxX;
         titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleSize.width,titleSize.height};
-        titleView.ct_centerY = self.ct_centerY;
+        titleView.ct_y = (self.ct_height * 0.5) - titleSize.height * 0.5;
         titleView.titleLabel.frame = titleView.bounds;
         lastChannelLabelMaxX += (titleView.ct_width + self.channelStyle.titleMargin);
         if (i == 0) {
-
+            
             titleView.transform = CGAffineTransformMakeScale(self.channelStyle.titleBigScale, self.channelStyle.titleBigScale);
         }
         [self addSubview:titleView];
@@ -74,7 +74,7 @@
         self.selectedTip.ct_size = CGSizeMake(self.channelStyle.scrollLineWidth, self.channelStyle.scrollLineHeight);
         self.selectedTip.layer.cornerRadius = self.channelStyle.scrollLineCornerRadius;
         CGFloat centerX = itemView.ct_centerX;
-//        self.selectedTip.cen
+        //        self.selectedTip.cen
         if (itemView.layer.anchorPoint.x == 0) {
             centerX += (itemView.ct_width * 0.5);
         } else if (itemView.layer.anchorPoint.x == 1) {
@@ -119,7 +119,7 @@
     } else if (titleView.layer.anchorPoint.x == 1) {
         oldChannelViewCenterX -= (titleView.ct_width * 0.5);
     }
-        self.selectedTip.ct_centerX = oldChannelViewCenterX;
+    self.selectedTip.ct_centerX = oldChannelViewCenterX;
 }
 
 /** 切换下标的时候根据progress同步设置UI*/
@@ -137,21 +137,21 @@
     
     //颜色渐变
     oldChannelView.titleLabel.textColor = [UIColor colorWithRed:[self.selectedColorRGB[0] floatValue] + [self.deltaRGB[0] floatValue] * progress
-                                               green:[self.selectedColorRGB[1] floatValue] + [self.deltaRGB[1] floatValue] * progress
-                                                blue:[self.selectedColorRGB[2] floatValue] + [self.deltaRGB[2] floatValue] * progress
-                                               alpha:1.0];
+                                                          green:[self.selectedColorRGB[1] floatValue] + [self.deltaRGB[1] floatValue] * progress
+                                                           blue:[self.selectedColorRGB[2] floatValue] + [self.deltaRGB[2] floatValue] * progress
+                                                          alpha:1.0];
     currentChannelView.titleLabel.textColor = [UIColor colorWithRed:[self.normalColorRGB[0] floatValue] - [self.deltaRGB[0] floatValue] * progress
-                                                   green:[self.normalColorRGB[1] floatValue] - [self.deltaRGB[1] floatValue] * progress
-                                                    blue:[self.normalColorRGB[2] floatValue] - [self.deltaRGB[2] floatValue] * progress
-                                                   alpha:1.0];
+                                                              green:[self.normalColorRGB[1] floatValue] - [self.deltaRGB[1] floatValue] * progress
+                                                               blue:[self.normalColorRGB[2] floatValue] - [self.deltaRGB[2] floatValue] * progress
+                                                              alpha:1.0];
     
     CGFloat oldScale = self.channelStyle.titleBigScale - (self.channelStyle.titleBigScale - 1.0) * progress;
     CGFloat currentScale = 1.0 + (self.channelStyle.titleBigScale - 1.0) * progress;
     oldChannelView.transform = CGAffineTransformMakeScale(oldScale, oldScale);
     currentChannelView.transform = CGAffineTransformMakeScale(currentScale, currentScale);
-//    CGFloat margin = ((currentChannelView.ct_x) - (oldChannelView.ct_x));
-//    CGFloat centerX = oldChannelView.ct_centerX + margin * progress;
-//
+    //    CGFloat margin = ((currentChannelView.ct_x) - (oldChannelView.ct_x));
+    //    CGFloat centerX = oldChannelView.ct_centerX + margin * progress;
+    //
     CGFloat currentChannelViewCenterX = currentChannelView.ct_centerX;
     CGFloat oldChannelViewCenterX = oldChannelView.ct_centerX;
     //        self.selectedTip.cen
@@ -192,7 +192,7 @@
         
         oldChannelView.transform = CGAffineTransformIdentity;
         currentChannelView.transform = CGAffineTransformMakeScale(self.channelStyle.titleBigScale, self.channelStyle.titleBigScale);;
-    
+        
     } completion:^(BOOL finished) {
         [weakSelf adjustChannelOffSetToCurrentIndex:self.currentIndex];
     }];
@@ -209,7 +209,7 @@
 -(UIView *)selectedTip {
     if (!_selectedTip) {
         UIView *selectedTip = [UIView new];
-//        selectedTip.backgroundColor = [UIColor grayColor];
+        //        selectedTip.backgroundColor = [UIColor grayColor];
         _selectedTip = selectedTip;
     }
     return _selectedTip;
