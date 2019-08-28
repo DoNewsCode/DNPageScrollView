@@ -30,6 +30,7 @@
 }
 
 - (void)createContent {
+    self.clipsToBounds = YES;
     CGFloat height = self.frame.size.height - self.channelStyle.titleSeesawMargin * 2;
     CGFloat lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
     for (NSInteger i = 0; i < self.channelNameArray.count; i++) {
