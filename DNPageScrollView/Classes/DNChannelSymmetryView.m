@@ -54,7 +54,7 @@
         [titleView addGestureRecognizer:tapGesture];
         CGFloat titleViewX = lastChannelLabelMaxX;
         titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleSize.width,titleSize.height};
-        titleView.ct_y = (self.ct_height * 0.5) - titleSize.height * 0.5;
+        //        titleView.ct_y = (self.ct_height * 0.5) - titleSize.height * 0.5;
         titleView.titleLabel.frame = titleView.bounds;
         lastChannelLabelMaxX += (titleView.ct_width + self.channelStyle.titleMargin);
         if (i == 0) {
@@ -70,7 +70,7 @@
         self.selectedTip.backgroundColor = self.channelStyle.scrollLineColor;
         NSInteger currentIndex = self.currentIndex;
         DNSymmetryItemView *itemView = self.channelViews[currentIndex];
-        self.selectedTip.ct_y = self.ct_height - self.channelStyle.scrollLineHeight;
+        self.selectedTip.ct_y = CGRectGetMaxY(self.channelViews.firstObject.frame) + self.channelStyle.titleSelectedTipMargin;
         self.selectedTip.ct_size = CGSizeMake(self.channelStyle.scrollLineWidth, self.channelStyle.scrollLineHeight);
         self.selectedTip.layer.cornerRadius = self.channelStyle.scrollLineCornerRadius;
         CGFloat centerX = itemView.ct_centerX;

@@ -12,7 +12,7 @@
 
 /**
  标题对其方式
-
+ 
  - DNPageChannelStyleChannelTextAlignmentCenter: 中心对齐
  - DNPageChannelStyleChannelTextAlignmentBottom: 底部对齐
  */
@@ -78,6 +78,9 @@ typedef NS_ENUM(NSInteger, DNPageChannelStyleChannelType) {
 @property (assign, nonatomic) CGFloat titleAboutMargin;
 /** 标题与ChannelViews上下之间的间隙 默认为5.0 */
 @property (assign, nonatomic) CGFloat titleSeesawMargin;
+
+/** 标题与选中提示上下之间的间隙 默认为8.0 */
+@property (assign, nonatomic) CGFloat titleSelectedTipMargin;
 /** 标题的字体 默认为14 */
 @property (assign, nonatomic) CGFloat titleFontSize;
 /** 标题的字体 默认为14 */

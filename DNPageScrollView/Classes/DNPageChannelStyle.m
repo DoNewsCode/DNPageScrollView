@@ -24,8 +24,9 @@
         _titleAboutMargin = 15.0;
         _titleSeesawMargin = 5.0;
         _contentBottomMargin = 0.;
+        _titleSelectedTipMargin = 8.;
         _titleFont = [UIFont systemFontOfSize:17.0];
-
+        
         _titleBigScale = 1.1;
         _channelBackgroundColor = [UIColor colorWithRed:248.0/255.0 green:249.0/255.0 blue:249.0/255.0 alpha:1.0];
         _extraButtonBackgroundColor = _channelBackgroundColor;
@@ -34,7 +35,7 @@
         _selectedTitleColor = [UIColor colorWithRed:231.0/255.0 green:5.0/255.0 blue:5/255.0 alpha:1.0];
         _scrollLineColor = _selectedTitleColor;
         /** 滚动视图背景颜色 */
-//        _pageViewBackgroundColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
+        //        _pageViewBackgroundColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
         _pageViewBackgroundColor = [UIColor colorWithRed:36.0/255.0 green:36.0/255.0 blue:36.0/255.0 alpha:1.0];
         _channelHeight = 44.0;
         _scrollLineHeight = 2.0;

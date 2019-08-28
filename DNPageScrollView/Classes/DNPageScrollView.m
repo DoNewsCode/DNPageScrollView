@@ -117,7 +117,7 @@
 
 -(void)setFrame:(CGRect)frame {
     [super setFrame:frame];
-
+    
 }
 
 - (DNChannelScrollView *)channelView {
@@ -169,12 +169,12 @@
         }
         
         DNChannelTapView *tabChannelView = [[DNChannelTapView alloc]
-                                                  initWithFrame:symmetryChannelViewFrame
-                                                  channelStyle:self.style
-                                                  channelNames:self.channelNameArray
+                                            initWithFrame:symmetryChannelViewFrame
+                                            channelStyle:self.style
+                                            channelNames:self.channelNameArray
                                             channelDidClick:^(NSInteger index) {
-                                                  [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
-                                              }];
+                                                [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
+                                            }];
         [tabChannelView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {
             if (weakSelf.delegate && [weakSelf respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
                 [weakSelf.delegate setUpTitleView:titleView forIndex:index];
@@ -201,12 +201,12 @@
         }
         
         DNChannelSymmetryView *symmetryChannelView = [[DNChannelSymmetryView alloc]
-                                         initWithFrame:symmetryChannelViewFrame
-                                         channelStyle:self.style
-                                         channelNames:self.channelNameArray
-                                         channelDidClick:^(NSInteger index) {
-                                             [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
-                                         }];
+                                                      initWithFrame:symmetryChannelViewFrame
+                                                      channelStyle:self.style
+                                                      channelNames:self.channelNameArray
+                                                      channelDidClick:^(NSInteger index) {
+                                                          [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
+                                                      }];
         [symmetryChannelView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {
             if (weakSelf.delegate && [weakSelf respondsToSelector:@selector(setUpTitleView:forIndex:)]) {
                 [weakSelf.delegate setUpTitleView:titleView forIndex:index];
