@@ -36,7 +36,7 @@
         _scrollLineColor = _selectedTitleColor;
         /** 滚动视图背景颜色 */
         //        _pageViewBackgroundColor = [UIColor colorWithRed:0.0/255.0 green:0.0/255.0 blue:0.0/255.0 alpha:1.0];
-        _pageViewBackgroundColor = [UIColor colorWithRed:36.0/255.0 green:36.0/255.0 blue:36.0/255.0 alpha:1.0];
+        _pageViewBackgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
         _channelHeight = 44.0;
         _scrollLineHeight = 2.0;
         _bottomLineHeight = 0.5;
