@@ -135,12 +135,18 @@
         
     }
     CGFloat margin = (self.frame.size.width - self.channelStyle.titleAboutMargin * 2 - self.channelStyle.channelInnerEdge.left - self.channelStyle.channelInnerEdge.right - CGRectGetMaxX(self.channelViews.lastObject.frame)) / (self.channelViews.count - 1);
-    for (NSInteger i = 0; i < self.channelViews.count; i++) {
-        if (i > 0) {
-            DNChannelTitleView *titleView = self.channelViews[i];
-            titleView.ct_x = CGRectGetMaxX(self.channelViews[i - 1].frame) + margin;
+    if (self.channelViews.count == 2) {
+        DNChannelTitleView *titleView = self.channelViews.lastObject;
+        titleView.ct_x = self.ct_width - self.channelStyle.channelInnerEdge.right - self.channelStyle.titleAboutMargin - titleView.ct_width;
+    } else {
+        for (NSInteger i = 0; i < self.channelViews.count; i++) {
+            if (i > 0) {
+                DNChannelTitleView *titleView = self.channelViews[i];
+                titleView.ct_x = CGRectGetMaxX(self.channelViews[i - 1].frame) + margin;
+            }
         }
     }
+    
     
     if (self.channelStyle.showLine == YES) {
         self.selectedTip.backgroundColor = self.channelStyle.scrollLineColor;
