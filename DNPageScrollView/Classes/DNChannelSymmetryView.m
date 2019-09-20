@@ -35,6 +35,8 @@
     CGFloat lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
     for (NSInteger i = 0; i < self.channelNameArray.count; i++) {
         NSString *name = self.channelNameArray[i];
+        
+//        UIView * clickView = [UIView new];
         DNSymmetryItemView *titleView = [DNSymmetryItemView new];
         titleView.titleLabel.font = self.channelStyle.titleFont;
         if (i == 0) {
@@ -55,13 +57,14 @@
         [titleView addGestureRecognizer:tapGesture];
         CGFloat titleViewX = lastChannelLabelMaxX;
         titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleSize.width,titleSize.height};
-        //        titleView.ct_y = (self.ct_height * 0.5) - titleSize.height * 0.5;
         titleView.titleLabel.frame = titleView.bounds;
+//        titleView.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
         lastChannelLabelMaxX += (titleView.ct_width + self.channelStyle.titleMargin);
         if (i == 0) {
             
             titleView.transform = CGAffineTransformMakeScale(self.channelStyle.titleBigScale, self.channelStyle.titleBigScale);
         }
+        
         [self addSubview:titleView];
         [self.channelViews addObject:titleView];
         

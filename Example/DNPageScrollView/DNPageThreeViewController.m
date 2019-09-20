@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.channels = @[@"首页",@"新鲜事"];
+    self.channels = @[@"首页",@"新鲜事",@"校友"];
     [self.view addSubview:self.pageScrollView];
 }
 

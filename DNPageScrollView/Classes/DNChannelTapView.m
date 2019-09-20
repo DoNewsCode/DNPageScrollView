@@ -70,7 +70,7 @@
     CGFloat wDistance = currentChannelView.ct_width - oldChannelView.ct_width;
     //下标
     self.selectedTip.ct_centerX = oldChannelViewCenterX + xDistance * progress;
-    self.selectedTip.ct_width = ((oldChannelView.ct_width + self.channelStyle.titleAboutMargin * 2) + wDistance * progress);
+    self.selectedTip.ct_width = ((oldChannelView.ct_width) + wDistance * progress);
     
 }
 
@@ -119,6 +119,8 @@
 - (void)createContent {
     [self addSubview:self.selectedTip];
     CGFloat height = self.frame.size.height - self.channelStyle.titleSeesawMargin * 2;
+    
+    CGFloat totalWidth = 0;
     for (NSInteger i = 0; i < self.channelNameArray.count; i++) {
         NSString *name = self.channelNameArray[i];
         DNChannelTitleView *titleView = [DNChannelTitleView new];
@@ -128,16 +130,17 @@
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(channelViewClick:)];
         [titleView addGestureRecognizer:tapGesture];
-        CGFloat titleViewX = self.channelStyle.titleAboutMargin + self.channelStyle.channelInnerEdge.left + i * (titleView.channleTitleViewWidth);
-        titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleView.channleTitleViewWidth,height};
+        CGFloat titleViewX = self.channelStyle.channelInnerEdge.left + i * (titleView.channleTitleViewWidth);
+        titleView.frame = (CGRect){titleViewX,self.channelStyle.titleSeesawMargin,titleView.channleTitleViewWidth + self.channelStyle.titleAboutMargin * 2,height};
+        totalWidth += titleView.ct_width;
         [self addSubview:titleView];
         [self.channelViews addObject:titleView];
         
     }
-    CGFloat margin = (self.frame.size.width - self.channelStyle.titleAboutMargin * 2 - self.channelStyle.channelInnerEdge.left - self.channelStyle.channelInnerEdge.right - CGRectGetMaxX(self.channelViews.lastObject.frame)) / (self.channelViews.count - 1);
+    CGFloat margin = (self.frame.size.width - self.channelStyle.channelInnerEdge.left - self.channelStyle.channelInnerEdge.right - totalWidth) / (self.channelViews.count - 1);
     if (self.channelViews.count == 2) {
         DNChannelTitleView *titleView = self.channelViews.lastObject;
-        titleView.ct_x = self.ct_width - self.channelStyle.channelInnerEdge.right - self.channelStyle.titleAboutMargin - titleView.ct_width;
+        titleView.ct_x = self.ct_width - self.channelStyle.channelInnerEdge.right - titleView.ct_width;
     } else {
         for (NSInteger i = 0; i < self.channelViews.count; i++) {
             if (i > 0) {
@@ -152,7 +155,7 @@
         self.selectedTip.backgroundColor = self.channelStyle.scrollLineColor;
         NSInteger currentIndex = self.currentIndex;
         DNChannelTitleView *itemView = self.channelViews[currentIndex];
-        self.selectedTip.ct_size = CGSizeMake(itemView.ct_width + self.channelStyle.titleAboutMargin * 2, self.selectedTip.ct_height > 0 ? self.selectedTip.ct_height : self.channelStyle.scrollLineHeight);
+        self.selectedTip.ct_size = CGSizeMake(itemView.ct_width, self.selectedTip.ct_height > 0 ? self.selectedTip.ct_height : self.channelStyle.scrollLineHeight);
         self.selectedTip.layer.cornerRadius = self.channelStyle.scrollLineCornerRadius;
         self.selectedTip.ct_centerX = itemView.ct_centerX;
         self.selectedTip.ct_centerY = itemView.ct_centerY;
@@ -189,7 +192,7 @@
         oldChannelView.selected = NO;
         currentChannelView.selected = YES;
         
-        weakSelf.selectedTip.ct_width = (currentChannelView.ct_width + self.channelStyle.titleAboutMargin * 2);
+        weakSelf.selectedTip.ct_width = (currentChannelView.ct_width);
         weakSelf.selectedTip.center = currentChannelView.center;
     } completion:^(BOOL finished) {
         [weakSelf adjustChannelOffSetToCurrentIndex:self.currentIndex];

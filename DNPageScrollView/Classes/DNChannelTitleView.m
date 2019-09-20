@@ -68,7 +68,7 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    self.label.frame = self.bounds;
+    self.label.frame = (CGRect){(self.frame.size.width - _titleSize.width) * 0.5,0.,_titleSize.width,self.frame.size.height};
 }
 
 
