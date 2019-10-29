@@ -85,9 +85,9 @@
         _pageStyle.selectedTitleColor = [UIColor colorWithRed:50/255.0 green:51/255.0 blue:51/255.0 alpha:1.0];
         _pageStyle.channelEdge = UIEdgeInsetsMake(17., 12, 24, 12);
         _pageStyle.titleSeesawMargin = 16;
-        _pageStyle.titleFont = [UIFont fontWithName:@"PingFangSC-Regular" size:15];
+        _pageStyle.titleFont = [UIFont fontWithName:@"PingFangSC-Regular" size:17];
         _pageStyle.channelFrame = (CGRect){0.,0,144,37};
-        _pageStyle.titleBigScale = 1.33;
+        _pageStyle.titleBigScale = 1.411765;
         _pageStyle.channelBackgroundColor = [UIColor whiteColor];
         _pageStyle.scrollLineColor = [UIColor blackColor];
         _pageStyle.channleType = DNPageChannelStyleChannelTypeSymmetry;

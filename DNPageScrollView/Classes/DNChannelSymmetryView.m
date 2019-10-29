@@ -15,6 +15,8 @@
 /** 缓存所有标题label */
 @property (nonatomic, strong) NSMutableArray<DNSymmetryItemView *> *channelViews;
 
+@property(nonatomic, strong) UITapGestureRecognizer *backgroundTapGestureRecognizer;
+
 @end
 
 @implementation DNChannelSymmetryView
@@ -33,6 +35,7 @@
     self.clipsToBounds = YES;
     CGFloat height = self.frame.size.height - self.channelStyle.titleSeesawMargin * 2;
     CGFloat lastChannelLabelMaxX = self.channelStyle.titleAboutMargin;
+    
     for (NSInteger i = 0; i < self.channelNameArray.count; i++) {
         NSString *name = self.channelNameArray[i];
         
@@ -52,7 +55,7 @@
         }
         titleView.titleLabel.text = name;
         CGSize titleSize =  [titleView.titleLabel.text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : titleView.titleLabel.font} context:nil].size;
-        
+        titleSize.height -= (titleSize.height * 0.225);
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(channelViewClick:)];
         [titleView addGestureRecognizer:tapGesture];
         CGFloat titleViewX = lastChannelLabelMaxX;
@@ -89,6 +92,7 @@
         [self addSubview:self.selectedTip];
     }
     self.channelViews.firstObject.titleLabel.textColor = self.channelStyle.selectedTitleColor;
+    [self addGestureRecognizer:self.backgroundTapGestureRecognizer];
 }
 
 - (void)createItemTitleLableFrameWithItem:(DNSymmetryItemView *)item index:(NSInteger)index {
@@ -103,6 +107,16 @@
     }
     
     item.titleLabel.frame = (CGRect){titlePoint,titleSize};
+}
+
+- (void)eventBackgroundClick:(UIGestureRecognizer *)gestureRecognizer {
+    CGPoint point = [gestureRecognizer locationInView:self];
+    NSInteger index = point.x / (self.ct_width / self.channelViews.count);
+    if (index < self.channelViews.count) {
+        self.currentIndex = index;
+        [self adjustUIWhenBtttonClickWithAnimate:YES taped:YES];
+        [[NSNotificationCenter defaultCenter] postNotificationName:self.channelStyle.notificationChannelClickName object:[NSString stringWithFormat:@"%zd",index]];
+    }
 }
 
 - (void)channelViewClick:(UITapGestureRecognizer *)tapGesture {
@@ -225,6 +239,14 @@
         _channelViews = [NSMutableArray<DNSymmetryItemView *> array];
     }
     return _channelViews;
+}
+
+-(UITapGestureRecognizer *)backgroundTapGestureRecognizer {
+    if (!_backgroundTapGestureRecognizer) {
+        UITapGestureRecognizer *backgroundTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(eventBackgroundClick:)];
+        _backgroundTapGestureRecognizer = backgroundTapGestureRecognizer;
+    }
+    return _backgroundTapGestureRecognizer;
 }
 
 @end

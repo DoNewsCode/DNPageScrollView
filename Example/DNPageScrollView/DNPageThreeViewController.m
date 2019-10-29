@@ -27,6 +27,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.channels = @[@"首页",@"新鲜事",@"校友"];
     [self.view addSubview:self.pageScrollView];
+    [self.pageScrollView.tabChannelView setSelectedIndex:1 animated:NO];
 }
 
 
