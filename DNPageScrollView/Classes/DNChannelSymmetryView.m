@@ -127,6 +127,13 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:self.channelStyle.notificationChannelClickName object:[NSString stringWithFormat:@"%zd",index]];
 }
 
+/** 设置选中的下标*/
+- (void)setSelectedIndex:(NSInteger)index animated:(BOOL)animated {
+    [self adjustUIWithProgress:1 oldIndex:self.currentIndex currentIndex:index];
+    self.currentIndex = index;
+
+}
+
 /** 让选中的标题居中*/
 - (void)adjustChannelOffSetToCurrentIndex:(NSInteger)currentIndex {
     DNSymmetryItemView *titleView = self.channelViews[currentIndex];
@@ -138,6 +145,7 @@
         oldChannelViewCenterX -= (titleView.ct_width * 0.5);
     }
     self.selectedTip.ct_centerX = oldChannelViewCenterX;
+    
 }
 
 /** 切换下标的时候根据progress同步设置UI*/

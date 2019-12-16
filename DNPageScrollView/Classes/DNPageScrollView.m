@@ -78,7 +78,8 @@
 
 /** 给外界设置选中的下标的方法 */
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated {
-    [self.channelView setSelectedIndex:selectedIndex animated:animated];
+    [self.channelBaseView setSelectedIndex:selectedIndex animated:animated];
+    [self.contentView setContentOffSet:CGPointMake(self.contentView.bounds.size.width * selectedIndex, 0.0) animated:animated];
 }
 
 /**  给外界重新设置视图内容的标题的方法 */

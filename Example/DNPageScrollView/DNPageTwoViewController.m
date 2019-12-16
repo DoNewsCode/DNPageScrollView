@@ -27,8 +27,16 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.channels = @[@"新鲜事",@"推荐"];
     [self.view addSubview:self.pageScrollView];
+    UIButton *button = [UIButton new];
+    button.frame = (CGRect){0.,100.,50.,50.};
+    button.backgroundColor = [UIColor redColor];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(eventButtonEventTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)eventButtonEventTouchUpInside:(UIButton *)button {
+    [self.pageScrollView setSelectedIndex:0 animated:YES];
+}
 
 #pragma mark - DNPageScrollViewDelegate
 - (NSInteger)numberOfChildViewControllers {
