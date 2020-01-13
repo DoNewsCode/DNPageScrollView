@@ -260,7 +260,7 @@
     }
     /** 停止拖拽时更新title位置 */
     NSInteger currentIndex = (scrollView.contentOffset.x / self.bounds.size.width);
-    [self adjustChannelTitleOffSetTicurrentIndex:currentIndex];
+//    [self adjustChannelTitleOffSetTicurrentIndex:currentIndex];
 }
 
 #pragma mark - UICollectionViewDelegate --- UICollectionViewDataSource
