@@ -140,6 +140,9 @@
                                                   channelStyle:self.style
                                                   channelNames:self.channelNameArray
                                                   channelDidClick:^(NSInteger index) {
+            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(pageScrollow:channelDidClickWithIndex:)]) {
+                [weakSelf.delegate pageScrollow:weakSelf channelDidClickWithIndex:index];
+            }
                                                       [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
                                                   }];
         
@@ -174,6 +177,9 @@
                                             channelStyle:self.style
                                             channelNames:self.channelNameArray
                                             channelDidClick:^(NSInteger index) {
+            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(pageScrollow:channelDidClickWithIndex:)]) {
+                [weakSelf.delegate pageScrollow:weakSelf channelDidClickWithIndex:index];
+            }
                                                 [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
                                             }];
         [tabChannelView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {
@@ -206,6 +212,9 @@
                                                       channelStyle:self.style
                                                       channelNames:self.channelNameArray
                                                       channelDidClick:^(NSInteger index) {
+            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(pageScrollow:channelDidClickWithIndex:)]) {
+                [weakSelf.delegate pageScrollow:weakSelf channelDidClickWithIndex:index];
+            }
                                                           [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
                                                       }];
         [symmetryChannelView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {
@@ -238,6 +247,9 @@
                                                       channelStyle:self.style
                                                       channelNames:self.channelNameArray
                                                       channelDidClick:^(NSInteger index) {
+            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(pageScrollow:channelDidClickWithIndex:)]) {
+                [weakSelf.delegate pageScrollow:weakSelf channelDidClickWithIndex:index];
+            }
                                                           [weakSelf.contentView setContentOffSet:CGPointMake(weakSelf.contentView.bounds.size.width * index, 0.0) animated:YES];
                                                       }];
         [timeLineChannelView returnSetUpTitleBlock:^(UIView *titleView, NSInteger index) {

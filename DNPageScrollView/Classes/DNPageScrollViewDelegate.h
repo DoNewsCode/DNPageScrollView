@@ -66,6 +66,10 @@
  *  @return 返回最终显示的位置
  */
 - (CGRect)frameOfChildControllerForContainer:(UIView *)containerView;
+
+//该方法会在点击channel时调用
+- (void)pageScrollow:(DNPageScrollView *)pageScrollow channelDidClickWithIndex:(NSUInteger)channelIndex;
+
 @end
 
 
