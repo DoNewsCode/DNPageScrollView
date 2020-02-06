@@ -43,6 +43,10 @@
     return self.channels.count;
 }
 
+- (void)pageScrollow:(DNPageScrollView *)pageScrollow channelDidClickWithIndex:(NSUInteger)channelIndex {
+    
+}
+
 - (UIViewController<DNPageScrollViewChildViewControllerDelegate> *)childViewController:(UIViewController<DNPageScrollViewChildViewControllerDelegate> *)reuseViewController forIndex:(NSInteger)index {
     
     if(index == NSNotFound || index > self.channels.count - 1) {

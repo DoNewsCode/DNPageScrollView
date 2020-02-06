@@ -125,6 +125,10 @@
     self.currentIndex = index;
     [self adjustUIWhenBtttonClickWithAnimate:YES taped:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:self.channelStyle.notificationChannelClickName object:[NSString stringWithFormat:@"%zd",index]];
+    if (self.channelClickBlock) {
+        NSInteger currentIndex = self.currentIndex;
+        self.channelClickBlock(currentIndex);
+    }
 }
 
 /** 设置选中的下标*/

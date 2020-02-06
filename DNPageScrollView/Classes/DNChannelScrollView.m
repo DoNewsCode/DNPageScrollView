@@ -269,7 +269,10 @@ static CGFloat const shadowCoverWidth = 30;
     [self adjustUIWhenBtttonClickWithAnimate:YES taped:YES];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:self.channelStyle.notificationChannelClickName object:[NSString stringWithFormat:@"%zd",self.currentIndex]];
-    
+    if (self.channelClickBlock) {
+        NSInteger currentIndex = self.currentIndex;
+        self.channelClickBlock(currentIndex);
+    }
 }
 
 - (void)adjustUIWhenBtttonClickWithAnimate:(BOOL)animated taped:(BOOL)taped

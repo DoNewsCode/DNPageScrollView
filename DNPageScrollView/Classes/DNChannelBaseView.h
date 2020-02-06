@@ -27,6 +27,8 @@ typedef void(^DNChannelBaseViewSetUpTitleBlock)(UIView *titleView, NSInteger ind
 // 响应标题点击
 @property (copy, nonatomic) DNChannelViewTitleClickBlock channelButtonClickBlock;
 // 响应标题点击
+@property (copy, nonatomic) DNChannelViewTitleClickBlock channelClickBlock;
+// 响应标题点击
 @property (copy, nonatomic) DNChannelBaseViewSetUpTitleBlock setUpTitleBlock;
 
 @property(nonatomic, assign) CGFloat currentWidth;
@@ -55,6 +57,7 @@ typedef void(^DNChannelBaseViewSetUpTitleBlock)(UIView *titleView, NSInteger ind
 
 - (void)returnSetUpTitleBlock:(DNChannelBaseViewSetUpTitleBlock)setUpTitleBlock;
 - (void)returnChannelButtonClickBlock:(DNChannelViewTitleClickBlock)channelButtonClickBlock;
+- (void)returnChannelClickBlock:(DNChannelViewTitleClickBlock)channelClickBlock;
 
 @end
 

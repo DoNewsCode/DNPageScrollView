@@ -42,6 +42,10 @@
     self.channelButtonClickBlock = channelButtonClickBlock;
 }
 
+- (void)returnChannelClickBlock:(DNChannelViewTitleClickBlock)channelClickBlock {
+    self.channelClickBlock = channelClickBlock;
+}
+
 - (NSArray *)deltaRGB {
     if (_deltaRGB == nil) {
         NSArray *normalColorRgb = self.normalColorRGB;
